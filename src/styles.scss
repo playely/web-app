@@ -53,7 +53,7 @@ h1, h2, h3, h4, h5 {
  .btn-primary {
    background: $primary-color;
    padding: 10px 24px;
-   border-radius: 3px;
+   border-radius: $border-radius;
    border: none;
    font-family: $primary-font;
    font-style: normal;
@@ -73,4 +73,56 @@ h1, h2, h3, h4, h5 {
     border-radius: 100%;
     padding: 10px;
     border: none;
+ }
+
+ select,
+ input[type="text"],
+ input[type="number"] {
+   font-family: $primary-font;
+   font-style: normal;
+   font-size: 16px;
+   padding: 0 20px;
+ }
+
+ select:focus-visible,
+ input[type="text"]:focus-visible,
+ input[type="number"]:focus-visible,
+ button:focus-visible {
+    outline: none;
+ } 
+
+ .select-input-form {
+   display: inline-flex;
+   height: 55px;
+   background-color: #FFFFFF;
+   align-items: center;
+   border-radius: $border-radius;
+   select {
+       border-radius: 0;
+       border: none;
+       background-color: transparent;
+       text-align: center;
+       height: 100%;
+   }
+
+   .separator {
+      background-color: $primary-color;
+      width: 0.5px;
+      height: 50%;
+      display: flex;
+      border-radius: 2px;
+      margin-left: 5px;
+   }
+
+   input[type="text"] {
+       border-radius: 0;
+       border: none;
+       background-color: transparent;
+       height: 100%;
+   }
+
+   button {
+      height: 100%;
+       border-radius: 0 $border-radius $border-radius 0;
+   }
  }
