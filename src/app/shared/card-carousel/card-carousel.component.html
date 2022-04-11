@@ -1,1 +1,12 @@
-<p>card-carousel works!</p>
+<div *ngIf="carousel" class="carousel-container">
+    <h4>{{carousel.title}}</h4>
+
+    <!--------------------DESCRIPTION CAROUSEL ----------------------------->
+    <div *ngIf="isDescription" class="cards-container">
+        <app-description-card *ngFor="let item of carousel.content" [item]="item" ></app-description-card>
+    </div>
+    <!--------------------INNER CAROUSEL ----------------------------->
+    <div *ngIf="isInnerCard" class="cards-container">
+        <app-inner-card *ngFor="let item of carousel.content" [item]="item" ></app-inner-card>
+    </div>
+</div>

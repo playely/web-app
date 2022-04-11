@@ -4,6 +4,8 @@ import { HeroCarouselComponent } from './hero-carousel/hero-carousel.component';
 import { CardCarouselComponent } from './card-carousel/card-carousel.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { NavbarIconComponent } from './navbar/navbar-icon/navbar-icon.component';
+import { DescriptionCardComponent } from './card-carousel/description-card/description-card.component';
+import { InnerCardComponent } from './card-carousel/inner-card/inner-card.component';
 
 const components = [
   HeroCarouselComponent,
@@ -15,6 +17,8 @@ const components = [
   declarations: [
     ...components,
     NavbarIconComponent,
+    DescriptionCardComponent,
+    InnerCardComponent,
   ],
   imports: [
     CommonModule,

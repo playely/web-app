@@ -1,0 +1,9 @@
+<div *ngIf="item" class="inner-card">
+    <div class="inner-card__image-container">
+        <img [src]="item.image" [alt]="item.title">
+    </div>
+    <div class="inner-card__overlay">
+        <div class="background"></div>
+        <p class="title">{{item.title}}</p>
+    </div>
+</div>
