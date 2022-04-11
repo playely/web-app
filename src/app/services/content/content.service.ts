@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
-import { CardAspectRatio, CarouselType, ContentType, ICarousel } from './models/carousel';
+import { ICarousel } from './models/carousel';
+import { CardAspectRatio, CarouselType, ContentType } from './models/types';
 
 @Injectable({
   providedIn: 'root'
@@ -116,6 +117,44 @@ export class ContentService {
             duration: '2 hrs',
             id: '1',
             image: 'https://play-jolly-assets.s3.amazonaws.com/content/dummy/image4-2x3.png',
+            shortDescription: 'Short description',
+            title: 'Wandavision',
+            type: ContentType.SERIE,
+            isLive: false
+          },
+        ]
+      },
+      {
+        id: '3',
+        title: 'Movies for you',
+        aspectRatio: CardAspectRatio.HORIZONTAL,
+        type: CarouselType.INNERCARD,
+        content: [
+          {
+            description: 'Long description',
+            duration: '2 hrs',
+            id: '1',
+            image: 'https://play-jolly-assets.s3.amazonaws.com/content/dummy/image1-16x9.png',
+            shortDescription: 'Short description',
+            title: 'Wandavision',
+            type: ContentType.SERIE,
+            isLive: false
+          },
+          {
+            description: 'Long description',
+            duration: '2 hrs',
+            id: '1',
+            image: 'https://play-jolly-assets.s3.amazonaws.com/content/dummy/image2-16x9.png',
+            shortDescription: 'Short description',
+            title: 'Wandavision',
+            type: ContentType.SERIE,
+            isLive: false
+          },
+          {
+            description: 'Long description',
+            duration: '2 hrs',
+            id: '1',
+            image: 'https://play-jolly-assets.s3.amazonaws.com/content/dummy/image3-16x9.png',
             shortDescription: 'Short description',
             title: 'Wandavision',
             type: ContentType.SERIE,

@@ -7,6 +7,6 @@
     </div>
     <!--------------------INNER CAROUSEL ----------------------------->
     <div *ngIf="isInnerCard" class="cards-container">
-        <app-inner-card *ngFor="let item of carousel.content" [item]="item" ></app-inner-card>
+        <app-inner-card *ngFor="let item of carousel.content" [item]="item" [aspectRatio]="carousel.aspectRatio" ></app-inner-card>
     </div>
 </div>

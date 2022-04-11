@@ -1,12 +1,23 @@
 @import 'vars';
 
+.aspect-ratio-2x3 {
+    width: 214px;
+}
+
+.aspect-ratio-16x9 {
+    width: 400px;
+}
+
+.aspect-ratio-1x1 {
+    width: 126px;
+}
+
 .inner-card {
     position: relative;
     border-radius: $border-radius;
     margin-right: 16px;
 
     &__image-container {
-        width: 214px;
 
         img {
             width: 100%;
@@ -20,8 +31,10 @@
         left: 0;
         width: 100%;
         background: linear-gradient(360deg, #0A070B 0%, rgba(10, 7, 11, 0) 100%);
+        overflow: hidden;
 
         .title {
+            width: 100%;
             font-style: normal;
             font-weight: 600;
             font-size: 20px;
@@ -31,6 +44,9 @@
             color: #fff;
             margin: 0 0 16px 12px;
             padding: 0;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            white-space: nowrap;
         }
     }
 }

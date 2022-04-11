@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { CarouselType, ICarousel } from 'src/app/services/content/models/carousel';
+import { ICarousel } from 'src/app/services/content/models/carousel';
+import { CarouselType } from 'src/app/services/content/models/types';
 
 @Component({
   selector: 'app-card-carousel',
