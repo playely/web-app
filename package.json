@@ -1,5 +1,5 @@
 {
-  "name": "pj-web",
+  "name": "angular-app-web",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
