@@ -1,0 +1,45 @@
+@import 'vars';
+
+.navbar-container {
+    background: $dark-black;
+    width: 100%;
+    min-height: 10px;
+    display: inline-flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &__left {
+        display: inline-flex;
+        align-items: center;
+        margin-left: $margin-side;
+        .options ul {
+            display: inline-flex;
+    
+            li {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                padding: 0 12px;
+
+                .icon {
+                    margin-right: 10px;
+                }
+            }
+
+            li:hover p {
+                cursor: pointer;
+                color: #FFF;
+            }
+        }
+    }
+
+    &__right {
+        display: inline-flex;
+        align-items: center;
+        margin-right: $margin-side;
+        
+        .btn-icon {
+            margin-right: 60px;
+        }
+    }
+}

@@ -1,1 +1,23 @@
-<p>navbar works!</p>
+<div class="navbar-container">
+    <div class="navbar-container__left">
+        <div class="logo">
+            <img src="assets/img/logo.png" alt="">
+        </div>
+    
+        <div class="options">
+            <ul>
+                <li *ngFor="let item of menuItems">
+                    <div class="icon">
+                        <app-navbar-icon [type]="item.title_en"></app-navbar-icon>
+                    </div>
+                    <p class="title">{{ item.title }}</p>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="navbar-container__right">
+        <button class="btn-icon"><img src="assets/img/svg/search.svg" alt="search"/></button>
+        <button class="btn-primary">Sign In</button>
+    </div>
+</div>
