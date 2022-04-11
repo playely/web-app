@@ -16,7 +16,7 @@ export const menu: ITab[] = [
         title: 'Drama',
         title_en: 'drama',
     },
-    {
+   /* {
         id: '4',
         title: 'Music Video',
         title_en: 'music',
@@ -30,5 +30,5 @@ export const menu: ITab[] = [
         id: '6',
         title: 'Comedies',
         title_en: 'comedies',
-    }
+    }*/
 ];

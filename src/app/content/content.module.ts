@@ -1,7 +1,9 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ContentComponent } from './content/content.component';
 
+import { ContentRoutingModule } from './content-routing.module';
+import { ContentComponent } from './content/content.component';
+import { SharedModule } from '../shared/shared.module';
 
 
 @NgModule({
@@ -9,7 +11,9 @@ import { ContentComponent } from './content/content.component';
     ContentComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    ContentRoutingModule,
+    SharedModule
   ]
 })
 export class ContentModule { }
