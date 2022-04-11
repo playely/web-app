@@ -6,11 +6,13 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { NavbarIconComponent } from './navbar/navbar-icon/navbar-icon.component';
 import { DescriptionCardComponent } from './card-carousel/description-card/description-card.component';
 import { InnerCardComponent } from './card-carousel/inner-card/inner-card.component';
+import { FooterComponent } from './footer/footer.component';
 
 const components = [
   HeroCarouselComponent,
   CardCarouselComponent,
-  NavbarComponent
+  NavbarComponent,
+  FooterComponent,
 ];
 
 @NgModule({
