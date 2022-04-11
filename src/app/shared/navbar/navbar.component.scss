@@ -1,7 +1,10 @@
 @import 'vars';
 
+.navbar-inverse {
+    background: $dark-black;
+}
+
 .navbar-container {
-    // background: $dark-black;
     width: 100%;
     min-height: 10px;
     display: inline-flex;
