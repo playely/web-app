@@ -4,6 +4,16 @@
     background: $dark-black;
 }
 
+.logo:hover {
+    cursor: pointer;
+}
+
+.item-active {
+    p {
+        color: #FFF;
+    }
+}
+
 .navbar-container {
     width: 100%;
     min-height: 10px;
@@ -33,9 +43,11 @@
                 }
             }
 
-            li:hover p {
+            li:hover {
                 cursor: pointer;
-                color: #FFF;
+                p {
+                    color: #FFF;
+                }
             }
         }
     }

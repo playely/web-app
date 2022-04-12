@@ -9,6 +9,7 @@ import { InnerCardComponent } from './card-carousel/inner-card/inner-card.compon
 import { FooterComponent } from './footer/footer.component';
 import { GridCarouselComponent } from './grid-carousel/grid-carousel.component';
 import { LoadingComponent } from './loading/loading.component';
+import { RouterModule } from '@angular/router';
 
 const components = [
   HeroCarouselComponent,
@@ -28,6 +29,7 @@ const components = [
   ],
   imports: [
     CommonModule,
+    RouterModule.forChild([])
   ],
   exports: [ ...components ]
 })

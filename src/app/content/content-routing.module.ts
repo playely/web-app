@@ -9,6 +9,10 @@ const routes: Routes = [
     component: ContentComponent
   },
   {
+    path: ':tab',
+    component: ContentComponent
+  },
+  {
     path: ':contentType/:contentId',
     component: DetailsComponent
   }
