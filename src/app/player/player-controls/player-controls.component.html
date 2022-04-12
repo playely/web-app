@@ -1,18 +1,21 @@
 <div *ngIf="content" class="player-controls-container">
     <div class="player-top">
         <button class="arrow"><img src="assets/img/svg/arrows/arrow-left.svg" alt="back arrow"></button>
-        <h3>{{ content.title }}</h3>
+        <h4>{{ content.title }}</h4>
     </div>
 
     <div class="player-center">
-    center
-    </div>
+        <img src="assets/img/svg/player/rewind.svg" (click)="rewind()" alt="rewind">
+        <img *ngIf="playerState.isPlaying" (click)="pause()" src="assets/img/svg/player/play-line.svg" alt="Play">
+        <img *ngIf="!playerState.isPlaying" (click)="play()" src="assets/img/svg/player/pause.svg" alt="Play">
+        <img src="assets/img/svg/player/forward.svg" (click)="forward()" alt="forward">
+</div>
 
     <div class="player-bottom">
     bottom
     </div>
 </div>
 
-<div *ngIf="!content" class="loading">
+<div *ngIf="!content || playerState.isLoading" class="loading">
     <app-loading></app-loading>
 </div>

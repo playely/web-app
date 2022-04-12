@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ContentService } from 'src/app/services/content/content.service';
+import { IContent } from 'src/app/services/content/models/carousel';
 
 @Component({
   selector: 'app-player',
@@ -6,10 +8,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./player.component.scss']
 })
 export class PlayerComponent implements OnInit {
-
-  constructor() { }
+  content: IContent | undefined;
+  constructor(private contentService: ContentService) { }
 
   ngOnInit(): void {
+    this.contentService.getContent('id').then((result) => {
+      setTimeout(() => {
+        this.content = result;
+      }, 3000);
+    });
   }
 
 }
