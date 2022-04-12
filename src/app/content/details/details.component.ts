@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { ContentService } from 'src/app/services/content/content.service';
 import { ICarousel, IContent } from 'src/app/services/content/models/carousel';
 
@@ -11,7 +12,7 @@ export class DetailsComponent implements OnInit {
   content: IContent | undefined;
   suggestedCarousel: ICarousel | undefined;
   relatedCarousel: ICarousel | undefined;
-  constructor(private contentService: ContentService) { }
+  constructor(private contentService: ContentService, private router: Router) { }
 
   ngOnInit(): void {
     // get content to details
@@ -28,6 +29,10 @@ export class DetailsComponent implements OnInit {
       this.relatedCarousel = result;
       this.relatedCarousel.title = `Related ${this.content?.type}s`;
     });
+  }
+
+  redirectToPlayer(): void {
+    this.router.navigate([`player/${this.content?.id}`]);
   }
 
 }

@@ -8,6 +8,7 @@ import { DescriptionCardComponent } from './card-carousel/description-card/descr
 import { InnerCardComponent } from './card-carousel/inner-card/inner-card.component';
 import { FooterComponent } from './footer/footer.component';
 import { GridCarouselComponent } from './grid-carousel/grid-carousel.component';
+import { LoadingComponent } from './loading/loading.component';
 
 const components = [
   HeroCarouselComponent,
@@ -15,6 +16,7 @@ const components = [
   NavbarComponent,
   FooterComponent,
   GridCarouselComponent,
+  LoadingComponent,
 ];
 
 @NgModule({

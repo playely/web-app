@@ -1,6 +1,6 @@
 <div *ngIf="content" class="details-container">
     <div class="content-container">
-        <div class="content-container__banner">
+        <div class="content-container__banner" (click)="redirectToPlayer()">
             <img src="https://play-jolly-assets.s3.amazonaws.com/content/dummy/details-16x9.png" alt="">
             <div class="overlay">
                 <img class="play-icon" src="assets/img/svg/player/play.svg" alt="Play">

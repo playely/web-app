@@ -1,0 +1,18 @@
+<div *ngIf="content" class="player-controls-container">
+    <div class="player-top">
+        <button class="arrow"><img src="assets/img/svg/arrows/arrow-left.svg" alt="back arrow"></button>
+        <h3>{{ content.title }}</h3>
+    </div>
+
+    <div class="player-center">
+    center
+    </div>
+
+    <div class="player-bottom">
+    bottom
+    </div>
+</div>
+
+<div *ngIf="!content" class="loading">
+    <app-loading></app-loading>
+</div>

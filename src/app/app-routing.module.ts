@@ -3,6 +3,10 @@ import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
   {
+    path: 'player',
+    loadChildren:  () => import('./player/player.module').then(m => m.PlayerModule) 
+  },
+  {
     path: '',
     loadChildren:  () => import('./content/content.module').then(m => m.ContentModule) 
   }
