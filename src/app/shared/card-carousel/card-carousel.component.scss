@@ -1,5 +1,9 @@
 @import 'vars';
 
+.carousel-container {
+    margin-top: 60px;
+}
+
 .cards-container {
     display: flex;
     margin-top: 33px;
@@ -31,5 +35,9 @@
         img {
             margin-left: 8px;
         }
+    }
+
+    .see-all:hover {
+        cursor: pointer;
     }
 }

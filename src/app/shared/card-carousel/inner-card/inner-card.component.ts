@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { IContent } from 'src/app/services/content/models/carousel';
 import { CardAspectRatio } from 'src/app/services/content/models/types';
 
@@ -8,6 +8,7 @@ import { CardAspectRatio } from 'src/app/services/content/models/types';
   styleUrls: ['./inner-card.component.scss']
 })
 export class InnerCardComponent implements OnInit {
+  @Output() clickCard = new EventEmitter<IContent>();
   @Input() aspectRatio: CardAspectRatio = CardAspectRatio.SQUARE;
   @Input() item: IContent | undefined;
   
@@ -18,6 +19,10 @@ export class InnerCardComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  click(): void {
+    this.clickCard.emit(this.item);
   }
 
 }

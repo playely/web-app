@@ -14,6 +14,10 @@
     align-items: flex-start;
     flex-wrap: nowrap;
 
+    &__image-container:hover {
+        cursor: pointer;
+    }
+
     &__info-container {
         flex: 2;
         display: flex;
@@ -60,6 +64,10 @@
                 border-radius: $border-radius;
                 padding: 8px;
             }
+        }
+
+        .live-tag:hover {
+            cursor: pointer;
         }
     }
 }

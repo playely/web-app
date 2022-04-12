@@ -1,4 +1,4 @@
-<div *ngIf="item" class="inner-card" [ngClass]="[aspectRatioClass]">
+<div *ngIf="item" class="inner-card" [ngClass]="[aspectRatioClass]" (click)="click()">
     <div class="inner-card__image-container">
         <img [src]="item.image" [alt]="item.title">
     </div>
