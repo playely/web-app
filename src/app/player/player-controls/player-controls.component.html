@@ -1,6 +1,6 @@
 <div *ngIf="content" class="player-controls-container">
     <div class="player-top">
-        <button class="arrow"><img src="assets/img/svg/arrows/arrow-left.svg" alt="back arrow"></button>
+        <button class="arrow" (click)="goBack()"><img src="assets/img/svg/arrows/arrow-left.svg" alt="back arrow"></button>
         <h4>{{ content.title }}</h4>
     </div>
 
