@@ -1,0 +1,49 @@
+<div *ngIf="content" class="details-container">
+    <div class="content-container">
+        <div class="content-container__banner">
+            <img src="https://play-jolly-assets.s3.amazonaws.com/content/dummy/details-16x9.png" alt="">
+            <div class="overlay">
+                <img class="play-icon" src="assets/img/svg/player/play.svg" alt="Play">
+            </div>
+        </div>
+        <div class="content-container__info">
+            <div class="data-container">
+                <div class="data">
+                    <p class="title">{{content.title }}</p>
+                    <p class="subtitle">
+                        {{ content.releaseYear }} 
+                        <span class="circle"></span>
+                        {{ content.duration }}
+                    </p>
+                </div>
+                <div class="options">
+                    <div class="item">
+                        <img src="assets/img/svg/watchlist.svg" alt="watchlist">
+                        <p>Watchlist</p>
+                    </div>
+                    <div class="item">
+                        <img src="assets/img/svg/download.svg" alt="watchlist">
+                        <p>Download</p>
+                    </div>
+                    <div class="item">
+                        <img src="assets/img/svg/share.svg" alt="watchlist">
+                        <p>Share</p>
+                    </div>
+                </div>
+            </div>
+            <div class="tags">
+                <p class="tag" *ngFor="let item of content.tags" >{{ item }} <span class="circle"></span> </p>
+            </div>
+            <div class="type">
+                <p>{{ content.type }}</p>
+            </div>
+            <div class="description">
+                <h4>Description</h4>
+                <p>{{content.description}}</p>
+            </div>
+        </div>
+    </div>
+    <div class="suggestions">
+        suggestions        
+    </div>
+</div>

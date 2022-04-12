@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { ICarousel } from './models/carousel';
+import { ICarousel, IContent } from './models/carousel';
 import { CardAspectRatio, CarouselType, ContentType } from './models/types';
 
 @Injectable({
@@ -31,7 +31,10 @@ export class ContentService {
             title: 'The K- POP Live Show',
             type: ContentType.LIVE,
             currentWatchers: 150,
-            isLive: true
+            isLive: true,
+            releaseDate: new Date(),
+            releaseYear: '2018',
+            tags: []
           },
           {
             description: 'Long description',
@@ -42,7 +45,10 @@ export class ContentService {
             title: 'The K- POP Live Show',
             type: ContentType.LIVE,
             currentWatchers: 175,
-            isLive: true
+            isLive: true,
+            releaseDate: new Date(),
+            releaseYear: '2018',
+            tags: []
           },
           {
             description: 'Long description',
@@ -53,6 +59,9 @@ export class ContentService {
             title: 'Minions Official',
             type: ContentType.TRAILER,
             isLive: false,
+            releaseDate: new Date(),
+            releaseYear: '2018',
+            tags: []
           },
           {
             description: 'Long description',
@@ -63,6 +72,9 @@ export class ContentService {
             title: 'Kapil Sharma',
             type: ContentType.MOVIE,
             isLive: false,
+            releaseDate: new Date(),
+            releaseYear: '2018',
+            tags: []
           },
           {
             description: 'Long description',
@@ -73,6 +85,9 @@ export class ContentService {
             title: 'Kapil Sharma Show',
             type: ContentType.SERIE,
             isLive: false,
+            releaseDate: new Date(),
+            releaseYear: '2018',
+            tags: []
           }
         ],
       },
@@ -90,7 +105,10 @@ export class ContentService {
             shortDescription: 'Short description',
             title: 'Wandavision',
             type: ContentType.SERIE,
-            isLive: false
+            isLive: false,
+            releaseDate: new Date(),
+            releaseYear: '2018',
+            tags: []
           },
           {
             description: 'Long description',
@@ -100,7 +118,10 @@ export class ContentService {
             shortDescription: 'Short description',
             title: 'Wandavision',
             type: ContentType.SERIE,
-            isLive: false
+            isLive: false,
+            releaseDate: new Date(),
+            releaseYear: '2018',
+            tags: []
           },
           {
             description: 'Long description',
@@ -110,7 +131,10 @@ export class ContentService {
             shortDescription: 'Short description',
             title: 'Wandavision',
             type: ContentType.SERIE,
-            isLive: false
+            isLive: false,
+            releaseDate: new Date(),
+            releaseYear: '2018',
+            tags: []
           },
           {
             description: 'Long description',
@@ -120,7 +144,10 @@ export class ContentService {
             shortDescription: 'Short description',
             title: 'Wandavision',
             type: ContentType.SERIE,
-            isLive: false
+            isLive: false,
+            releaseDate: new Date(),
+            releaseYear: '2018',
+            tags: []
           },
         ]
       },
@@ -138,7 +165,10 @@ export class ContentService {
             shortDescription: 'Short description',
             title: 'Wandavision',
             type: ContentType.SERIE,
-            isLive: false
+            isLive: false,
+            releaseDate: new Date(),
+            releaseYear: '2018',
+            tags: []
           },
           {
             description: 'Long description',
@@ -148,7 +178,10 @@ export class ContentService {
             shortDescription: 'Short description',
             title: 'Wandavision',
             type: ContentType.SERIE,
-            isLive: false
+            isLive: false,
+            releaseDate: new Date(),
+            releaseYear: '2018',
+            tags: []
           },
           {
             description: 'Long description',
@@ -158,10 +191,29 @@ export class ContentService {
             shortDescription: 'Short description',
             title: 'Wandavision',
             type: ContentType.SERIE,
-            isLive: false
+            isLive: false,
+            releaseDate: new Date(),
+            releaseYear: '2018',
+            tags: []
           },
         ]
       }
     ]);
+  }
+
+  getContent(contentId: string): Promise<IContent> {
+    return Promise.resolve({
+      description: 'Bizli, is a 2018 Bangladeshi Superhero film directed by Iftakar Chowdhury, and produced by Bobstar Films. It stars Bobby as the protagonist and Indian actress Satabdi Roy as the antagonist. The film was released countrywide on . t is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters.',
+      duration: '2 hrs 35min',
+      id: '1',
+      image: 'https://play-jolly-assets.s3.amazonaws.com/content/dummy/image1-16x9.png',
+      shortDescription: 'Short description',
+      title: 'Bijle',
+      type: ContentType.SERIE,
+      isLive: false,
+      releaseDate: new Date(),
+      releaseYear: '2018',
+      tags: ['superhero', 'action', 'Bangladesh']
+    });
   }
 }

@@ -9,5 +9,8 @@ export enum CarouselType {
 }
 
 export enum ContentType {
-    LIVE, MOVIE, SERIE, TRAILER
+    LIVE = 'live', 
+    MOVIE = 'movie', 
+    SERIE = 'serie', 
+    TRAILER = 'trailer'
 }

@@ -4,11 +4,13 @@ import { CommonModule } from '@angular/common';
 import { ContentRoutingModule } from './content-routing.module';
 import { ContentComponent } from './content/content.component';
 import { SharedModule } from '../shared/shared.module';
+import { DetailsComponent } from './details/details.component';
 
 
 @NgModule({
   declarations: [
-    ContentComponent
+    ContentComponent,
+    DetailsComponent
   ],
   imports: [
     CommonModule,

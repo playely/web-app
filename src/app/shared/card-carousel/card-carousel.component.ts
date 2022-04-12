@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { ICarousel, IContent } from 'src/app/services/content/models/carousel';
 import { CarouselType } from 'src/app/services/content/models/types';
 
@@ -18,7 +19,7 @@ export class CardCarouselComponent implements OnInit {
     return this.carousel?.type === CarouselType.INNERCARD;
   }
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
   }
@@ -30,6 +31,7 @@ export class CardCarouselComponent implements OnInit {
    */
   handleClickCard(event: IContent): void {
     console.log(event);
+    this.router.navigate([`${event.type.toString().toLowerCase()}/${event.id}`]);
   }
 
   /**

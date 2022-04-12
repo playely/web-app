@@ -18,5 +18,8 @@ export interface IContent {
     image: string;
     currentWatchers?: number;
     isLive: boolean;
+    releaseYear: string;
+    releaseDate: Date;
+    tags: string[];
 }
 
