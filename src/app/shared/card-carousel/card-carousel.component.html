@@ -13,8 +13,9 @@
     </div>
     <!--------------------INNER CAROUSEL ----------------------------->
     <div *ngIf="isInnerCard" class="cards-container">
-        <app-inner-card *ngFor="let item of carousel.content" 
-        [item]="item" [aspectRatio]="carousel.aspectRatio" (clickCard)="handleClickCard($event)"
+        <div class="inner-card-container" *ngFor="let item of carousel.content" >
+            <app-inner-card [item]="item" [aspectRatio]="carousel.aspectRatio" (clickCard)="handleClickCard($event)"
         ></app-inner-card>
+        </div>
     </div>
 </div>
