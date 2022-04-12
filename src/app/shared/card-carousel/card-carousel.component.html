@@ -1,5 +1,8 @@
 <div *ngIf="carousel" class="carousel-container">
-    <h4>{{carousel.title}}</h4>
+    <div class="header">
+        <h4>{{carousel.title}}</h4>
+        <div class="see-all">See All <img src="assets/img/svg/arrows/arrow-right.svg" alt="arrow left"></div>
+    </div>
 
     <!--------------------DESCRIPTION CAROUSEL ----------------------------->
     <div *ngIf="isDescription" class="cards-container">

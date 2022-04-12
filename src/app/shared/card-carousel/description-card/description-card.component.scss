@@ -1,16 +1,18 @@
 @import 'vars';
 
+.aspect-ratio-1x1 {
+    width: 370px;
+    &__image-container img {
+        width: 126px;
+    }        
+}
+
+
 .description-card {
     display: flex;
     justify-content: flex-start;
     align-items: flex-start;
-    flex-wrap: nowrap
-    ;
-    &__image-container {
-        img {
-            width: 126px;
-        }
-    }
+    flex-wrap: nowrap;
 
     &__info-container {
         flex: 2;

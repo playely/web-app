@@ -4,4 +4,32 @@
     display: flex;
     margin-top: 33px;
     margin-bottom: 33px;
+    width: 100%;
+    overflow: hidden;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-right: $margin-side;
+
+    h4 {
+        margin: 0;
+        padding: 0;
+    }
+
+    .see-all {
+        font-family: $primary-font;
+        font-style: normal;
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 22px;
+        color: #FFF;
+        display: flex;
+        align-items: center;
+        img {
+            margin-left: 8px;
+        }
+    }
 }

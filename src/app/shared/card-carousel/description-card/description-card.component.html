@@ -1,4 +1,4 @@
-<div *ngIf="item" class="description-card">
+<div *ngIf="item" class="description-card" [ngClass]="[aspectRatioClass]">
     <div class="description-card__image-container">
         <img [src]="item.image" [alt]="item.title">
     </div>
