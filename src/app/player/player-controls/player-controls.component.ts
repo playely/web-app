@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { IContent } from 'src/app/services/content/models/carousel';
+import { Options } from "@angular-slider/ngx-slider";
 
 @Component({
   selector: 'app-player-controls',
@@ -12,6 +13,12 @@ export class PlayerControlsComponent implements OnInit {
     isPlaying: false,
     isLoading: false,
   }
+  value: number = 0;
+  options: Options = {
+    floor: 0,
+    ceil: 100,
+    showSelectionBar: true
+  };
   constructor() { }
 
   ngOnInit(): void {

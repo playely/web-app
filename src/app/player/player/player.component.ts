@@ -15,7 +15,7 @@ export class PlayerComponent implements OnInit {
     this.contentService.getContent('id').then((result) => {
       setTimeout(() => {
         this.content = result;
-      }, 3000);
+      }, 1000);
     });
   }
 

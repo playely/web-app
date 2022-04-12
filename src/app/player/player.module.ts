@@ -5,6 +5,7 @@ import { PlayerRoutingModule } from './player-routing.module';
 import { PlayerComponent } from './player/player.component';
 import { PlayerControlsComponent } from './player-controls/player-controls.component';
 import { SharedModule } from '../shared/shared.module';
+import { NgxSliderModule } from "@angular-slider/ngx-slider";
 
 
 @NgModule({
@@ -15,7 +16,8 @@ import { SharedModule } from '../shared/shared.module';
   imports: [
     CommonModule,
     PlayerRoutingModule,
-    SharedModule
+    SharedModule,
+    NgxSliderModule
   ]
 })
 export class PlayerModule { }
