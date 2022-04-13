@@ -1,8 +1,7 @@
 @import 'vars';
 
 .details-container {
-    padding: 0 $margin-side;
-    padding-top: 120px;
+    padding: 0;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -165,8 +164,4 @@
     flex: 1;
     padding-left: 24px;
     width: 20%;
-}
-
-.related {
-    margin-left: $margin-side;
-}   
+}  

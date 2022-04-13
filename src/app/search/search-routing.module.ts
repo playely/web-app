@@ -1,15 +1,15 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { PlayerComponent } from './player/player.component';
+import { SearchComponent } from './search/search.component';
 
 const routes: Routes = [
   {
-    path:':id',
-    component: PlayerComponent,
-    data: {
-      hideNavbar: true,
-      hideFooter: true,
-    }
+    path: '',
+    component: SearchComponent
+  },
+  {
+    path: ':searchText',
+    component: SearchComponent
   }
 ];
 
@@ -17,4 +17,4 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
-export class PlayerRoutingModule { }
+export class SearchRoutingModule { }

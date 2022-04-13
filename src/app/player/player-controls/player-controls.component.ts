@@ -15,7 +15,7 @@ export class PlayerControlsComponent implements OnInit {
     isPlaying: false,
     isLoading: false,
   }
-  value: number = 0;
+  value: number = 100;
   options: Options = {
     floor: 0,
     ceil: 100,

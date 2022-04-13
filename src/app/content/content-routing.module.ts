@@ -6,15 +6,21 @@ import { DetailsComponent } from './details/details.component';
 const routes: Routes = [
   {
     path: '',
-    component: ContentComponent
+    component: ContentComponent,
+    data: {
+      isContentPage: true,
+    }
   },
   {
     path: ':tab',
-    component: ContentComponent
+    component: ContentComponent,
+    data: {
+      isContentPage: true,
+    }
   },
   {
     path: ':contentType/:contentId',
-    component: DetailsComponent
+    component: DetailsComponent,
   }
 ];
 

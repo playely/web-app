@@ -7,6 +7,10 @@ const routes: Routes = [
     loadChildren:  () => import('./player/player.module').then(m => m.PlayerModule) 
   },
   {
+    path: 'search',
+    loadChildren:  () => import('./search/search.module').then(m => m.SearchModule) 
+  },
+  {
     path: '',
     loadChildren:  () => import('./content/content.module').then(m => m.ContentModule) 
   }

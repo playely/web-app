@@ -28,7 +28,7 @@
     &__left {
         display: inline-flex;
         align-items: center;
-        margin-left: $margin-side;
+        margin-left: $space-side;
         .options ul {
             display: inline-flex;
     
@@ -55,7 +55,7 @@
     &__right {
         display: inline-flex;
         align-items: center;
-        margin-right: $margin-side;
+        margin-right: $space-side;
         
         .btn-icon {
             margin-right: 60px;
