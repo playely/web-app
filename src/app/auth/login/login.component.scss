@@ -2,20 +2,48 @@
 
 .login-container {
     width: 100%;
-    min-height: 80vh;
+    min-height: 100vh;
     background-color: black;
-    //background-image:  url('https://play-jolly-assets.s3.amazonaws.com/hero-image-1.png');
-    //background-size: cover;
+    background-image:  url('https://assets.nflxext.com/ffe/siteui/vlv3/8459cea4-79ab-4f27-9ef0-a7c92a30a9bb/baff5c9e-4d93-47ae-bfbf-9568eabf832a/GT-es-20220411-popsignuptwoweeks-perspective_alpha_website_small.jpg');
+    background-size: cover;
     position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
-    /*position: fixed;
-    top: 0;
-    left: 0;*/
 
     .card {
-        width: 40vw;
-        min-height: 40vh;
+        z-index: 1;
+        width: 35%;
+        .card-content{
+            padding: 50px;
+
+            h4 {
+                margin: 10px 0;
+             }
+
+        }
+    }
+}
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+
+    .divider {
+        width: 100%;
+        text-align: center;
+        p {
+            color: #FFF;
+        }
+    }
+
+    &__container {
+        display: inline-flex;
+
+        div {
+            flex: 1;
+            margin-left: 5px;
+            margin-right: 5px;
+        }
     }
 }

@@ -1,10 +1,10 @@
 <div class="navbar-container">
     <div class="navbar-container__left">
-        <div class="logo" routerLink="">
+        <div class="logo" [ngClass]="{'margin-logo': isCover}" routerLink="">
             <img src="assets/img/logo.png" alt="">
         </div>
     
-        <div class="options">
+        <div *ngIf="!isCover" class="options">
             <ul>
                 <li *ngFor="let item of menuItems" [routerLink]="[item.title.toLowerCase()]" routerLinkActive="item-active">
                     <div class="icon">
@@ -16,7 +16,7 @@
         </div>
     </div>
 
-    <div class="navbar-container__right">
+    <div *ngIf="!isCover" class="navbar-container__right">
         <button class="btn-icon" routerLink="search"><img src="assets/img/svg/search.svg" alt="search"/></button>
         <button class="btn-primary" routerLink="login">Sign In</button>
     </div>

@@ -11,6 +11,7 @@ export class AppComponent implements OnInit{
   showNavbar = false;
   showFooter = false;
   isContentPage = false;
+  isCover = false;
   constructor(private router: Router, private activatedRoute: ActivatedRoute) {}
 
   ngOnInit(): void {
@@ -23,6 +24,7 @@ export class AppComponent implements OnInit{
       this.showFooter = !event.hideFooter;
       this.showNavbar = !event.hideNavbar;
       this.isContentPage = event.isContentPage;
+      this.isCover = event.cover;
       // this.scrollToTop();
     });
   }

@@ -1,0 +1,106 @@
+
+/* forms */
+
+.form-controls {
+   
+    button[type="submit"] {
+       margin-top: 15px;
+    }
+ }
+ 
+ .form-control {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    font-family: $primary-font;
+    font-size: 16px;
+    line-height: 24px;
+    color: #FFF;
+    padding: 10px 0 10px 0;
+ 
+    input[type="text"] {
+       padding: 15px;
+    }
+ 
+    label {
+       padding-bottom: 5px;
+    }
+ 
+    a {
+       color: $gray;
+       transition: all .5s;
+    }
+ 
+    a:hover {
+       cursor: pointer;
+       text-decoration: underline;
+    }
+ }
+ 
+ .form-control.fc-inline-reverse {
+    flex-direction: row;
+    align-items: center;
+    
+ }
+ 
+ .form-control.fc-inline {
+    flex-direction: row;
+ }
+ 
+ .form-control.fc-checkbox {
+    label {
+       padding: 0;
+    }
+ }
+ 
+ select,
+ input[type="text"],
+ input[type="number"] {
+   font-family: $primary-font;
+   font-style: normal;
+   font-size: 16px;
+   padding: 0 20px;
+ }
+
+ select:focus-visible,
+ input[type="text"]:focus-visible,
+ input[type="number"]:focus-visible,
+ button:focus-visible {
+    outline: none;
+ } 
+
+ .select-input-form {
+   display: inline-flex;
+   height: 55px;
+   background-color: #FFFFFF;
+   align-items: center;
+   border-radius: $border-radius;
+   select {
+       border-radius: 0;
+       border: none;
+       background-color: transparent;
+       text-align: center;
+       height: 100%;
+   }
+
+   .separator {
+      background-color: $primary-color;
+      width: 0.5px;
+      height: 50%;
+      display: flex;
+      border-radius: 2px;
+      margin-left: 5px;
+   }
+
+   input[type="text"] {
+       border-radius: 0;
+       border: none;
+       background-color: transparent;
+       height: 100%;
+   }
+
+   button {
+      height: 100%;
+       border-radius: 0 $border-radius $border-radius 0;
+   }
+ }

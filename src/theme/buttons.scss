@@ -1,0 +1,41 @@
+.base-button {
+    padding: 10px 24px;
+    border-radius: $border-radius;
+    font-family: $primary-font;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 22px;
+    text-align: center;
+}
+
+ .btn-primary {
+    @extend .base-button;
+    background: $primary-color;
+    border: none;
+    color: #FFF;
+  }
+  
+  .btn-primary:hover, 
+  .btn-icon:hover {
+    cursor: pointer;
+  }
+ 
+  .btn-icon {
+     background: transparent;
+     border-radius: 100%;
+     padding: 10px;
+     border: none;
+  }
+
+  .btn-outlined {
+    @extend .base-button;
+    border: 3px solid $blue-color;
+    margin-top: 10px;
+    font-weight: normal;
+  }
+
+  .btn-outlined:hover {
+      background: $blue-color;
+      cursor: pointer;
+  }

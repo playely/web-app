@@ -1,11 +1,38 @@
 <div class="login-container">
+    <div class="overlay"></div>
     <div class="card">
         <div class="card-content">
-            <form action="" class="login-form">
+            <h4>Login</h4>
+            <form action="" class="form-controls login-form">
                 <div class="form-control">
-                    
+                    <label for="email">Email</label>
+                    <input type="text" name="email" placeholder="Enter your email" >
+                </div>
+                <div class="form-control">
+                    <label for="password">Password</label>
+                    <input type="text" name="password" placeholder="Enter your password" >
+                </div>
+                <div class="form-control">
+                    <a>Forgot Password?</a>
+                </div>
+                <div class="form-control fc-inline-reverse fc-checkbox">
+                    <input type="checkbox" name="remember">
+                    <label for="remember">Remember me</label>
+                </div>
+                <button type="submit" class="btn-primary">Login</button>
+                <div class="divider"><p>or</p></div>
+                <div class="login-form__container">
+                    <div class="btn-outlined">Login with Gmail</div>
+                    <div class="btn-outlined">Login with Facebook</div>
+                </div>
+                <div class="login-form__container">
+                    <div class="btn-outlined">Login with Gmail</div>
+                    <div class="btn-outlined">Login with Facebook</div>
                 </div>
             </form>
+            <div class="login-form">
+                
+            </div>
         </div>
     </div>
 </div>

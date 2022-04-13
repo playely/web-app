@@ -1,7 +1,10 @@
 @import 'vars';
 
-.router-container {
+.top-space {
+    margin-top: $space-top;
+}
+
+.left-spaces {
     padding-left: $space-side;
     padding-right: $space-side;
-    margin-top: $space-top;
 }

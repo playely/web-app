@@ -8,6 +8,7 @@ const routes: Routes = [
     component: LoginComponent,
     data: {
       hideFooter: true,
+      cover: true,
     }
   }
 ];

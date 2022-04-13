@@ -1,5 +1,5 @@
-<app-navbar *ngIf="showNavbar"></app-navbar>
-<div [ngClass]="{'router-container' : !isContentPage && showNavbar }">
+<app-navbar *ngIf="showNavbar" [isCover]="isCover" ></app-navbar>
+<div [ngClass]="{'top-space' : !isContentPage && showNavbar && !isCover, 'left-spaces': !isContentPage && !isCover }">
     <router-outlet></router-outlet>
 </div>
 <app-footer *ngIf="showFooter"></app-footer>
