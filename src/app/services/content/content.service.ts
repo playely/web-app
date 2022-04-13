@@ -346,4 +346,59 @@ export class ContentService {
       ]
     });
   }
+
+  /**
+   * Get recent searches
+   * @param contentId 
+   * @returns 
+   */
+   getRecentSeaches(): Promise<ICarousel> {
+    return Promise.resolve({
+      id: '3',
+      title: 'Recent Search',
+      aspectRatio: CardAspectRatio.HORIZONTAL,
+      type: CarouselType.INNERCARD,
+      content: [
+        {
+          description: 'Long description',
+          duration: '2 hrs',
+          id: '1',
+          image: 'https://play-jolly-assets.s3.amazonaws.com/content/dummy/image1-16x9.png',
+          shortDescription: 'Short description',
+          title: 'Wandavision',
+          type: ContentType.SERIE,
+          isLive: false,
+          releaseDate: new Date(),
+          releaseYear: '2018',
+          tags: []
+        },
+        {
+          description: 'Long description',
+          duration: '2 hrs',
+          id: '1',
+          image: 'https://play-jolly-assets.s3.amazonaws.com/content/dummy/image2-16x9.png',
+          shortDescription: 'Short description',
+          title: 'Wandavision',
+          type: ContentType.SERIE,
+          isLive: false,
+          releaseDate: new Date(),
+          releaseYear: '2018',
+          tags: []
+        },
+        {
+          description: 'Long description',
+          duration: '2 hrs',
+          id: '1',
+          image: 'https://play-jolly-assets.s3.amazonaws.com/content/dummy/image3-16x9.png',
+          shortDescription: 'Short description',
+          title: 'Wandavision',
+          type: ContentType.SERIE,
+          isLive: false,
+          releaseDate: new Date(),
+          releaseYear: '2018',
+          tags: []
+        },
+      ]
+    });
+  }
 }

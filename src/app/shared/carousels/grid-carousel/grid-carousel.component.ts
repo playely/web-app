@@ -8,6 +8,7 @@ import { ICarousel, IContent } from 'src/app/services/content/models/carousel';
 })
 export class GridCarouselComponent implements OnInit {
   @Input() carousel: ICarousel | undefined;
+  @Input() cols: number = 2;
   constructor() { }
 
   ngOnInit(): void {

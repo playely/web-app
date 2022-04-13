@@ -20,12 +20,20 @@ export class AppComponent implements OnInit{
       filter((route: ActivatedRoute) => route.outlet === 'primary'),
       mergeMap((route: ActivatedRoute) => route.data)
     ).subscribe((event: any) => {
-      console.log(event);
       this.showFooter = !event.hideFooter;
       this.showNavbar = !event.hideNavbar;
       this.isContentPage = event.isContentPage;
+      // this.scrollToTop();
     });
   }
+
+  scrollToTop() {
+    window.scroll({ 
+            top: 0, 
+            left: 0, 
+            behavior: 'smooth' 
+     });
+ }
 
   /**
    * Find the last activated route
