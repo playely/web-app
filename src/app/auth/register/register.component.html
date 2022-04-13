@@ -1,9 +1,13 @@
-<div class="login-container">
+<div class="register-container">
     <div class="overlay"></div>
     <div class="card">
         <div class="card-content">
-            <h4>Login</h4>
-            <form class="form-controls login-form">
+            <h4>Create Account</h4>
+            <form class="form-controls register-form">
+                <div class="form-control">
+                    <label for="name">Name</label>
+                    <input type="text" name="name" placeholder="Enter your name" >
+                </div>
                 <div class="form-control">
                     <label for="email">Email</label>
                     <input type="text" name="email" placeholder="Enter your email" >
@@ -13,15 +17,16 @@
                     <input type="password" name="password" placeholder="Enter your password" >
                 </div>
                 <div class="form-control">
-                    <a>Forgot Password?</a>
+                    <label for="confirm-password">Confirm Password</label>
+                    <input type="password" name="confirm-password" placeholder="Enter your password" >
                 </div>
                 <div class="form-control fc-inline-reverse fc-checkbox">
                     <input type="checkbox" name="remember">
-                    <label for="remember">Remember me</label>
+                    <label for="remember">I Agree with Terms and conditions</label>
                 </div>
-                <button type="submit" class="btn-primary">Login</button>
+                <button type="submit" class="btn-primary">Register</button>
                 <div class="divider"><p>or login with</p></div>
-                <div class="login-form__container">
+                <div class="register-form__container">
                     <div class="btn-outlined social-button">
                         <i class="lni lni-google"></i>
                     </div>
@@ -36,7 +41,7 @@
                     </div>
                 </div>
                 <div class="form-control">
-                    <a routerLink="/register">not registered? Create a new account</a>
+                    <a routerLink="/login">Already registered? Login</a>
                 </div>
             </form>
         </div>

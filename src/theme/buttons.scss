@@ -3,10 +3,11 @@
     border-radius: $border-radius;
     font-family: $primary-font;
     font-style: normal;
-    font-weight: 600;
+    font-weight: 500;
     font-size: 16px;
     line-height: 22px;
     text-align: center;
+    transition: all .25s;
 }
 
  .btn-primary {
