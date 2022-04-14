@@ -39,9 +39,10 @@ export class AuthService {
   login(request: LoginRequest): Promise<LoginResponse> {
     const response = {
       email: 'test@text.com',
-      image: 'https://placeholder.com/150',
+      image: 'https://cdn.pixabay.com/photo/2016/08/08/09/17/avatar-1577909_1280.png',
       name: 'John Smith',
       token: 'dfwefwefwefwefewfwefewfwe',
+      id: '123423232',
     };
     this.storageService.setLocalItem(StorageKeys.AUTHTOKEN,response.token);
     this.storageService.setLocalItem(StorageKeys.AUTHUSER, JSON.stringify(response));

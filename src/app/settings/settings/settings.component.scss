@@ -1,0 +1,22 @@
+.settings-container {
+    width: 100%;
+
+    .profile-container {
+        width: 40%;
+
+        img {
+            width: 10vw;
+            height: 10vw;
+            border-radius: 100%;
+        }
+
+        h4 {
+            margin: 15px 0 0 0;
+        }
+
+        p {
+            margin: 15px 0 0 0;
+            color: #FFF;
+        }
+    }
+}

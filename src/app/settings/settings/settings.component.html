@@ -1,0 +1,12 @@
+<div class="settings-container">
+    <div *ngIf="user" class="profile-container">
+        <img [src]="user.image" alt="User profile">
+        <h4>{{user.name}}</h4>
+        <p>{{user.email}}</p>
+        <p>{{user.phone}}</p>
+        <p>{{user.country?.name}}</p>
+    </div>
+    <div class="options">
+
+    </div>
+</div>

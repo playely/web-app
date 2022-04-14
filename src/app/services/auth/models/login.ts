@@ -10,9 +10,11 @@ export interface LoginResponse extends BaseResponse {
     email: string;
     name: string;
     image: string;
+    id: string;
 }
 
 export interface UserSession {
+    id: string;
     email: string;
     name: string;
     image: string;

@@ -36,7 +36,8 @@ export class LoginComponent implements OnInit {
         this.authService.changeSession({
           email: response.email,
           image: response.image,
-          name: response.name
+          name: response.name,
+          id: response.id,
         });
       });
     }
