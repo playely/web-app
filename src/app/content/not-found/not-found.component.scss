@@ -1,0 +1,20 @@
+.not-found-container {
+    text-align: center;
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    h1 {
+        margin-top: 10px;
+    }
+
+    h2, h5 {
+        margin: 0;
+    }
+
+    .img {
+        width: 75px;
+    }
+}

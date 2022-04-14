@@ -2,15 +2,9 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { ContentComponent } from './content/content.component';
 import { DetailsComponent } from './details/details.component';
+import { NotFoundComponent } from './not-found/not-found.component';
 
 const routes: Routes = [
-  {
-    path: '',
-    component: ContentComponent,
-    data: {
-      isContentPage: true,
-    }
-  },
   {
     path: ':tab',
     component: ContentComponent,
@@ -21,6 +15,21 @@ const routes: Routes = [
   {
     path: ':contentType/:contentId',
     component: DetailsComponent,
+    
+  },
+  {
+    path: 'not-found',
+    component: NotFoundComponent,
+    data: {
+      hideFooter: true,
+    }
+  },
+  {
+    path: '',
+    component: NotFoundComponent,
+    data: {
+      hideFooter: true,
+    }
   }
 ];
 

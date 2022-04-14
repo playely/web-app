@@ -12,6 +12,7 @@ export class ContentComponent implements OnInit {
   constructor(private contentService: ContentService) { }
 
   ngOnInit(): void {
+    console.log('CONTENT LOADED!');
     this.contentService.getHomeCarousels().then((result) => {
       this.carousels = result;
     });
