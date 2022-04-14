@@ -3,23 +3,25 @@
     <div class="card">
         <div class="card-content">
             <h4>Login</h4>
-            <form class="form-controls login-form">
+            <form [formGroup]="loginForm" class="form-controls login-form" (ngSubmit)="onSubmit()">
                 <div class="form-control">
                     <label for="email">Email</label>
-                    <input type="text" name="email" placeholder="Enter your email" >
+                    <input type="text" name="email" placeholder="Enter your email" formControlName="email">
+                    <p *ngIf="handleError('email', 'required')" class="form-control-error">Email is required</p>
                 </div>
                 <div class="form-control">
                     <label for="password">Password</label>
-                    <input type="password" name="password" placeholder="Enter your password" >
+                    <input type="password" name="password" placeholder="Enter your password" formControlName="password">
+                    <p *ngIf="handleError('password', 'required')" class="form-control-error">Password is required</p>
                 </div>
                 <div class="form-control">
                     <a routerLink="/auth/reset-password">Forgot Password?</a>
                 </div>
                 <div class="form-control fc-inline-reverse fc-checkbox">
-                    <input type="checkbox" name="remember">
+                    <input type="checkbox" name="remember" formControlName="rememberme">
                     <label for="remember">Remember me</label>
                 </div>
-                <button type="submit" class="btn-primary">Login</button>
+                <button [ngClass]="{'disabled': loginForm.invalid}" [disabled]="loginForm.invalid" type="submit" class="btn-primary">Login</button>
                 <div class="divider"><p>or login with</p></div>
                 <div class="login-form__container">
                     <div class="btn-outlined social-button">

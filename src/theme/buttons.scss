@@ -16,6 +16,10 @@
     border: none;
     color: #FFF;
   }
+
+  .btn-primary.disabled {
+    background-color: $primary-color-light;
+  }
   
   .btn-primary:hover, 
   .btn-icon:hover {

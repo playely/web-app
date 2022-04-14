@@ -32,6 +32,13 @@
        cursor: pointer;
        text-decoration: underline;
     }
+
+    .form-control-error {
+      margin: 5px 0 0 0;
+      color: $primary-color;
+      font-size: 12px;
+      transition: all 0.5ms;
+    }
  }
  
  .form-control.fc-inline-reverse {
