@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { Title } from '@angular/platform-browser';
 import { ITab } from './models/tab.model';
 import { menu } from './options';
 
@@ -7,7 +8,7 @@ import { menu } from './options';
 })
 export class TabService {
   private selectedTab: ITab | undefined;
-  constructor() {
+  constructor(private title: Title) {
   }
 
   /**
@@ -26,6 +27,7 @@ export class TabService {
    */
   setSelectedTab(tab: ITab): void {
     this.selectedTab = tab;
+    this.title.setTitle(tab.title);
   }
 
   /**

@@ -22,6 +22,7 @@ const routes: Routes = [
     component: NotFoundComponent,
     data: {
       hideFooter: true,
+      title: 'notFound'
     }
   },
   {
@@ -29,6 +30,7 @@ const routes: Routes = [
     component: NotFoundComponent,
     data: {
       hideFooter: true,
+      title: 'notFound'
     }
   }
 ];

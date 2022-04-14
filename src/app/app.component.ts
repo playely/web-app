@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MatIconRegistry } from '@angular/material/icon';
-import { DomSanitizer } from '@angular/platform-browser';
+import { DomSanitizer, Title } from '@angular/platform-browser';
 import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
 import { filter, map, mergeMap } from "rxjs/operators";
 import { TabService } from './services/tabs/tab.service';
@@ -46,7 +46,8 @@ export class AppComponent implements OnInit{
     private activatedRoute: ActivatedRoute, 
     private matIconRegistry: MatIconRegistry,
     private domSanitizer: DomSanitizer,
-    private tabService: TabService
+    private tabService: TabService,
+    private title: Title
     ) {}
 
   ngOnInit(): void {
@@ -61,6 +62,9 @@ export class AppComponent implements OnInit{
       this.showNavbar = !event.hideNavbar;
       this.isContentPage = event.isContentPage;
       this.isCover = event.cover;
+      if (event.title) {
+        this.title.setTitle(event.title);
+      }
       // this.scrollToTop();
     });
   }

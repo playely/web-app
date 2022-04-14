@@ -6,7 +6,8 @@
     
         <div *ngIf="!isCover" class="options">
             <ul>
-                <li *ngFor="let item of menuItems" [routerLink]="[item.title.toLowerCase()]" routerLinkActive="item-active">
+                <li *ngFor="let item of menuItems" [routerLink]="[item.title.toLowerCase()]" routerLinkActive="item-active"
+                (click)="selectTab(item)">
                     <div class="icon">
                         <mat-icon cass="menu-icon" svgIcon="{{item.title_en}}"></mat-icon>
                     </div>

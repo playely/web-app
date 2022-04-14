@@ -8,6 +8,7 @@ const routes: Routes = [
     component: SettingsComponent,
     data: {
       hideFooter: true,
+      title: 'settings'
     }
   }
 ];

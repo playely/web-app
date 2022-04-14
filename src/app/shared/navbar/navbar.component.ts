@@ -35,4 +35,8 @@ export class NavbarComponent implements OnInit {
     });
   }
 
+  selectTab(tab: ITab): void {
+    this.tabService.setSelectedTab(tab);
+  }
+
 }
