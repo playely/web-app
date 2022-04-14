@@ -1,5 +1,9 @@
 @import 'vars';
 
+.set-pad {
+    padding: 50px 0;
+}
+
 .register-container {
     width: 100%;
     min-height: 100vh;
@@ -10,7 +14,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 50px 0;
 
     .card {
         z-index: 1;
@@ -41,11 +44,7 @@
     &__container {
         display: inline-flex;
         margin-bottom: 5px;
-
-        div {
-            flex: 1;
-            margin-left: 5px;
-            margin-right: 5px;
-        }
+        width: 100%;
+        justify-content: space-evenly;
     }
 }

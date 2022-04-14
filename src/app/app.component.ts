@@ -1,7 +1,36 @@
 import { Component, OnInit } from '@angular/core';
+import { MatIconRegistry } from '@angular/material/icon';
+import { DomSanitizer } from '@angular/platform-browser';
 import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
 import { filter, map, mergeMap } from "rxjs/operators";
+import { TabService } from './services/tabs/tab.service';
+interface IconRegistry {
+  label: string;
+  url: string;
+}
 
+const icons:IconRegistry[] = [
+  {
+    label: 'facebook',
+    url: 'assets/img/svg/social-media/facebook.svg'
+  },
+  {
+    label: 'instagram',
+    url: 'assets/img/svg/social-media/instagram.svg'
+  },
+  {
+    label: 'google',
+    url: 'assets/img/svg/social-media/google-brands.svg'
+  },
+  {
+    label: 'twitter',
+    url: 'assets/img/svg/social-media/twitter-brands.svg'
+  },
+  {
+    label: 'microsoft',
+    url: 'assets/img/svg/social-media/windows-brands.svg'
+  }
+]
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -12,9 +41,16 @@ export class AppComponent implements OnInit{
   showFooter = false;
   isContentPage = false;
   isCover = false;
-  constructor(private router: Router, private activatedRoute: ActivatedRoute) {}
+  constructor(
+    private router: Router, 
+    private activatedRoute: ActivatedRoute, 
+    private matIconRegistry: MatIconRegistry,
+    private domSanitizer: DomSanitizer,
+    private tabService: TabService
+    ) {}
 
   ngOnInit(): void {
+    this.registerIcons();
     this.router.events.pipe(
       filter(event => event instanceof NavigationEnd),
       map(() => this.rootRoute(this.activatedRoute)),
@@ -48,5 +84,22 @@ export class AppComponent implements OnInit{
       route = route.firstChild;
     }
     return route;
+  }
+
+  private registerIcons(): void {
+    icons.forEach(element => {
+      this.matIconRegistry.addSvgIcon(
+        element.label,
+        this.domSanitizer.bypassSecurityTrustResourceUrl(element.url)
+      );
+    });
+    this.tabService.getTabs().then((tabs) => {
+      tabs.forEach(element => {
+        this.matIconRegistry.addSvgIcon(
+          element.title_en,
+          this.domSanitizer.bypassSecurityTrustResourceUrl(`assets/img/svg/menu/${element.title_en}.svg`)
+        );
+      });
+    });
   }
 }

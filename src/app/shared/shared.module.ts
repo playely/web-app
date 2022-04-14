@@ -10,6 +10,7 @@ import { LoadingComponent } from './loading/loading.component';
 import { RouterModule } from '@angular/router';
 import { DescriptionCardComponent } from './cards/description-card/description-card.component';
 import { InnerCardComponent } from './cards/inner-card/inner-card.component';
+import { MaterialModule } from './material.module';
 
 const components = [
   HeroCarouselComponent,
@@ -29,6 +30,7 @@ const components = [
   ],
   imports: [
     CommonModule,
+    MaterialModule,
     RouterModule.forChild([])
   ],
   exports: [ ...components ]

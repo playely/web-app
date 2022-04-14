@@ -1,46 +1,48 @@
 <div class="login-container">
-    <div class="overlay"></div>
-    <div class="card">
-        <div class="card-content">
-            <h4>Login</h4>
-            <form [formGroup]="loginForm" class="form-controls login-form" (ngSubmit)="onSubmit()">
-                <div class="form-control">
-                    <label for="email">Email</label>
-                    <input type="text" name="email" placeholder="Enter your email" formControlName="email">
-                    <p *ngIf="handleError('email', 'required')" class="form-control-error">Email is required</p>
-                </div>
-                <div class="form-control">
-                    <label for="password">Password</label>
-                    <input type="password" name="password" placeholder="Enter your password" formControlName="password">
-                    <p *ngIf="handleError('password', 'required')" class="form-control-error">Password is required</p>
-                </div>
-                <div class="form-control">
-                    <a routerLink="/auth/reset-password">Forgot Password?</a>
-                </div>
-                <div class="form-control fc-inline-reverse fc-checkbox">
-                    <input type="checkbox" name="remember" formControlName="rememberme">
-                    <label for="remember">Remember me</label>
-                </div>
-                <button [ngClass]="{'disabled': loginForm.invalid}" [disabled]="loginForm.invalid" type="submit" class="btn-primary">Login</button>
-                <div class="divider"><p>or login with</p></div>
-                <div class="login-form__container">
-                    <div class="btn-outlined social-button">
-                        <i class="lni lni-google"></i>
-                    </div>
-                    <div class="btn-outlined social-button">
-                        <i class="lni lni-facebook-oval"></i>
-                    </div>
-                    <div class="btn-outlined social-button">
-                        <i class="lni lni-twitter-filled"></i>
-                    </div>
-                    <div class="btn-outlined social-button">
-                        <i class="lni lni-microsoft"></i>
-                    </div>
-                </div>
-                <div class="form-control">
-                    <a routerLink="/auth/register">not registered? Create a new account</a>
-                </div>
-            </form>
+  <div class="overlay"></div>
+  <div class="card">
+    <div class="card-content">
+      <h4>Login</h4>
+      <form [formGroup]="loginForm" class="form-controls login-form" (ngSubmit)="onSubmit()">
+        <mat-form-field appearance="fill">
+          <mat-label>Email</mat-label>
+          <input matInput type="email" placeholder="Enter your email" formControlName="email">
+          <mat-error *ngIf="handleError('email', 'required')">Email is required</mat-error>
+          <mat-error *ngIf="handleError('email', 'email')">Email bad format</mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+          <mat-label>Password</mat-label>
+          <input matInput type="password" placeholder="Enter your password" formControlName="password">
+          <mat-error *ngIf="handleError('password', 'required')">Password is required</mat-error>
+        </mat-form-field>
+        <div class="form-control">
+          <a routerLink="/auth/reset-password">Forgot Password?</a>
         </div>
+        <div class="form-control">
+          <mat-checkbox [disableRipple]="true" color="primary" formControlName="rememberme">Remember me</mat-checkbox>
+        </div>
+        <button mat-flat-button color="primary" [disabled]="loginForm.invalid" type="submit">Login</button>
+        <div class="divider">
+          <p>or login with</p>
+        </div>
+        <div class="login-form__container">
+          <button type="button" mat-fab color="accent">
+            <mat-icon svgIcon="facebook"></mat-icon>
+          </button>
+          <button type="button" mat-fab color="accent">
+            <mat-icon svgIcon="microsoft"></mat-icon>
+          </button>
+          <button type="button" mat-fab color="accent">
+            <mat-icon svgIcon="twitter"></mat-icon>
+          </button>
+          <button type="button" mat-fab color="accent">
+            <mat-icon svgIcon="google"></mat-icon>
+          </button>
+        </div>
+        <div class="form-control">
+          <a routerLink="/auth/register">Not registered? Create a new account</a>
+        </div>
+      </form>
     </div>
+  </div>
 </div>

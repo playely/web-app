@@ -12,6 +12,10 @@
     p {
         color: #FFF;
     }
+
+    .menu-icon {
+        color: #FFF;
+    }
 }
 
 .margin-logo {
@@ -62,7 +66,9 @@
         margin-right: $space-side;
         
         .btn-icon {
-            margin-right: 60px;
+            margin-right: 10px;
+            background: transparent;
+            color: #FFF;
         }
 
         .user-info {

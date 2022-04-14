@@ -3,6 +3,7 @@ import { BehaviorSubject, Observable } from 'rxjs';
 import { StorageKeys } from '../storage/storage-items';
 import { StorageService } from '../storage/storage.service';
 import { LoginRequest, LoginResponse, UserSession } from './models/login';
+import { RegisterRequest } from './models/register';
 
 @Injectable({
   providedIn: 'root'
@@ -30,6 +31,10 @@ export class AuthService {
     this.session.next(value);
   }
 
+  register(data: RegisterRequest): Promise<void> {
+    return Promise.resolve();
+  }
+
   /**
    * Handle login http request 
    *
@@ -47,6 +52,26 @@ export class AuthService {
     this.storageService.setLocalItem(StorageKeys.AUTHTOKEN,response.token);
     this.storageService.setLocalItem(StorageKeys.AUTHUSER, JSON.stringify(response));
     return Promise.resolve(response);
+  }
+
+  /**
+   * Reset password by email 
+   *
+   * @param email 
+   * @returns 
+   */
+  resetPassword(email: string): Promise<void> {
+    return Promise.resolve();
+  }
+
+  /**
+   * Save new password 
+   *
+   * @param email 
+   * @returns 
+   */
+   saveNewPassword(newPassword: string, validationCode: string): Promise<void> {
+    return Promise.resolve();
   }
 
   private getUserSession(): UserSession {

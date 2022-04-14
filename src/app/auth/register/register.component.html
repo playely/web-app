@@ -1,49 +1,59 @@
-<div class="register-container">
+<div class="register-container" [ngClass]="{'set-pad ' : !registered }" >
     <div class="overlay"></div>
     <div class="card">
         <div class="card-content">
             <h4>Create Account</h4>
-            <form class="form-controls register-form">
-                <div class="form-control">
-                    <label for="name">Name</label>
-                    <input type="text" name="name" placeholder="Enter your name" >
+            <form *ngIf="!registered" [formGroup]="registerForm" (ngSubmit)="onSubmit()" class="form-controls register-form">
+                <mat-form-field appearance="fill">
+                    <mat-label>Name</mat-label>
+                    <input matInput type="text" placeholder="Enter your name" formControlName="name" >
+                    <mat-error *ngIf="handleError('name', 'required')">Name is required</mat-error>
+                  </mat-form-field>
+                  <mat-form-field appearance="fill">
+                    <mat-label>Email</mat-label>
+                    <input matInput type="email" placeholder="Enter your email" formControlName="email" >
+                    <mat-error *ngIf="handleError('email', 'required')">Email is required</mat-error>
+                    <mat-error *ngIf="handleError('email', 'email')">Email bad format</mat-error>
+                  </mat-form-field>
+                  <mat-form-field appearance="fill">
+                    <mat-label>Password</mat-label>
+                    <input matInput type="password" placeholder="Enter your password" formControlName="password" >
+                    <mat-error *ngIf="handleError('password', 'required')">Password is required</mat-error>
+                  </mat-form-field>
+                  <mat-form-field appearance="fill">
+                    <mat-label>Confirm Password</mat-label>
+                    <input matInput type="password" placeholder="Confirm your password" formControlName="confirmPassword" >
+                    <mat-error *ngIf="handleError('confirmPassword', 'required')">Confirm password is required</mat-error>
+                  </mat-form-field>
+                  <div class="form-control">
+                    <mat-checkbox [disableRipple]="true" color="primary" formControlName="agreeTC">
+                        I agree Terms and conditions </mat-checkbox>
                 </div>
-                <div class="form-control">
-                    <label for="email">Email</label>
-                    <input type="text" name="email" placeholder="Enter your email" >
-                </div>
-                <div class="form-control">
-                    <label for="password">Password</label>
-                    <input type="password" name="password" placeholder="Enter your password" >
-                </div>
-                <div class="form-control">
-                    <label for="confirm-password">Confirm Password</label>
-                    <input type="password" name="confirm-password" placeholder="Confirm your password" >
-                </div>
-                <div class="form-control fc-inline-reverse fc-checkbox">
-                    <input type="checkbox" name="remember">
-                    <label for="remember">I Agree with Terms and conditions</label>
-                </div>
-                <button type="submit" class="btn-primary">Register</button>
-                <div class="divider"><p>or login with</p></div>
+                <button mat-flat-button color="primary" [disabled]="registerForm.invalid" type="submit">Register</button>
+                <div class="divider"><p>or enter with</p></div>
                 <div class="register-form__container">
-                    <div class="btn-outlined social-button">
-                        <i class="lni lni-google"></i>
-                    </div>
-                    <div class="btn-outlined social-button">
-                        <i class="lni lni-facebook-oval"></i>
-                    </div>
-                    <div class="btn-outlined social-button">
-                        <i class="lni lni-twitter-filled"></i>
-                    </div>
-                    <div class="btn-outlined social-button">
-                        <i class="lni lni-microsoft"></i>
-                    </div>
+                    <button type="button" mat-fab color="accent">
+                        <mat-icon svgIcon="facebook"></mat-icon>
+                      </button>
+                      <button type="button" mat-fab color="accent">
+                        <mat-icon svgIcon="microsoft"></mat-icon>
+                      </button>
+                      <button type="button" mat-fab color="accent">
+                        <mat-icon svgIcon="twitter"></mat-icon>
+                      </button>
+                      <button type="button" mat-fab color="accent">
+                        <mat-icon svgIcon="google"></mat-icon>
+                      </button>
                 </div>
                 <div class="form-control">
                     <a routerLink="/auth/login">Already registered? Login</a>
                 </div>
             </form>
+
+            <div *ngIf="registered">
+              <p>We sent you an email to complete your registation.</p>
+              <button mat-flat-button color="primary" type="button" routerLink="/home" >Go Home</button>
+            </div>
         </div>
     </div>
 </div>
