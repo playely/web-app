@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { PageEvent } from '@angular/material/paginator';
-import { IUserSubscription } from 'src/app/services/user/models/user';
-import { UserService } from 'src/app/services/user/user.service';
+import { IUserSubscription } from 'src/app/services/subscriptions/models/subscriptions';
+import { SubscriptionsService } from 'src/app/services/subscriptions/subscriptions.service';
 
 @Component({
   selector: 'app-subscriptions',
@@ -12,15 +12,20 @@ export class SubscriptionsComponent implements OnInit {
   subscriptions: IUserSubscription[] = [];
   viewSubscriptions: IUserSubscription[] = [];
   SIZE_PAGE = 2;
-  constructor(private userService: UserService) { }
+  constructor(private subService: SubscriptionsService) { }
 
   ngOnInit(): void {
-    this.userService.getSUbscriptions().then((result) => {
+    this.subService.getSUbscriptions().then((result) => {
       this.subscriptions = result;
       this.viewSubscriptions = this.subscriptions.slice(0,2);
     });
   }
 
+  /**
+   * Manage paginator event
+   *
+   * @param event 
+   */
   changePage(event: PageEvent): void {
     const first = event.pageIndex * this.SIZE_PAGE;
     const last =  event.pageIndex * this.SIZE_PAGE + this.SIZE_PAGE;

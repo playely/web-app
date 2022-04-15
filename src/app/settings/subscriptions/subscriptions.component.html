@@ -2,7 +2,6 @@
 
     <div *ngFor="let item of viewSubscriptions" class="list-line-item">
         <h5>{{item.name}}</h5>
-        <p>{{item.id}}</p>
         <p [ngClass]="{'active-plan': item.status}" *ngIf="item.status">Estado: <span>Activo </span></p>
         <p [ngClass]="{'inactive-plan': !item.status}" *ngIf="!item.status">Estado: <span>Inactivo</span></p>
 
@@ -11,8 +10,8 @@
         <p *ngIf="item.status">Proxima Facturación: <span>{{item.nextInvoice | date:'longDate'}}</span></p>
         <p *ngIf="!item.status">Valido hasta: <span>{{item.validUntil | date:'longDate'}}</span></p>
         <div class="button-container">
-            <button *ngIf="item.status" mat-flat-button color="primary">Cambiar Plan</button>
-            <button *ngIf="!item.status" mat-flat-button color="primary">Renovar Plan</button>
+            <button *ngIf="item.status" mat-stroked-button color="primary">Cambiar Plan</button>
+            <button *ngIf="!item.status" mat-stroked-button color="primary">Renovar Plan</button>
             <button *ngIf="item.status" mat-stroked-button color="accent">Cancelar Plan</button>
         </div>
         <div class="divider"></div>

@@ -1,0 +1,23 @@
+@import 'vars';
+.devices-container {
+    padding-top: 20px;  
+    /*background-color: black;  
+    height: 73%;
+    overflow-y: scroll;*/
+}
+
+h5 {
+    display: flex;
+    align-items: center;
+    mat-icon {
+        margin-right: 5px;
+    }
+}
+
+.active-device {
+    color: $primary-color;
+}
+
+.inactive-device {
+    color: $blue-color;
+}

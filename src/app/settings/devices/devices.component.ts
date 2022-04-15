@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { PageEvent } from '@angular/material/paginator';
+import { DevicesService } from 'src/app/services/devices/devices.service';
+import { DeviceType, IDevice } from 'src/app/services/devices/models/devices';
 
 @Component({
   selector: 'app-devices',
@@ -6,10 +9,31 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./devices.component.scss']
 })
 export class DevicesComponent implements OnInit {
+  devices: IDevice[] = [];
+  viewDevices: IDevice[] = [];
+  SIZE_PAGE = 2;
+  constructor(private deviceService: DevicesService) { }
 
-  constructor() { }
-
-  ngOnInit(): void {
+  get DeviceType() {
+    return DeviceType;
   }
 
+  ngOnInit(): void {
+    this.deviceService.getDevices().then((result) => {
+      this.devices = result;
+      this.viewDevices = this.devices.slice(0,this.SIZE_PAGE);
+    });
+  }
+
+  /**
+   * Manage paginator event
+   *
+   * @param event 
+   */
+   changePage(event: PageEvent): void {
+    const first = event.pageIndex * this.SIZE_PAGE;
+    const last =  event.pageIndex * this.SIZE_PAGE + this.SIZE_PAGE;
+    const lastPage = last > this.devices.length ? event.pageIndex * this.SIZE_PAGE + last - this.devices.length : last;
+   this.viewDevices = this.devices.slice(first, lastPage);
+  }
 }
