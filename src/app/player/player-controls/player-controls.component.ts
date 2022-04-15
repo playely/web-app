@@ -1,6 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { IContent } from 'src/app/services/content/models/carousel';
-import { Options } from "@angular-slider/ngx-slider";
 import { Router } from '@angular/router';
 import { Location } from '@angular/common';
 
@@ -11,16 +10,16 @@ import { Location } from '@angular/common';
 })
 export class PlayerControlsComponent implements OnInit {
   @Input() content: IContent | undefined;
+  payerConfig = {
+    min: 0,
+    max: 100,
+  }
   playerState = {
     isPlaying: false,
     isLoading: false,
+    value: 99,
+    valueText: '99'
   }
-  value: number = 100;
-  options: Options = {
-    floor: 0,
-    ceil: 100,
-    showSelectionBar: true
-  };
   constructor(private router: Router, private location: Location) { }
 
   ngOnInit(): void {

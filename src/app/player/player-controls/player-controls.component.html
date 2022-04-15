@@ -13,8 +13,11 @@
 
     <div class="player-bottom">
         <div class="seekbar">
-            <ngx-slider [(value)]="value" [options]="options"></ngx-slider>
-        </div>
+            <mat-slider color="primary" 
+            [max]="payerConfig.max" [min]="payerConfig.min" 
+            [value]="playerState.value" [valueText]="playerState.valueText"
+            ></mat-slider>
+        </div>  
         <p class="time-label">00:00:00</p>
     </div>
 </div>

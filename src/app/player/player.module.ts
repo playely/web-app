@@ -5,7 +5,7 @@ import { PlayerRoutingModule } from './player-routing.module';
 import { PlayerComponent } from './player/player.component';
 import { PlayerControlsComponent } from './player-controls/player-controls.component';
 import { SharedModule } from '../shared/shared.module';
-import { NgxSliderModule } from "@angular-slider/ngx-slider";
+import { MaterialModule } from '../shared/material.module';
 
 
 @NgModule({
@@ -17,7 +17,7 @@ import { NgxSliderModule } from "@angular-slider/ngx-slider";
     CommonModule,
     PlayerRoutingModule,
     SharedModule,
-    NgxSliderModule
+    MaterialModule
   ]
 })
 export class PlayerModule { }

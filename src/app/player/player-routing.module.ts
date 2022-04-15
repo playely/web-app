@@ -9,6 +9,7 @@ const routes: Routes = [
     data: {
       hideNavbar: true,
       hideFooter: true,
+      cover: true
     }
   }
 ];
