@@ -9,6 +9,10 @@ export interface IUserSubscription {
     name: string;
     validUntil: Date;
     purchased: Date;
+    price: number;
+    currency: string;
+    nextInvoice?: Date;
+    status: boolean;
 }
 
 export interface IUserInfoResponse {

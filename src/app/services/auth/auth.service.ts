@@ -13,7 +13,7 @@ export class AuthService {
   constructor(private storageService: StorageService, private appService: AppService) { }
 
   get isUserAuthenticated(): boolean {
-    return this.storageService.getLocalItem(StorageKeys.AUTHTOKEN) !== null;
+    return this.storageService.getLocalItem(StorageKeys.AUTH_TOKEN) !== null;
   }
 
   /**
@@ -32,7 +32,7 @@ export class AuthService {
    * @param request 
    * @returns 
    */
-  login(request: LoginRequest): Promise<LoginResponse> {
+  login(request: LoginRequest, rememberUser: boolean): Promise<LoginResponse> {
     const response = {
       email: 'test@text.com',
       image: 'https://cdn.pixabay.com/photo/2016/08/08/09/17/avatar-1577909_1280.png',
@@ -40,8 +40,9 @@ export class AuthService {
       token: 'dfwefwefwefwefewfwefewfwe',
       id: '123423232',
     };
-    this.storageService.setLocalItem(StorageKeys.AUTHTOKEN,response.token);
-    this.storageService.setLocalItem(StorageKeys.AUTHUSER, JSON.stringify(response));
+    this.storageService.setLocalItem(StorageKeys.AUTH_TOKEN,response.token);
+    this.storageService.setLocalItem(StorageKeys.AUTH_USER, JSON.stringify(response));
+    this.storageService.setLocalItem(StorageKeys.SILENT_LOGIN, rememberUser);
     this.appService.changeSession({
       email: response.email,
       image: response.image,
@@ -53,8 +54,8 @@ export class AuthService {
 
   logout(): Promise<void> {
     this.appService.changeSession(null);
-    this.storageService.removeLocalItem(StorageKeys.AUTHTOKEN);
-    this.storageService.removeLocalItem(StorageKeys.AUTHUSER);
+    this.storageService.removeLocalItem(StorageKeys.AUTH_TOKEN);
+    this.storageService.removeLocalItem(StorageKeys.AUTH_USER);
     return Promise.resolve();
   }
 

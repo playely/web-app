@@ -31,7 +31,7 @@ export class LoginComponent implements OnInit {
    */
   onSubmit(): void {
     if (this.loginForm.valid) {
-      this.authService.login(this.loginForm.value).then(() => {
+      this.authService.login(this.loginForm.value, this.loginForm.value.rememberme).then(() => {
         this.router.navigate(['/home']);
       });
     }

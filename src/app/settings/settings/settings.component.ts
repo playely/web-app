@@ -11,6 +11,10 @@ import { UserService } from 'src/app/services/user/user.service';
 })
 export class SettingsComponent implements OnInit {
   user: IUserInfoResponse | undefined;
+
+  get fullNumber() {
+    return `+${this.user?.country.numberCode} ${this.user?.phone}`
+  }
   constructor(private userService: UserService, private authService: AuthService, private router: Router) { }
 
   ngOnInit(): void {

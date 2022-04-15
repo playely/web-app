@@ -1,4 +1,5 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { ICarousel, IContent } from 'src/app/services/content/models/carousel';
 
 @Component({
@@ -9,7 +10,7 @@ import { ICarousel, IContent } from 'src/app/services/content/models/carousel';
 export class GridCarouselComponent implements OnInit {
   @Input() carousel: ICarousel | undefined;
   @Input() cols: number = 2;
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
   }
@@ -20,7 +21,7 @@ export class GridCarouselComponent implements OnInit {
    * @param event 
    */
   handleClickCard(event: IContent): void {
-    console.log(event);
+    this.router.navigate([`${event.type.toString().toLowerCase()}/${event.title}`], { state: event });
   }
 
 }

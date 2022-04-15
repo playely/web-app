@@ -16,6 +16,7 @@ export class DetailsComponent implements OnInit {
   constructor(private contentService: ContentService, private router: Router, private title: Title) { }
 
   ngOnInit(): void {
+    this.scrollToTop();
     // get content to details
     this.contentService.getContent('id').then((result) => {
       this.content = result;
@@ -34,7 +35,14 @@ export class DetailsComponent implements OnInit {
   }
 
   redirectToPlayer(): void {
-    this.router.navigate([`player/${this.content?.id}`]);
+    this.router.navigate([`player/${this.content?.title}`], { state: this.content });
   }
 
+  private scrollToTop() {
+    window.scroll({ 
+            top: 0, 
+            left: 0, 
+            behavior: 'smooth' 
+     });
+ }
 }

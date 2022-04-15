@@ -5,13 +5,23 @@
                 <img [src]="user.image" alt="User profile">
                 <h4>{{user.name}}</h4>
             </div>
-            <div class="item"> <mat-icon>alternate_email</mat-icon> <p>{{user.email}}</p></div>
-            <div class="item"> <mat-icon>smartphone</mat-icon> <p>{{user.phone}}</p></div>
+            <div class="item"> <mat-icon>email</mat-icon> <p>{{user.email}}</p></div>
+            <div class="item"> <mat-icon>smartphone</mat-icon> <p>{{fullNumber}}</p></div>
             <div class="item"> <mat-icon>push_pin</mat-icon> <p>{{user.country?.name}}</p> </div>
         </div>
         <button (click)="logout()" class="btn-logout" mat-stroked-button color="accent">Salir</button>
     </div>
     <div class="options">
-        Options
+        <mat-tab-group mat-align-tabs="end">
+            <mat-tab label="Profile">
+
+            </mat-tab>
+            <mat-tab label="Subscription">
+                <app-subscriptions></app-subscriptions>
+            </mat-tab>
+            <mat-tab label="Devices">
+                <app-devices></app-devices>
+            </mat-tab>
+          </mat-tab-group>
     </div>
 </div>

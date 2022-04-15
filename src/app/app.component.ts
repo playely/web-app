@@ -90,6 +90,9 @@ export class AppComponent implements OnInit{
     return route;
   }
 
+  /**
+   * Register icons in material
+   */
   private registerIcons(): void {
     icons.forEach(element => {
       this.matIconRegistry.addSvgIcon(

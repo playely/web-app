@@ -30,8 +30,7 @@ export class CardCarouselComponent implements OnInit {
    * @param event 
    */
   handleClickCard(event: IContent): void {
-    console.log(event);
-    this.router.navigate([`${event.type.toString().toLowerCase()}/${event.id}`]);
+    this.router.navigate([`${event.type.toString().toLowerCase()}/${event.title}`], { state: event });
   }
 
   /**

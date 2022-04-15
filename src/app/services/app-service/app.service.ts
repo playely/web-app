@@ -32,7 +32,7 @@ export class AppService {
 
     
   private getUserSession(): UserSession {
-    return this.storageService.getLocalItem(StorageKeys.AUTHUSER) ? 
-    JSON.parse(this.storageService.getLocalItem(StorageKeys.AUTHUSER)) : null;
+    return this.storageService.getLocalItem(StorageKeys.AUTH_USER) ? 
+    JSON.parse(this.storageService.getLocalItem(StorageKeys.AUTH_USER)) : null;
   }
 }

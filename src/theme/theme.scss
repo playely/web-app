@@ -43,6 +43,10 @@ $my-custom-theme: mat-dark-theme($my-custom-primary, $my-custom-accent, $my-cust
     border-radius: 100px;
 }
 
+.mat-paginator {
+    background: transparent;
+}
+
 /*
 
 

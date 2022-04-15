@@ -8,6 +8,10 @@ import {MatInputModule} from '@angular/material/input';
 import {MatCheckboxModule} from '@angular/material/checkbox'; 
 import {MatSelectModule} from '@angular/material/select'; 
 import {MatSliderModule} from '@angular/material/slider'; 
+import {MatTabsModule} from '@angular/material/tabs'; 
+import {MatCardModule} from '@angular/material/card'; 
+import {MatGridListModule} from '@angular/material/grid-list'; 
+import {MatPaginatorModule} from '@angular/material/paginator'; 
 
 const materialModules = [
   MatButtonModule,
@@ -16,7 +20,11 @@ const materialModules = [
   MatInputModule,
   MatCheckboxModule,
   MatSelectModule,
-  MatSliderModule
+  MatSliderModule,
+  MatTabsModule,
+  MatCardModule,
+  MatGridListModule,
+  MatPaginatorModule,
 ];
 
 @NgModule({

@@ -1,4 +1,5 @@
 import { AfterViewInit, Component, Input, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { ICarousel, IContent } from 'src/app/services/content/models/carousel';
 
 @Component({
@@ -8,10 +9,13 @@ import { ICarousel, IContent } from 'src/app/services/content/models/carousel';
 })
 export class HeroCarouselComponent implements OnInit {
   @Input() carousel: ICarousel | undefined;
-  constructor() { 
+  constructor(private router: Router) { 
   }
 
   ngOnInit(): void {
   }
 
+  goToPlayer(content: IContent): void {
+    this.router.navigate([`player/${content.title}`], { state: content });
+  }
 }
