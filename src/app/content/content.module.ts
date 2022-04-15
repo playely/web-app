@@ -6,6 +6,7 @@ import { ContentComponent } from './content/content.component';
 import { SharedModule } from '../shared/shared.module';
 import { DetailsComponent } from './details/details.component';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { MaterialModule } from '../shared/material.module';
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import { NotFoundComponent } from './not-found/not-found.component';
   imports: [
     CommonModule,
     ContentRoutingModule,
-    SharedModule
+    SharedModule,
+    MaterialModule
   ]
 })
 export class ContentModule { }

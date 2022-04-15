@@ -1,4 +1,4 @@
 export enum StorageKeys {
-    AUTHTOKEN = '',
-    AUTHUSER = ''
+    AUTHTOKEN = 'authToken',
+    AUTHUSER = 'authUser'
 }

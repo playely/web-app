@@ -18,6 +18,28 @@ export class ContentService {
     return Promise.resolve([
       {
         id: '1',
+        title: 'Hero',
+        aspectRatio: CardAspectRatio.SQUARE,
+        type: CarouselType.HERO,
+        content: [
+          {
+            description: 'Long description',
+            duration: '2 hrs',
+            id: '1',
+            image: 'https://play-jolly-assets.s3.amazonaws.com/content/dummy/image1-1x1.png',
+            shortDescription: 'Bizli, is a 2018 Bangladeshi Superhero film directed by Iftakar Chowdhury, and produced by Bobstar Films. It stars Bobby as the protagonist and Indian actress Satabdi Roy as the antagonist.',
+            title: 'The K- POP Live Show',
+            type: ContentType.LIVE,
+            currentWatchers: 150,
+            isLive: true,
+            releaseDate: new Date(),
+            releaseYear: '2018',
+            tags: []
+          }
+        ]
+      },
+      {
+        id: '1',
         title: 'Live Show',
         aspectRatio: CardAspectRatio.SQUARE,
         type: CarouselType.DESCRIPTION,

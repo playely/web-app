@@ -1,36 +1,27 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, Observable } from 'rxjs';
+import { AppService } from '../app-service/app.service';
 import { StorageKeys } from '../storage/storage-items';
 import { StorageService } from '../storage/storage.service';
-import { LoginRequest, LoginResponse, UserSession } from './models/login';
+import { LoginRequest, LoginResponse } from './models/login';
 import { RegisterRequest } from './models/register';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
-  session = new BehaviorSubject<UserSession>(this.getUserSession());
 
-  constructor(private storageService: StorageService) { }
+  constructor(private storageService: StorageService, private appService: AppService) { }
+
+  get isUserAuthenticated(): boolean {
+    return this.storageService.getLocalItem(StorageKeys.AUTHTOKEN) !== null;
+  }
 
   /**
-   * Get Session Observable
+   * Register user
    *
+   * @param data 
    * @returns 
    */
-  getSessionOb(): Observable<UserSession> {
-    return this.session.asObservable();
-  }
-
-  /**
-   * Fire session bs change
-   *
-   * @param value 
-   */
-  changeSession(value: UserSession): void {
-    this.session.next(value);
-  }
-
   register(data: RegisterRequest): Promise<void> {
     return Promise.resolve();
   }
@@ -51,7 +42,20 @@ export class AuthService {
     };
     this.storageService.setLocalItem(StorageKeys.AUTHTOKEN,response.token);
     this.storageService.setLocalItem(StorageKeys.AUTHUSER, JSON.stringify(response));
+    this.appService.changeSession({
+      email: response.email,
+      image: response.image,
+      name: response.name,
+      id: response.id,
+    });
     return Promise.resolve(response);
+  }
+
+  logout(): Promise<void> {
+    this.appService.changeSession(null);
+    this.storageService.removeLocalItem(StorageKeys.AUTHTOKEN);
+    this.storageService.removeLocalItem(StorageKeys.AUTHUSER);
+    return Promise.resolve();
   }
 
   /**
@@ -72,10 +76,5 @@ export class AuthService {
    */
    saveNewPassword(newPassword: string, validationCode: string): Promise<void> {
     return Promise.resolve();
-  }
-
-  private getUserSession(): UserSession {
-    return this.storageService.getLocalItem(StorageKeys.AUTHUSER) ? 
-    JSON.parse(this.storageService.getLocalItem(StorageKeys.AUTHUSER)) : null;
   }
 }

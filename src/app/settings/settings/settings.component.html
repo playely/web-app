@@ -1,12 +1,17 @@
 <div class="settings-container">
     <div *ngIf="user" class="profile-container">
-        <img [src]="user.image" alt="User profile">
-        <h4>{{user.name}}</h4>
-        <p>{{user.email}}</p>
-        <p>{{user.phone}}</p>
-        <p>{{user.country?.name}}</p>
+        <div class="profile-container__data">
+            <div class="image-container">
+                <img [src]="user.image" alt="User profile">
+                <h4>{{user.name}}</h4>
+            </div>
+            <div class="item"> <mat-icon>alternate_email</mat-icon> <p>{{user.email}}</p></div>
+            <div class="item"> <mat-icon>smartphone</mat-icon> <p>{{user.phone}}</p></div>
+            <div class="item"> <mat-icon>push_pin</mat-icon> <p>{{user.country?.name}}</p> </div>
+        </div>
+        <button (click)="logout()" class="btn-logout" mat-stroked-button color="accent">Salir</button>
     </div>
     <div class="options">
-
+        Options
     </div>
 </div>

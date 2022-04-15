@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { AfterViewInit, Component, Input, OnInit } from '@angular/core';
+import { ICarousel, IContent } from 'src/app/services/content/models/carousel';
 
 @Component({
   selector: 'app-hero-carousel',
@@ -6,8 +7,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./hero-carousel.component.scss']
 })
 export class HeroCarouselComponent implements OnInit {
-
-  constructor() { }
+  @Input() carousel: ICarousel | undefined;
+  constructor() { 
+  }
 
   ngOnInit(): void {
   }

@@ -1,4 +1,5 @@
 import { Component, HostListener, Input, OnInit } from '@angular/core';
+import { AppService } from 'src/app/services/app-service/app.service';
 import { AuthService } from 'src/app/services/auth/auth.service';
 import { UserSession } from 'src/app/services/auth/models/login';
 import { ITab } from 'src/app/services/tabs/models/tab.model';
@@ -11,10 +12,12 @@ import { TabService } from 'src/app/services/tabs/tab.service';
 })
 export class NavbarComponent implements OnInit {
   @Input() isCover: boolean = false;
-  userInfo: UserSession | undefined;
+  userInfo: UserSession | null;
 
   menuItems: ITab[] = [];
-  constructor(private tabService: TabService, private authService: AuthService) { }
+  constructor(private tabService: TabService, private authService: AuthService, private appService: AppService) { 
+    this.userInfo = null;
+  }
   
   @HostListener('window:scroll', ['$event'])
   onWindowScroll() {
@@ -29,8 +32,7 @@ export class NavbarComponent implements OnInit {
     this.tabService.getTabs().then((tabs) => {
       this.menuItems = tabs;
     });
-    this.authService.getSessionOb().subscribe((info) => {
-      console.log(info);
+    this.appService.getSessionOb().subscribe((info) => {
       this.userInfo = info;
     });
   }

@@ -9,11 +9,8 @@
 }
 
 .item-active {
+    color: #FFF;
     p {
-        color: #FFF;
-    }
-
-    .menu-icon {
         color: #FFF;
     }
 }
@@ -47,6 +44,7 @@
                 padding: 0 12px;
 
                 .icon {
+                    color: $gray;
                     margin-right: 10px;
                 }
             }

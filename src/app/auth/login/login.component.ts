@@ -31,14 +31,8 @@ export class LoginComponent implements OnInit {
    */
   onSubmit(): void {
     if (this.loginForm.valid) {
-      this.authService.login(this.loginForm.value).then((response) => {
+      this.authService.login(this.loginForm.value).then(() => {
         this.router.navigate(['/home']);
-        this.authService.changeSession({
-          email: response.email,
-          image: response.image,
-          name: response.name,
-          id: response.id,
-        });
       });
     }
   }

@@ -5,7 +5,7 @@ export enum CardAspectRatio {
 }
 
 export enum CarouselType {
-    DESCRIPTION, INNERCARD, OUTERCARD
+    DESCRIPTION, INNERCARD, OUTERCARD, HERO
 }
 
 export enum ContentType {

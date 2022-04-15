@@ -11,6 +11,7 @@ import { RouterModule } from '@angular/router';
 import { DescriptionCardComponent } from './cards/description-card/description-card.component';
 import { InnerCardComponent } from './cards/inner-card/inner-card.component';
 import { MaterialModule } from './material.module';
+import { BannerComponent } from './banner/banner.component';
 
 const components = [
   HeroCarouselComponent,
@@ -19,6 +20,7 @@ const components = [
   FooterComponent,
   GridCarouselComponent,
   LoadingComponent,
+  BannerComponent,
 ];
 
 @NgModule({

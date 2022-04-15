@@ -1,45 +1,95 @@
 @import 'vars';
 
-.carousel-static {
+.all-hero-container {
     width: 100%;
-    height: 100vh;
-    background: url('https://play-jolly-assets.s3.amazonaws.com/hero-image-1.png');
-    background-size: cover;
+    position: relative;
+    display: flex;
+    position: relative;
+    overflow: hidden;
+}
+
+.all-hero-container:hover {
+    .arrow {
+        visibility: visible;
+    }
+}
+
+.hero-margin {
+    margin: 80px $space-side 0 $space-side;
+}
+
+.arrow {
+    position: absolute;
+    visibility: hidden;
+    transition: all 0.5ms;
+    top: 45%;
+    background-color: white;
+    width: 47px;
+    height: 77px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 50px;
+    mat-icon {
+        font-size: 50px;
+        width: 50px;
+        height: 50px;
+    }
+}
+
+.arrow:hover {
+    cursor: pointer;
+    mat-icon {
+        transform: scale(1.25);
+    }
+}
+.arrow-left {
+    @extend .arrow;
+    left: -5px;
+    border-bottom-right-radius: 110px; 
+    border-top-right-radius: 110px;  
+    
+}
+
+.arrow-right {
+    @extend .arrow;
+    right: -5px;
+    border-bottom-left-radius: 110px; 
+    border-top-left-radius: 110px; 
+}
+
+.hero-container {
+    width: 100%;
     position: relative;
 
-    .description {
-        font-size: 20px;
-        line-height: 32px;
-        display: flex;
-        align-items: center;
-        color: #FFFFFF;
-        text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.45);
-    }
-
-    h1, h5 {
-        color: #FFFFFF;
-    }
-
-    h1 {
-        font-size: 55px;
-        line-height: 60px;
-        font-weight: bold;
-    }
-
-    h5 {
-        margin-bottom: 25px;
-        margin-top: 0;
+    img {
+        width: 100%;
+        height: 100%;
     }
 
     .info {
-        position: inherit;
-        z-index: 1;
+        position: absolute;
+        top: 0;
+        left: 0;
         width: 50%;
-        margin-left: $space-side;
-        padding-top: $space-top;
+        height: 100%;
+        padding-left: $space-side;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        h4, h5, p {
+            margin: 0;
+            color: #FFF;
+        }
+    
+        .button-container {
+            padding-bottom: 50px;
+            padding-top: 10px;
+            button {
+                margin-right: 10px;
+            }
+        }
     }
 }
 
-.subscribe-form .mat-form-field-appearance-fill{
-    background-color: $dark-black !important;
-}
+

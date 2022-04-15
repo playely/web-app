@@ -9,7 +9,10 @@ $my-custom-warn: mat-palette($mat-red, 700, 800);
 $my-custom-theme: mat-dark-theme($my-custom-primary, $my-custom-accent, $my-custom-warn);
 @include angular-material-theme($my-custom-theme);
 
-.mat-flat-button.mat-primary {
+.mat-flat-button.mat-primary,
+.mat-flat-button.mat-accent,
+.mat-stroked-button.mat-primary,
+.mat-stroked-button.mat-accent {
     padding: 5px 24px;
     font-family: $primary-font;
     font-weight: 500;
