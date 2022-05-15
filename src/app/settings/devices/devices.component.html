@@ -13,8 +13,8 @@
         <p>Registado el: <span>{{ item.enrollDate | date: 'medium'}}</span></p>
 
         <div class="button-container">
-            <button *ngIf="item.status && !item.isCurrentDevice" mat-stroked-button color="primary">Eliminar</button>
-            <button mat-stroked-button color="accent">Cambiar Nombre</button>
+            <button *ngIf="item.status && !item.isCurrentDevice" mat-stroked-button color="primary" (click)="removeDevice()">Eliminar</button>
+            <button mat-stroked-button color="accent" (click)="changeDeviceName()" >Cambiar Nombre</button>
         </div>
 
         <div class="divider"></div>

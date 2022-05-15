@@ -10,9 +10,9 @@
         <p *ngIf="item.status">Proxima Facturación: <span>{{item.nextInvoice | date:'longDate'}}</span></p>
         <p *ngIf="!item.status">Valido hasta: <span>{{item.validUntil | date:'longDate'}}</span></p>
         <div class="button-container">
-            <button *ngIf="item.status" mat-stroked-button color="primary">Cambiar Plan</button>
-            <button *ngIf="!item.status" mat-stroked-button color="primary">Renovar Plan</button>
-            <button *ngIf="item.status" mat-stroked-button color="accent">Cancelar Plan</button>
+            <button *ngIf="item.status" mat-stroked-button color="primary" (click)="changePlan()">Cambiar Plan</button>
+            <button *ngIf="!item.status" mat-stroked-button color="primary" (click)="renewPlan()">Renovar Plan</button>
+            <button *ngIf="item.status" mat-stroked-button color="accent" (click)="cancelPlan()">Cancelar Plan</button>
         </div>
         <div class="divider"></div>
     </div>

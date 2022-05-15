@@ -24,6 +24,8 @@
 
         h4 {
             margin: 15px 0 0 0;
+            display: flex;
+            align-items: center;
         }
         }
 
@@ -51,7 +53,8 @@
     }
 }
 
-.btn-logout {
+.btn-logout,
+.btn-device {
     margin-top: 10px;
     width: 100%;
 }

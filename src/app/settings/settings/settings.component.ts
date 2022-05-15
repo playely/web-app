@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { DialogService } from 'src/app/dialogs/dialog.service';
 import { AuthService } from 'src/app/services/auth/auth.service';
 import { IUserInfoResponse } from 'src/app/services/user/models/user';
 import { UserService } from 'src/app/services/user/user.service';
@@ -15,12 +16,31 @@ export class SettingsComponent implements OnInit {
   get fullNumber() {
     return `+${this.user?.country.numberCode} ${this.user?.phone}`
   }
-  constructor(private userService: UserService, private authService: AuthService, private router: Router) { }
+  constructor(
+    private userService: UserService, 
+    private authService: AuthService, 
+    private router: Router, 
+    private dialogService: DialogService
+    ) { }
 
   ngOnInit(): void {
     this.userService.getUserInfo().then((response) => {
       this.user = response;
     });
+  }
+
+  /**
+   * Open edit user dialog
+   */
+  editUser(): void {
+    this.dialogService.openEditUser(this.user);
+  }
+
+  /**
+   * open link device dialog
+   */
+  linkDevice(): void {
+    this.dialogService.openLinkDeviceDialog();
   }
 
   /**

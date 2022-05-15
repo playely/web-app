@@ -47,6 +47,9 @@ $my-custom-theme: mat-dark-theme($my-custom-primary, $my-custom-accent, $my-cust
     background: transparent;
 }
 
+.mat-tab-body-content {
+    overflow: hidden !important;
+}
 /*
 
 

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { PageEvent } from '@angular/material/paginator';
+import { DialogService } from 'src/app/dialogs/dialog.service';
 import { DevicesService } from 'src/app/services/devices/devices.service';
 import { DeviceType, IDevice } from 'src/app/services/devices/models/devices';
 
@@ -12,7 +13,7 @@ export class DevicesComponent implements OnInit {
   devices: IDevice[] = [];
   viewDevices: IDevice[] = [];
   SIZE_PAGE = 2;
-  constructor(private deviceService: DevicesService) { }
+  constructor(private deviceService: DevicesService, private dialogService: DialogService) { }
 
   get DeviceType() {
     return DeviceType;
@@ -24,6 +25,15 @@ export class DevicesComponent implements OnInit {
       this.viewDevices = this.devices.slice(0,this.SIZE_PAGE);
     });
   }
+
+  removeDevice(): void {
+    this.dialogService.openRemoveDevice();
+  }
+
+  changeDeviceName(): void {
+    this.dialogService.openChangeDeviceName();
+  }
+
 
   /**
    * Manage paginator event

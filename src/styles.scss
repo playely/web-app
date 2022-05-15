@@ -120,3 +120,18 @@ h1, h2, h3, h4, h5 {
 .list-line-item:nth-last-child(2) .divider {
    display: none;
 }
+
+/* Mat dialog as card */
+.dialog-panel-class .mat-dialog-container{
+   background: $dark-black;
+   border-radius: $border-radius;
+   padding: 5px;
+   border: 3px solid $primary-color;
+}
+
+.dialog-backdrop-class {
+   -webkit-backdrop-filter: blur(100px);
+   backdrop-filter: blur(100px);
+   background-color: #0000009c;
+    backdrop-filter: blur(4px);
+}

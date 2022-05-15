@@ -6,18 +6,21 @@ import { SettingsComponent } from './settings/settings.component';
 import { MaterialModule } from '../shared/material.module';
 import { SubscriptionsComponent } from './subscriptions/subscriptions.component';
 import { DevicesComponent } from './devices/devices.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
   declarations: [
     SettingsComponent,
     SubscriptionsComponent,
-    DevicesComponent
+    DevicesComponent,
   ],
   imports: [
     CommonModule,
     SettingsRoutingModule,
-    MaterialModule
+    MaterialModule,
+    FormsModule,
+    ReactiveFormsModule
   ]
 })
 export class SettingsModule { }
