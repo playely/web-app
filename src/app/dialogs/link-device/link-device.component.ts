@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-link-device',
@@ -7,7 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LinkDeviceComponent implements OnInit {
 
-  constructor() { }
+  deviceForm: FormGroup;
+  constructor(private formBuilder: FormBuilder) {
+    this.deviceForm = this.formBuilder.group({
+      device: ['', [Validators.required]]
+    });
+   }
 
   ngOnInit(): void {
   }
