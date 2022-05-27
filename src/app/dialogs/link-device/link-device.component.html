@@ -1,1 +1,13 @@
-<p>link-device works!</p>
+<div class="card">
+    <div class="card-content">
+        <h3>Link Device</h3>
+        <p>Enter the code displayed on your device screen in this space</p>
+        <form class="form-controls" [formGroup]="deviceForm" >
+            <mat-form-field>
+                <mat-label>Device Code</mat-label>
+                <input class="device-input" matInput placeholder="">
+              </mat-form-field>
+        </form>
+        <button mat-flat-button color="primary">Link Device</button>
+    </div>
+</div>
