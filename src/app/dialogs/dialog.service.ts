@@ -19,7 +19,10 @@ export class DialogService {
    * @returns 
    */
   openLinkDeviceDialog(): MatDialogRef<LinkDeviceComponent> {
-    return  this.dialog.open(LinkDeviceComponent);
+    return  this.dialog.open(LinkDeviceComponent, {
+      panelClass: 'card-panel-class-container',
+      backdropClass: 'card-panel-class-backdrop',
+    });
   }
 
   /**

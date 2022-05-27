@@ -5,6 +5,8 @@ import { MaterialModule } from '../shared/material.module';
 import { EditUserComponent } from './edit-user/edit-user.component';
 import { YesNoOkComponent } from './yes-no-ok/yes-no-ok.component';
 import { InputDialogComponent } from './input-dialog/input-dialog.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MatButtonModule } from '@angular/material/button';
 
 
 @NgModule({
@@ -16,7 +18,11 @@ import { InputDialogComponent } from './input-dialog/input-dialog.component';
   ],
   imports: [
     CommonModule,
-    MaterialModule
-  ]
+    MaterialModule,
+    FormsModule,
+    ReactiveFormsModule,
+    MatButtonModule
+  ],
+  providers:[LinkDeviceComponent]
 })
 export class DialogsModule { }
