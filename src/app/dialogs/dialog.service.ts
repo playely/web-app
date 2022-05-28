@@ -46,7 +46,6 @@ export class DialogService {
    */
   openRenewPlan(): MatDialogRef<YesNoOkComponent> {
     return this.openYesNoDialog(
-      DialogType.YESNO,
       'Renew Plan',
       'Do you want renew your plan?'
     );
@@ -58,7 +57,6 @@ export class DialogService {
    */
    openCancelPlan(): MatDialogRef<YesNoOkComponent> {
     return this.openYesNoDialog(
-      DialogType.YESNO,
       'Cancel Plan',
       'Do you want cancel your plan?'
     );
@@ -82,7 +80,6 @@ export class DialogService {
    */
    openRemoveDevice(): MatDialogRef<YesNoOkComponent> {
     return this.openYesNoDialog(
-      DialogType.YESNO,
       'Remove Device',
       'Do you want remove your device?'
     );
@@ -92,13 +89,15 @@ export class DialogService {
    * Open a yes-no-ok dialog
    * @returns 
    */
-  private openYesNoDialog(type: DialogType, title: string, message: string): MatDialogRef<YesNoOkComponent> {
+  private openYesNoDialog(title: string, message: string): MatDialogRef<YesNoOkComponent> {
     return this.dialog.open(YesNoOkComponent, {
       data: {
-        type,
+        type: DialogType.YESNO,
         title,
         message
-      }
+      },
+      panelClass: 'card-panel-class-container',
+      backdropClass: 'card-panel-class-backdrop',
     });
   }
 }
