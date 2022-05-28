@@ -21,3 +21,7 @@ export interface IUserInfoResponse {
     loginMethod: UserLoginMethod;
     subscriptions: IUserSubscription[];
 }
+
+export interface IUserPreferencesResponse {
+    loginMethod: UserLoginMethod;
+}
