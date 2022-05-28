@@ -2,12 +2,12 @@
     <div class="card-content">
         <h3>Link Device</h3>
         <p>Enter the code displayed on your device in this space</p>
-        <form class="form-controls" [formGroup]="deviceForm" >
+        <div>
             <mat-form-field>
                 <mat-label>Device Code</mat-label>
-                <input formControlName="code" class="device-input" matInput placeholder="">
+                <input [formControl]="deviceCode" class="device-input" matInput placeholder="">
               </mat-form-field>
               <button mat-flat-button (click)="linkDevice()" cdkFocusInitial color="primary">Link Device</button>
-        </form>
+        </div>
     </div>
 </div>
