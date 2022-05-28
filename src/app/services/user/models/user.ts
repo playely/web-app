@@ -1,5 +1,9 @@
 import { IUserSubscription } from "../../subscriptions/models/subscriptions";
 
+export enum UserLoginMethod {
+    OTP = 'otp',
+    EMAIL = 'email',
+}
 export interface ICountry {
     name: string;
     code: string;
@@ -14,5 +18,10 @@ export interface IUserInfoResponse {
     country: ICountry;
     name: string;
     image: string;
+    loginMethod: UserLoginMethod;
     subscriptions: IUserSubscription[];
+}
+
+export interface IUserPreferencesResponse {
+    loginMethod: UserLoginMethod;
 }

@@ -36,9 +36,7 @@ export class DialogService {
       data: user,
       panelClass: 'card-panel-class-container',
       backdropClass: 'card-panel-class-backdrop',
-      maxWidth: '40%',
-      width: '30%'
-    });
+      });
   }
 
   /**

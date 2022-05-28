@@ -11,6 +11,7 @@
         <p [ngClass]="{'active-device': item.status}" *ngIf="item.status">Estado: <span>Activo </span></p>
         <p [ngClass]="{'inactive-device': !item.status}" *ngIf="!item.status">Estado: <span>Inactivo</span></p>
         <p>Registado el: <span>{{ item.enrollDate | date: 'medium'}}</span></p>
+        <p>Utilizado por última vez: <span>{{ item.lastUsedDate | date: 'medium'}}</span></p>
 
         <div class="button-container">
             <button *ngIf="item.status && !item.isCurrentDevice" mat-stroked-button color="primary" (click)="removeDevice()">Eliminar</button>

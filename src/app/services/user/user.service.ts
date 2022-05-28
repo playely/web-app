@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { IUserInfoResponse } from './models/user';
+import { IUserInfoResponse, IUserPreferencesResponse, UserLoginMethod } from './models/user';
 
 @Injectable({
   providedIn: 'root'
@@ -20,7 +20,14 @@ export class UserService {
         name: 'Guatemala',
         numberCode: '502'
       },
+      loginMethod: UserLoginMethod.OTP,
       subscriptions: [],
+    });
+  }
+
+  getUserPreferences(): Promise<IUserPreferencesResponse> {
+    return Promise.resolve({
+      loginMethod: UserLoginMethod.OTP,
     });
   }
 }

@@ -7,6 +7,7 @@ import { MaterialModule } from '../shared/material.module';
 import { SubscriptionsComponent } from './subscriptions/subscriptions.component';
 import { DevicesComponent } from './devices/devices.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { PreferencesComponent } from './preferences/preferences.component';
 
 
 @NgModule({
@@ -14,6 +15,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     SettingsComponent,
     SubscriptionsComponent,
     DevicesComponent,
+    PreferencesComponent,
   ],
   imports: [
     CommonModule,

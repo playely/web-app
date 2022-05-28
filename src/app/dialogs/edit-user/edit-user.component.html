@@ -1,26 +1,53 @@
 <div class="card">
     <div class="card-content">
-        <h4>Editar Perfil</h4>
-        <form class="edit-controls" [formGroup]="userForm" (ngSubmit)="editUser()" >
-            <mat-form-field>
-                <mat-label>Nombre</mat-label>
-                <input matInput placeholder="Nombre" formControlName="name">
-                <mat-error *ngIf="handleError('email', 'required')">El nombre es requerido</mat-error>
-            </mat-form-field>
-            <mat-form-field>
-                <mat-label>Email</mat-label>
-                <input matInput placeholder="Email" formControlName="email">
-                <mat-error *ngIf="handleError('email', 'required')">El email es requerido</mat-error>
-                <mat-error *ngIf="handleError('email', 'email')">El email tiene un formato incorrecto</mat-error>
-            </mat-form-field>
-            <mat-form-field>
-                <mat-label>Phone Number</mat-label>
-                <span matPrefix>+1 &nbsp;</span>
-                <input matInput placeholder="Phone number" formControlName="phoneNumber">
-                <mat-error *ngIf="handleError('phoneNumber', 'pattern')">El numero tiene un formato incorrecto</mat-error>
+        <h4>Account</h4>
+        <mat-tab-group mat-align-tabs="start">
+            <mat-tab label="Profile">
+                <form class="edit-controls" [formGroup]="userForm" (ngSubmit)="editUser()" >
+                    <mat-form-field>
+                        <mat-label>Nombre</mat-label>
+                        <input matInput placeholder="Nombre" formControlName="name">
+                        <mat-error *ngIf="handleError('email', 'required')">El nombre es requerido</mat-error>
+                    </mat-form-field>
+                    <mat-form-field>
+                        <mat-label>Email</mat-label>
+                        <input matInput placeholder="Email" formControlName="email">
+                        <mat-error *ngIf="handleError('email', 'required')">El email es requerido</mat-error>
+                        <mat-error *ngIf="handleError('email', 'email')">El email tiene un formato incorrecto</mat-error>
+                    </mat-form-field>
+                    <mat-form-field>
+                        <mat-label>Phone Number</mat-label>
+                        <span matPrefix>+1 &nbsp;</span>
+                        <input matInput placeholder="Phone number" formControlName="phoneNumber">
+                        <mat-error *ngIf="handleError('phoneNumber', 'pattern')">El numero tiene un formato incorrecto</mat-error>
+                    </mat-form-field>
+                    <div class="field">
+                        <mat-label>Género</mat-label>
+                        <mat-radio-group formControlName="gender" aria-label="Select an option">
+                            <mat-radio-button [value]="0">Female</mat-radio-button>
+                            <mat-radio-button [value]="1">Male</mat-radio-button>
+                          </mat-radio-group>                         
+                    </div>
+                    <button type="submit" class="save-button" mat-raised-button color="primary">Guardar</button>
+                </form>
+            </mat-tab>
+            <mat-tab label="Password">
+                <form class="edit-controls" [formGroup]="passwordForm" (ngSubmit)="changePassword()">
+                    <mat-form-field>
+                        <mat-label>Password</mat-label>
+                        <input matInput placeholder="Password" formControlName="password">
+                        <mat-error *ngIf="handlePwdError('password', 'required')">La contraseña es requerido</mat-error>
+                    </mat-form-field>
+                    <mat-form-field>
+                        <mat-label>Confirm Password</mat-label>
+                        <input matInput placeholder="Confirm Password" formControlName="confirmPassword">
+                        <mat-error *ngIf="handlePwdError('confirmPassword', 'required')">Debe confirmar la contraseña</mat-error>
+                    </mat-form-field>
+                    <button type="submit" class="save-button" mat-raised-button color="primary">Guardar</button>
+                  </form>
+            </mat-tab>
+          </mat-tab-group>
 
-            </mat-form-field>
-            <button type="submit" class="save-button" mat-raised-button color="primary">Guardar</button>
-        </form>
+        
     </div>
 </div>
