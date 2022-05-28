@@ -22,6 +22,7 @@ export class DevicesService {
         enrollDate: new Date(),
         status: true,
         isCurrentDevice: true,
+        lastUsedDate: new Date(),
       },
       {
         id: '1', 
@@ -31,6 +32,7 @@ export class DevicesService {
         enrollDate: new Date(),
         status: true,
         isCurrentDevice: false,
+        lastUsedDate: new Date(),
       },
       {
         id: '2', 
@@ -40,6 +42,7 @@ export class DevicesService {
         enrollDate: new Date(),
         status: true,
         isCurrentDevice: false,
+        lastUsedDate: new Date(),
       },
       {
         id: '6', 
@@ -49,6 +52,7 @@ export class DevicesService {
         enrollDate: new Date(),
         status: false,
         isCurrentDevice: false,
+        lastUsedDate: new Date(),
       },
       {
         id: '3', 
@@ -58,6 +62,7 @@ export class DevicesService {
         enrollDate: new Date(),
         status: true,
         isCurrentDevice: false,
+        lastUsedDate: new Date(),
       },
       {
         id: '4', 
@@ -67,6 +72,7 @@ export class DevicesService {
         enrollDate: new Date(),
         status: true,
         isCurrentDevice: false,
+        lastUsedDate: new Date(),
       },
       {
         id: '5', 
@@ -76,6 +82,7 @@ export class DevicesService {
         enrollDate: new Date(),
         status: false,
         isCurrentDevice: false,
+        lastUsedDate: new Date(),
       },
     ]);
   }
