@@ -9,16 +9,20 @@ import { MatDialogRef } from '@angular/material/dialog';
 })
 export class LinkDeviceComponent implements OnInit {
 
-  deviceCode: FormControl;
-  constructor( public dialogRef: MatDialogRef<LinkDeviceComponent>) {
-    this.deviceCode = new FormControl();
+  codeForm: FormGroup;
+  constructor( public dialogRef: MatDialogRef<LinkDeviceComponent>, private formBuilder: FormBuilder) {
+    this.codeForm = this.formBuilder.group({
+      code: ['', Validators.required]
+    });
    }
 
   ngOnInit(): void {
   }
 
   linkDevice(): void {
-    console.log('device code: ', this.deviceCode.value);
+    if (this.codeForm.valid) {
+      console.log('device code: ', this.codeForm.value);
     this.dialogRef.close();
+    }
   }
 }
