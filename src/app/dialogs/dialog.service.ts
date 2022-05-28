@@ -1,7 +1,7 @@
-import { Component, Injectable } from '@angular/core';
+import { Injectable } from '@angular/core';
 import { MatDialog, MatDialogRef } from '@angular/material/dialog';
 import { DeviceType } from '../services/devices/models/devices';
-import { IUserInfoResponse } from '../services/user/models/user';
+import { IUserInfo } from '../services/user/models/user';
 import { EditUserComponent } from './edit-user/edit-user.component';
 import { InputDialogComponent } from './input-dialog/input-dialog.component';
 import { LinkDeviceComponent } from './link-device/link-device.component';
@@ -31,7 +31,7 @@ export class DialogService {
    * @param user 
    * @returns 
    */
-  openEditUser(user?: IUserInfoResponse): MatDialogRef<EditUserComponent>  {
+  openEditUser(user?: IUserInfo): MatDialogRef<EditUserComponent>  {
     return this.dialog.open(EditUserComponent, {
       data: user,
       panelClass: 'card-panel-class-container',

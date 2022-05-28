@@ -28,7 +28,9 @@
                 <app-devices></app-devices>
             </mat-tab>
             <mat-tab label="Preferences">
-                <app-preferences></app-preferences>
+                <app-preferences
+                (loginMethodChange)="handleLoginMethodChange($event)"
+                ></app-preferences>
             </mat-tab>
           </mat-tab-group>
     </div>

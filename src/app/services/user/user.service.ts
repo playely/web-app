@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { IUserInfoResponse, IUserPreferencesResponse, UserLoginMethod } from './models/user';
+import { IUserInfo, IUserPreferences, UserLoginMethod } from './models/user';
 
 @Injectable({
   providedIn: 'root'
@@ -7,7 +7,7 @@ import { IUserInfoResponse, IUserPreferencesResponse, UserLoginMethod } from './
 export class UserService {
   constructor() { }
 
-  getUserInfo(): Promise<IUserInfoResponse> {
+  getUserInfo(): Promise<IUserInfo> {
     return Promise.resolve({
       email: 'test@text.com',
       image: 'https://cdn.pixabay.com/photo/2016/08/08/09/17/avatar-1577909_1280.png',
@@ -25,9 +25,13 @@ export class UserService {
     });
   }
 
-  getUserPreferences(): Promise<IUserPreferencesResponse> {
+  getUserPreferences(): Promise<IUserPreferences> {
     return Promise.resolve({
       loginMethod: UserLoginMethod.OTP,
     });
+  }
+
+  updatePreferences(pref: IUserPreferences): Promise<void> {
+    return Promise.resolve();
   }
 }

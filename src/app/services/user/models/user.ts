@@ -11,7 +11,7 @@ export interface ICountry {
 }
 
 
-export interface IUserInfoResponse {
+export interface IUserInfo {
     id: string;
     email: string;
     phone: string;
@@ -22,6 +22,6 @@ export interface IUserInfoResponse {
     subscriptions: IUserSubscription[];
 }
 
-export interface IUserPreferencesResponse {
+export interface IUserPreferences {
     loginMethod: UserLoginMethod;
 }
