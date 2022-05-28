@@ -19,7 +19,7 @@
           <a routerLink="/auth/reset-password">Forgot Password?</a>
         </div>
         <div class="form-control">
-          <mat-checkbox [disableRipple]="true" color="primary" formControlName="rememberme">Remember me</mat-checkbox>
+          <mat-checkbox name="rememberme" ngDefaultControl color="primary" formControlName="rememberme">Remember me</mat-checkbox>
         </div>
         <button mat-flat-button color="primary" [disabled]="loginForm.invalid" type="submit">Login</button>
         <div class="divider">
