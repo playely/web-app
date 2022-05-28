@@ -36,7 +36,9 @@ export class DevicesComponent implements OnInit {
   }
 
   changeDeviceName(device: IDevice): void {
-    this.dialogService.openChangeDeviceName(device.type);
+    this.dialogService.openChangeDeviceName(device.type).afterClosed().subscribe((value) => {
+      console.log('RESPONSE: ', value);
+    });
   }
 
 
