@@ -1,5 +1,6 @@
-import { Injectable } from '@angular/core';
+import { Component, Injectable } from '@angular/core';
 import { MatDialog, MatDialogRef } from '@angular/material/dialog';
+import { DeviceType } from '../services/devices/models/devices';
 import { IUserInfoResponse } from '../services/user/models/user';
 import { EditUserComponent } from './edit-user/edit-user.component';
 import { InputDialogComponent } from './input-dialog/input-dialog.component';
@@ -66,11 +67,16 @@ export class DialogService {
    * Open a change device name dialog input
    * @returns 
    */
-  openChangeDeviceName(): MatDialogRef<InputDialogComponent> {
+  openChangeDeviceName(deviceType: DeviceType): MatDialogRef<InputDialogComponent> {
     return this.dialog.open(InputDialogComponent, {
       data: {
-        title: 'Change Device Name'
-      }
+        title: 'Change Device Name',
+        placeholder: 'Device Name',
+        btnText: 'Guardar',
+        type: deviceType,
+      },
+      panelClass: 'card-panel-class-container',
+      backdropClass: 'card-panel-class-backdrop',
     });
   }
 

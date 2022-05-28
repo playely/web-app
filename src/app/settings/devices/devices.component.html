@@ -14,7 +14,7 @@
 
         <div class="button-container">
             <button *ngIf="item.status && !item.isCurrentDevice" mat-stroked-button color="primary" (click)="removeDevice()">Eliminar</button>
-            <button mat-stroked-button color="accent" (click)="changeDeviceName()" >Cambiar Nombre</button>
+            <button mat-stroked-button color="accent" (click)="changeDeviceName(item)" >Cambiar Nombre</button>
         </div>
 
         <div class="divider"></div>

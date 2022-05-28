@@ -35,8 +35,8 @@ export class DevicesComponent implements OnInit {
     });
   }
 
-  changeDeviceName(): void {
-    this.dialogService.openChangeDeviceName();
+  changeDeviceName(device: IDevice): void {
+    this.dialogService.openChangeDeviceName(device.type);
   }
 
 
