@@ -1,4 +1,13 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Inject, OnInit } from '@angular/core';
+import { MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { DeviceType } from 'src/app/services/devices/models/devices';
+
+export interface InputDialogData {
+  title: string;
+  placeholder: string;
+  btnText: string;
+  type: DeviceType;
+}
 
 @Component({
   selector: 'app-input-dialog',
@@ -7,8 +16,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class InputDialogComponent implements OnInit {
 
-  constructor() { }
+  constructor(@Inject(MAT_DIALOG_DATA) public data: InputDialogData) {}
 
+  get DeviceType() {
+    return DeviceType;
+  }
+  
   ngOnInit(): void {
   }
 
