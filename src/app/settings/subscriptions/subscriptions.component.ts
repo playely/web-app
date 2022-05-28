@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { PageEvent } from '@angular/material/paginator';
 import { DialogService } from 'src/app/dialogs/dialog.service';
+import { DialogReturn } from 'src/app/dialogs/yes-no-ok/dialog';
 import { IUserSubscription } from 'src/app/services/subscriptions/models/subscriptions';
 import { SubscriptionsService } from 'src/app/services/subscriptions/subscriptions.service';
 
@@ -28,7 +29,7 @@ export class SubscriptionsComponent implements OnInit {
 
   renewPlan(): void {
     this.dialogService.openRenewPlan().afterClosed().subscribe((response) => {
-      if (response) {
+      if (response === DialogReturn.YES) {
         // renew plan
         console.log('Renew plan');
       }
@@ -37,7 +38,7 @@ export class SubscriptionsComponent implements OnInit {
 
   cancelPlan(): void {
     this.dialogService.openCancelPlan().afterClosed().subscribe((response) => {
-      if (response) {
+      if (response === DialogReturn.YES) {
         // cancel plan
         console.log('Cancel plan');
       }
