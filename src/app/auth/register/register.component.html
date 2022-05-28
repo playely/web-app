@@ -26,7 +26,7 @@
                     <mat-error *ngIf="handleError('confirmPassword', 'required')">Confirm password is required</mat-error>
                   </mat-form-field>
                   <div class="form-control">
-                    <mat-checkbox [disableRipple]="true" color="primary" formControlName="agreeTC">
+                    <mat-checkbox name="agreetc" ngDefaultControl color="primary" formControlName="agreeTC">
                         I agree Terms and conditions </mat-checkbox>
                 </div>
                 <button mat-flat-button color="primary" [disabled]="registerForm.invalid" type="submit">Register</button>

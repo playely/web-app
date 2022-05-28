@@ -1,4 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MaterialModule } from 'src/app/shared/material.module';
 
 import { SubscriptionsComponent } from './subscriptions.component';
 
@@ -8,7 +10,8 @@ describe('SubscriptionsComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ SubscriptionsComponent ]
+      declarations: [ SubscriptionsComponent ],
+      imports: [ MatDialogModule ]
     })
     .compileComponents();
   });
