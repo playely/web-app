@@ -32,7 +32,11 @@ export class DialogService {
    */
   openEditUser(user?: IUserInfoResponse): MatDialogRef<EditUserComponent>  {
     return this.dialog.open(EditUserComponent, {
-      data: user
+      data: user,
+      panelClass: 'card-panel-class-container',
+      backdropClass: 'card-panel-class-backdrop',
+      maxWidth: '40%',
+      width: '30%'
     });
   }
 
