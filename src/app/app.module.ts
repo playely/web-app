@@ -6,6 +6,8 @@ import { AppComponent } from './app.component';
 import { SharedModule } from './shared/shared.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
+import { DialogsModule } from './dialogs/dialogs.module';
+import { MAT_FORM_FIELD_DEFAULT_OPTIONS } from '@angular/material/form-field';
 
 @NgModule({
   declarations: [
@@ -15,10 +17,13 @@ import { HttpClientModule } from '@angular/common/http';
     BrowserModule,
     SharedModule,
     AppRoutingModule,
+    DialogsModule,
     BrowserAnimationsModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [
+    { provide: MAT_FORM_FIELD_DEFAULT_OPTIONS, useValue: { appearance: 'fill' } } 
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
