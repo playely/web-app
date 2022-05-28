@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { IUserInfoResponse } from './models/user';
+import { IUserInfoResponse, UserLoginMethod } from './models/user';
 
 @Injectable({
   providedIn: 'root'
@@ -20,6 +20,7 @@ export class UserService {
         name: 'Guatemala',
         numberCode: '502'
       },
+      loginMethod: UserLoginMethod.EMAIL,
       subscriptions: [],
     });
   }
