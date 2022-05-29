@@ -5,6 +5,19 @@
   "Register": "Register",
   "Name": "Name",
   "Save": "Save",
+  "Watchlist": "Watchlist",
+  "Download": "Download",
+  "Share": "Share",
+  "Description": "Description",
+  "Search": "Buscar",
+  "Feedback": "Feedback",
+  "Help": "Help",
+  "Subscribe": "Subscribe",
+  "Play": "Play",
+  "FAQ": "FAQ",
+  "followOn": "Follow On",
+  "liveNow": "Live Now",
+  "seeAll": "See All",
   "forgottenPassword": "Forgot your password?",
   "rememberMe": "Remember Me",
   "orLoginWith": "or login with",
@@ -19,7 +32,19 @@
   "registerEmailMessage": "We sent you an email to complete your registation.",
   "goHome": "Go Home",
   "newPassword": "Create New Password",
-
+  "addWatchlist": "Add to watchlist",
+  "signIn": "Sign In",
+  "notFound": {
+    "title": "Not Found",
+    "message_1": "There's nothing here",
+    "message_2": "maybe the page you're looking for is not found or never existed.",
+    "message_3": "Redirecting to home in "
+  },
+  "banner": {
+    "title": "Welcome to Play Jolly",
+    "subtitle": "Watch unlimited Movies, Drama, Music Video and More Content.",
+    "message":"Enjoy exclusive Music Video popular movies and Live shows. Subscribe Play Jolly now"
+  },
   "formErrors": {
     "emailRequired": "Email required",
     "passwordRequired": "Email required",

@@ -34,7 +34,8 @@ const components = [
   imports: [
     CommonModule,
     MaterialModule,
-    RouterModule.forChild([])
+    RouterModule.forChild([]),
+    TranslateModule,
   ],
   exports: [ ...components, TranslateModule ]
 })

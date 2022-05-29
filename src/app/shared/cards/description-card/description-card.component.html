@@ -6,7 +6,7 @@
         <p class="title">{{item.title}}</p>
         <p class="duration">{{ item.currentWatchers? item.currentWatchers + ' watching now' : item.duration }}</p>
         <div *ngIf="item.isLive" class="live-tag-container">
-            <div class="live-tag" (click)="click()"><div class="live-text">Live Now</div></div>
+            <div class="live-tag" (click)="click()"><div class="live-text">{{ 'liveNow' | translate }}</div></div>
         </div>
     </div>
 </div>

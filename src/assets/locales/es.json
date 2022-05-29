@@ -5,6 +5,19 @@
   "Register": "Registrarse",
   "Name": "Nombre",
   "Save": "Guardar",
+  "Watchlist": "Favoritos",
+  "Download": "Descargar",
+  "Share": "Compartir",
+  "Description": "Descripción",
+  "Search": "Buscar",
+  "Feedback": "Comentarios",
+  "Help": "Ayuda",
+  "Subscribe": "Suscribirse",
+  "Play": "Reproducir",
+  "FAQ": "Preguntas Frecuentes",
+  "followOn": "Siguenos en",
+  "liveNow": "En Vivo ahora",
+  "seeAll": "Ver Todo",
   "forgottenPassword": "¿Olvidaste la contraseña?",
   "rememberMe": "Guardar usuario",
   "orLoginWith": "o inicia sesión con",
@@ -19,7 +32,19 @@
   "registerEmailMessage": "Te enviamos un correo electrónico para completar el registro.",
   "goHome": "Ir al Inicio",
   "newPassword": "Crear una Nueva Contraseña",
-
+  "addWatchlist": "Agregar a favoritos",
+  "signIn": "Entrar",
+  "notFound": {
+    "title": "Página no encontrada",
+    "message_1": "No hay nada aquí",
+    "message_2": "talvez la página que estás buscando no fue encontrada o nunca existió.",
+    "message_3": "Redirigiendo al inicio en "
+  },
+  "banner": {
+    "title": "Bienvenido a Play Jolly",
+    "subtitle": "Mira películas, dramas, videos musicales y más contenido ilimitado.",
+    "message":"Disfruta de vídeos musicales exclusivos, películas populares y espectáculos en directo. Suscribete a Play Jolly ahora"
+  },
   "formErrors": {
     "emailRequired": "El correo electrónico es requerido",
     "passwordRequired": "La contraseña es requerida",

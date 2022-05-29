@@ -21,7 +21,7 @@
         <button mat-icon-button class="btn-icon" routerLink="search">
             <mat-icon>search</mat-icon>
         </button>
-        <button mat-flat-button color="primary" *ngIf="!userInfo" routerLink="auth/login">Sign In</button>
+        <button mat-flat-button color="primary" *ngIf="!userInfo" routerLink="auth/login">{{ 'signIn' | translate }}</button>
         <div *ngIf="userInfo" class="user-info" routerLink="/settings">
             <img [src]="userInfo.image" alt="User image">
             <h4> {{ userInfo.name }}</h4>
