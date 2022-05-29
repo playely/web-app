@@ -1,8 +1,36 @@
-
 {
-    "banner": {
-      "hello" : "Hello",
-      "world": "world",
-      "change_lang_label": "Change The Language From Below Drop Down"
-    }
+  "Login": "Iniciar Sesión",
+  "Email": "Correo Electrónico",
+  "Password": "Contraseña",
+  "Register": "Registrarse",
+  "Name": "Nombre",
+  "Save": "Guardar",
+  "forgottenPassword": "¿Olvidaste la contraseña?",
+  "rememberMe": "Guardar usuario",
+  "orLoginWith": "o inicia sesión con",
+  "notRegistered": "¿No estás registrado? Crea una nueva cuenta",
+  "didForgetPassword": "Has olvidado tu contraseña?",
+  "resetPasswordMessage": "Te enviaremos un correo electrónico con las instrucciones para recuperar tu acceso.",
+  "createAccount": "Crear una cuenta",
+  "confirmPassword": "Confirmar contraseña",
+  "agreeTC": "Estoy de acuerdo con los Términos y Condiciones",
+  "orEnterWith":"o entra con",
+  "alreadyRegistered": "Ya estás registrado? Inicia Sesión",
+  "registerEmailMessage": "Te enviamos un correo electrónico para completar el registro.",
+  "goHome": "Ir al Inicio",
+  "newPassword": "Crear una Nueva Contraseña",
+
+  "formErrors": {
+    "emailRequired": "El correo electrónico es requerido",
+    "passwordRequired": "La contraseña es requerida",
+    "emailBadFormat": "El valor no es un correo electrónico",
+    "nameRequired": "El nombre es requerido",
+    "confirmPasswordRequired": "La confirmación de contraseña es requerida"
+  },
+  "placeholders": {
+    "email": "Ingresa tu correo electrónico",
+    "password": "Ingresa tu contraseña",
+    "name": "Ingresa tu nombre",
+    "confirmPassword": "Ingresa la confirmación de contraseña"
   }
+}

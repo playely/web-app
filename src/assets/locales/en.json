@@ -1,7 +1,36 @@
 {
-    "banner": {
-      "hello" : "Hello",
-      "world": "world",
-      "change_lang_label": "Change The Language From Below Drop Down"
-    }
+  "login": "Login",
+  "Email": "Email",
+  "Password": "Password",
+  "Register": "Register",
+  "Name": "Name",
+  "Save": "Save",
+  "forgottenPassword": "Forgot your password?",
+  "rememberMe": "Remember Me",
+  "orLoginWith": "or login with",
+  "notRegistered": "Not registered? Create a new account",
+  "didForgetPassword": "did you forget your password?",
+  "resetPasswordMessage": "We'll send you a email with the instructions to recover your access.",
+  "createAccount": "Create Account",
+  "confirmPassword": "Confirm Password",
+  "agreeTC": "I agree Terms and conditions",
+  "orEnterWith":"or enter with",
+  "alreadyRegistered": "Already registered? Login",
+  "registerEmailMessage": "We sent you an email to complete your registation.",
+  "goHome": "Go Home",
+  "newPassword": "Create New Password",
+
+  "formErrors": {
+    "emailRequired": "Email required",
+    "passwordRequired": "Email required",
+    "emailBadFormat": "Email bad format",
+    "nameRequired": "Name required",
+    "confirmPasswordRequired": "Confirm password required"
+  },
+  "placeholders": {
+    "email": "Enter your email",
+    "password": "Enter your password",
+    "name": "Enter your name",
+    "confirmPassword": "Enter confirm password"
   }
+}

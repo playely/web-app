@@ -2,28 +2,28 @@
   <div class="overlay"></div>
   <div class="card">
     <div class="card-content">
-      <h4>Login</h4>
+      <h4>{{ 'Login' | translate }}</h4>
       <form [formGroup]="loginForm" class="form-controls login-form" (ngSubmit)="onSubmit()">
         <mat-form-field appearance="fill">
-          <mat-label>Email</mat-label>
-          <input matInput type="email" placeholder="Enter your email" formControlName="email">
-          <mat-error *ngIf="handleError('email', 'required')">Email is required</mat-error>
-          <mat-error *ngIf="handleError('email', 'email')">Email bad format</mat-error>
+          <mat-label>{{ 'Email' | translate }}</mat-label>
+          <input matInput type="email" [placeholder]="'placeholders.email' | translate" formControlName="email">
+          <mat-error *ngIf="handleError('email', 'required')">{{'formErrors.emailRequired' | translate }}</mat-error>
+          <mat-error *ngIf="handleError('email', 'email')">{{ 'formErrors.emailBadFormat' | translate }}</mat-error>
         </mat-form-field>
         <mat-form-field appearance="fill">
-          <mat-label>Password</mat-label>
-          <input matInput type="password" placeholder="Enter your password" formControlName="password">
-          <mat-error *ngIf="handleError('password', 'required')">Password is required</mat-error>
+          <mat-label>{{ 'Password' | translate }}</mat-label>
+          <input matInput type="password" [placeholder]="'placeholders.password' | translate" formControlName="password">
+          <mat-error *ngIf="handleError('password', 'required')">{{'formErrors.passwordRequired' | translate }}</mat-error>
         </mat-form-field>
         <div class="form-control">
-          <a routerLink="/auth/reset-password">Forgot Password?</a>
+          <a routerLink="/auth/reset-password">{{ 'forgottenPassword' | translate }}</a>
         </div>
         <div class="form-control">
-          <mat-checkbox name="rememberme" ngDefaultControl color="primary" formControlName="rememberme">Remember me</mat-checkbox>
+          <mat-checkbox name="rememberme" ngDefaultControl color="primary" formControlName="rememberme">{{ 'rememberMe' | translate }}</mat-checkbox>
         </div>
-        <button mat-flat-button color="primary" [disabled]="loginForm.invalid" type="submit">Login</button>
+        <button mat-flat-button color="primary" [disabled]="loginForm.invalid" type="submit">{{'Login' | translate }}</button>
         <div class="divider">
-          <p>or login with</p>
+          <p>{{ 'orLoginWith' | translate }}</p>
         </div>
         <div class="login-form__container">
           <button type="button" mat-fab color="accent">
@@ -40,7 +40,7 @@
           </button>
         </div>
         <div class="form-control">
-          <a routerLink="/auth/register">Not registered? Create a new account</a>
+          <a routerLink="/auth/register">{{'notRegistered' | translate }}</a>
         </div>
       </form>
     </div>

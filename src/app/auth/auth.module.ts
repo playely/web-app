@@ -8,6 +8,7 @@ import { ResetPasswordComponent } from './reset-password/reset-password.componen
 import { NewPasswordComponent } from './new-password/new-password.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MaterialModule } from '../shared/material.module';
+import { TranslateModule } from '@ngx-translate/core';
 
 
 @NgModule({
@@ -22,7 +23,8 @@ import { MaterialModule } from '../shared/material.module';
     AuthRoutingModule,
     MaterialModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    TranslateModule
   ]
 })
 export class AuthModule { }
