@@ -1,4 +1,5 @@
 {
+  "language": "Idioma",
   "Login": "Iniciar Sesión",
   "Email": "Correo Electrónico",
   "Password": "Contraseña",
@@ -70,7 +71,8 @@
     "currentDevice": "Dispositivo Actual",
     "loginWithEmail": "Iniciar sesión con correo electrónico",
     "loginWithOTP": "Iniciar sesión con OTP",
-    "loginMethod": "Método de Inicio de Sesión"
+    "loginMethod": "Método de Inicio de Sesión",
+    "accountLanguage": "Idioma de la cuenta"
   },
   "formErrors": {
     "emailRequired": "El correo electrónico es requerido",

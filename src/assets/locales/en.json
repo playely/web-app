@@ -1,4 +1,5 @@
 {
+  "language": "Language",
   "login": "Login",
   "Email": "Email",
   "Password": "Password",
@@ -71,7 +72,8 @@
     "currentDevice": "Current Device",
     "loginWithEmail": "Login with email",
     "loginWithOTP": "Login with OTP",
-    "loginMethod": "Login Method"
+    "loginMethod": "Login Method",
+    "accountLanguage": "Account Language"
   },
   "formErrors": {
     "emailRequired": "Email required",
