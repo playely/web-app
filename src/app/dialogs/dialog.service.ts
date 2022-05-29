@@ -45,8 +45,8 @@ export class DialogService {
    */
   openRenewPlan(): MatDialogRef<YesNoOkComponent> {
     return this.openYesNoDialog(
-      'Renew Plan',
-      'Do you want renew your plan?'
+      'settings.renewalPlan',
+      'settings.renewalPlanMessage'
     );
   }
 
@@ -56,8 +56,8 @@ export class DialogService {
    */
    openCancelPlan(): MatDialogRef<YesNoOkComponent> {
     return this.openYesNoDialog(
-      'Cancel Plan',
-      'Do you want cancel your plan?'
+      'settings.cancelPlan',
+      'settings.cancelPlanMessage'
     );
   }
 
@@ -68,9 +68,9 @@ export class DialogService {
   openChangeDeviceName(deviceType: DeviceType): MatDialogRef<InputDialogComponent> {
     return this.dialog.open(InputDialogComponent, {
       data: {
-        title: 'Change Device Name',
-        placeholder: 'Device Name',
-        btnText: 'Guardar',
+        title: 'settings.changeDeviceName',
+        placeholder: 'settings.deviceName',
+        btnText: 'Save',
         type: deviceType,
       },
       panelClass: 'card-panel-class-container',
@@ -84,14 +84,16 @@ export class DialogService {
    */
    openRemoveDevice(): MatDialogRef<YesNoOkComponent> {
     return this.openYesNoDialog(
-      'Remove Device',
-      'Do you want remove your device?'
+      'settings.removeDevice',
+      'settings.removeDeviceMessage'
     );
   }
 
   /**
    * Open a yes-no-ok dialog
-   * @returns 
+   * @param title translate key of the text to show in title
+   * @param message translate key of the text to show in message
+   * @returns Mat dialog reference
    */
   private openYesNoDialog(title: string, message: string): MatDialogRef<YesNoOkComponent> {
     return this.dialog.open(YesNoOkComponent, {

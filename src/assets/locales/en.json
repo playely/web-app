@@ -1,5 +1,9 @@
 {
-  "language": "Language",
+  "Account": "Account",
+  "Yes": "Yes",
+  "No": "No",
+  "Ok": "Ok",
+  "Language": "Language",
   "login": "Login",
   "Email": "Email",
   "Password": "Password",
@@ -15,11 +19,16 @@
   "Help": "Help",
   "Subscribe": "Subscribe",
   "Play": "Play",
+  "Gender": "Gender",
+  "Female": "Female",
+  "Male": "Male",
+  "Profile": "Profile",
   "logout": "LogOut",
   "otp": "OTP",
   "email": "Email",
   "Subscriptions": "Subscriptions",
   "FAQ": "FAQ",
+  "phoneNumber": "Phone Number",
   "followOn": "Follow On",
   "liveNow": "Live Now",
   "seeAll": "See All",
@@ -52,7 +61,7 @@
   },
   "settings": {
     "linkDevice": "Link Device",
-    "subscriptions": "subscriptions",
+    "subscriptions": "Subscriptions",
     "devices": "Devices",
     "preferences": "Preferences",
     "changePlan": "Change Plan",
@@ -73,19 +82,29 @@
     "loginWithEmail": "Login with email",
     "loginWithOTP": "Login with OTP",
     "loginMethod": "Login Method",
-    "accountLanguage": "Account Language"
+    "accountLanguage": "Language Account",
+    "linkDeviceMessage": "Enter the code displayed on your device in this space.",
+    "deviceCode": "Device Code",
+    "removeDevice": "Remove Device",
+    "removeDeviceMessage": "Do you want remove your device?",
+    "changeDeviceName": "Change Device Name",
+    "deviceName": "Device Name",
+    "cancelPlanMessage": "Do you want cancel your plan?",
+    "renewalPlanMessage": "Do you want renew your plan?"
   },
   "formErrors": {
     "emailRequired": "Email required",
-    "passwordRequired": "Email required",
+    "passwordRequired": "Password required",
     "emailBadFormat": "Email bad format",
     "nameRequired": "Name required",
-    "confirmPasswordRequired": "Confirm password required"
+    "confirmPasswordRequired": "Confirm password required",
+    "phoneNumberBadFormat": "Phone number must have only digits"
   },
   "placeholders": {
     "email": "Enter your email",
     "password": "Enter your password",
     "name": "Enter your name",
-    "confirmPassword": "Enter confirm password"
+    "confirmPassword": "Confirm your password",
+    "phoneNumber": "Enter your phone number"
   }
 }
