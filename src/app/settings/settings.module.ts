@@ -8,6 +8,7 @@ import { SubscriptionsComponent } from './subscriptions/subscriptions.component'
 import { DevicesComponent } from './devices/devices.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { PreferencesComponent } from './preferences/preferences.component';
+import { TranslateModule } from '@ngx-translate/core';
 
 
 @NgModule({
@@ -21,8 +22,8 @@ import { PreferencesComponent } from './preferences/preferences.component';
     CommonModule,
     SettingsRoutingModule,
     MaterialModule,
-    FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    TranslateModule
   ]
 })
 export class SettingsModule { }

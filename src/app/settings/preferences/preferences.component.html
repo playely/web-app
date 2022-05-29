@@ -1,9 +1,9 @@
 <div class="field-container">
-        <h5 class="field">Login Method</h5>
-        <div class="field"><p>Login with email</p>
+        <h5 class="field">{{ 'settings.loginMethod' | translate }}</h5>
+        <div class="field"><p>{{ 'settings.loginWithEmail' | translate }}</p>
             <mat-slide-toggle [formControl]="loginEmailForm" (change)="handleTogleChange($event, LoginMethod.EMAIL)"></mat-slide-toggle>
         </div>
-        <div class="field"><p>Login with OTP</p>
+        <div class="field"><p>{{ 'settings.loginWithOTP' | translate }}</p>
             <mat-slide-toggle [formControl]="loginOTPForm" (change)="handleTogleChange($event, LoginMethod.OTP)"></mat-slide-toggle>
         </div>
 </div>

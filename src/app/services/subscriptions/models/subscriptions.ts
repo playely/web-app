@@ -6,6 +6,6 @@ export interface IUserSubscription {
     purchased: Date;
     price: number;
     currency: string;
-    nextInvoice?: Date;
+    nextBilling?: Date;
     status: boolean;
 }

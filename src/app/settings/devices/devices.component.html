@@ -7,15 +7,20 @@
             </mat-icon>
             {{item.name}}
         </h5>
-        <p class="active-device" *ngIf="item.isCurrentDevice">Dispositivo actual</p>
-        <p [ngClass]="{'active-device': item.status}" *ngIf="item.status">Estado: <span>Activo </span></p>
-        <p [ngClass]="{'inactive-device': !item.status}" *ngIf="!item.status">Estado: <span>Inactivo</span></p>
-        <p>Registado el: <span>{{ item.enrollDate | date: 'medium'}}</span></p>
-        <p>Utilizado por última vez: <span>{{ item.lastUsedDate | date: 'medium'}}</span></p>
+        <p class="active-device" *ngIf="item.isCurrentDevice">{{ 'settings.currentDevice' | translate }}</p>
+        <p [ngClass]="{'active-device': item.status}" *ngIf="item.status">
+            {{ 'settings.status' | translate }}: <span>{{ 'settings.active' | translate }} </span></p>
+        <p [ngClass]="{'inactive-device': !item.status}" *ngIf="!item.status">
+            {{ 'settings.status' | translate }}: <span>{{ 'settings.inactive' | translate }}</span></p>
+        <p>{{ 'settings.registeredAt' | translate }}: <span>{{ item.enrollDate | date: 'medium'}}</span></p>
+        <p>{{ 'settings.lastUsedAt' | translate }}: <span>{{ item.lastUsedDate | date: 'medium'}}</span></p>
 
         <div class="button-container">
-            <button *ngIf="item.status && !item.isCurrentDevice" mat-stroked-button color="primary" (click)="removeDevice()">Eliminar</button>
-            <button mat-stroked-button color="accent" (click)="changeDeviceName(item)" >Cambiar Nombre</button>
+            <button *ngIf="item.status && !item.isCurrentDevice" mat-stroked-button color="primary" 
+            (click)="removeDevice()">{{ 'settings.delete' | translate }}</button>
+            <button mat-stroked-button color="accent" (click)="changeDeviceName(item)" >
+                {{ 'settings.updateName' | translate }}
+            </button>
         </div>
 
         <div class="divider"></div>
