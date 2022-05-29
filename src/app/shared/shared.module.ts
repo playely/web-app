@@ -12,6 +12,7 @@ import { DescriptionCardComponent } from './cards/description-card/description-c
 import { InnerCardComponent } from './cards/inner-card/inner-card.component';
 import { MaterialModule } from './material.module';
 import { BannerComponent } from './banner/banner.component';
+import { TranslateModule } from '@ngx-translate/core';
 
 const components = [
   HeroCarouselComponent,
@@ -35,6 +36,6 @@ const components = [
     MaterialModule,
     RouterModule.forChild([])
   ],
-  exports: [ ...components ]
+  exports: [ ...components, TranslateModule ]
 })
 export class SharedModule { }
