@@ -2,10 +2,8 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { MatSelectChange } from '@angular/material/select';
 import { MatSlideToggleChange } from '@angular/material/slide-toggle';
-import { AppService } from 'src/app/services/app-service/app.service';
 import { LanguageService } from 'src/app/services/language/language.service';
 import { ILanguage } from 'src/app/services/language/models/language';
-import { TabService } from 'src/app/services/tabs/tab.service';
 import { UserLoginMethod } from 'src/app/services/user/models/user';
 import { UserService } from 'src/app/services/user/user.service';
 
