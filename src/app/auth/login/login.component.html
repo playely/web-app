@@ -4,13 +4,13 @@
     <div class="card-content">
       <h4>{{ 'Login' | translate }}</h4>
       <form [formGroup]="loginForm" class="form-controls login-form" (ngSubmit)="onSubmit()">
-        <mat-form-field appearance="fill">
+        <mat-form-field>
           <mat-label>{{ 'Email' | translate }}</mat-label>
           <input matInput type="email" [placeholder]="'placeholders.email' | translate" formControlName="email">
           <mat-error *ngIf="handleError('email', 'required')">{{'formErrors.emailRequired' | translate }}</mat-error>
           <mat-error *ngIf="handleError('email', 'email')">{{ 'formErrors.emailBadFormat' | translate }}</mat-error>
         </mat-form-field>
-        <mat-form-field appearance="fill">
+        <mat-form-field>
           <mat-label>{{ 'Password' | translate }}</mat-label>
           <input matInput type="password" [placeholder]="'placeholders.password' | translate" formControlName="password">
           <mat-error *ngIf="handleError('password', 'required')">{{'formErrors.passwordRequired' | translate }}</mat-error>

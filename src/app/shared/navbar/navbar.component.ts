@@ -1,6 +1,6 @@
 import { Component, HostListener, Input, OnInit } from '@angular/core';
 import { takeUntil } from 'rxjs/operators';
-import { BaseComponent } from 'src/app/base.component';
+import { BaseComponent } from 'src/app/app-base.component';
 import { AppService } from 'src/app/services/app-service/app.service';
 import { UserSession } from 'src/app/services/auth/models/login';
 import { ITab } from 'src/app/services/tabs/models/tab.model';

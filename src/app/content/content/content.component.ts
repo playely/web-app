@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { takeUntil } from 'rxjs/operators';
-import { BaseComponent } from 'src/app/base.component';
+import { BaseComponent } from 'src/app/app-base.component';
 import { AppService } from 'src/app/services/app-service/app.service';
 import { AuthService } from 'src/app/services/auth/auth.service';
 import { ContentService } from 'src/app/services/content/content.service';

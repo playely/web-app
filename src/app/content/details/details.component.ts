@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 import { Router } from '@angular/router';
 import { takeUntil } from 'rxjs/operators';
-import { BaseComponent } from 'src/app/base.component';
+import { BaseComponent } from 'src/app/app-base.component';
 import { AppService } from 'src/app/services/app-service/app.service';
 import { ContentService } from 'src/app/services/content/content.service';
 import { ICarousel, IContent } from 'src/app/services/content/models/carousel';
