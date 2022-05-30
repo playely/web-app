@@ -15,7 +15,7 @@ export class NavbarComponent implements OnInit {
   userInfo: UserSession | null;
 
   menuItems: ITab[] = [];
-  constructor(private tabService: TabService, private authService: AuthService, private appService: AppService) { 
+  constructor(private tabService: TabService, private appService: AppService) { 
     this.userInfo = null;
   }
   
@@ -29,11 +29,23 @@ export class NavbarComponent implements OnInit {
       }
     }
   ngOnInit(): void {
-    this.tabService.getTabs().then((tabs) => {
-      this.menuItems = tabs;
-    });
-    this.appService.getSessionOb().subscribe((info) => {
+    this.getTabs();
+    this.appService.getSession().subscribe((info) => {
       this.userInfo = info;
+    });
+    this.appService.getLanguageChange().subscribe((language) => {
+      if (language) {
+        this.getTabs(true);
+      }
+    })
+  }
+
+  /**
+   * Get all tabs form service
+   */
+  getTabs(force?: boolean): void {
+    this.tabService.getTabs(force).then((tabs) => {
+      this.menuItems = tabs;
     });
   }
 

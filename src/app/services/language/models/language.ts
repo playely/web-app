@@ -1,4 +1,8 @@
+export enum AvailableLanguages {
+    EN = 'en',
+    ES = 'es',
+}
 export interface ILanguage {
-    key: string;
+    key: AvailableLanguages;
     name: string;
 }

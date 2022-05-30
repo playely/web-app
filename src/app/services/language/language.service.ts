@@ -1,8 +1,9 @@
 import { Injectable } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
-import { ILanguage } from './models/language';
+import { AvailableLanguages, ILanguage } from './models/language';
 import { StorageService } from '../storage/storage.service';
 import { StorageKeys } from '../storage/storage-items';
+import { AppService } from '../app-service/app.service';
 
 @Injectable({
   providedIn: 'root'
@@ -10,15 +11,19 @@ import { StorageKeys } from '../storage/storage-items';
 export class LanguageService {
   languages: ILanguage[] = [
     {
-      key: 'en',
+      key: AvailableLanguages.EN,
       name: 'English',
     },
     {
-      key: 'es',
+      key: AvailableLanguages.ES,
       name: 'Español'
     },
   ];
-  constructor(private translateService: TranslateService, private storageService: StorageService) {
+  constructor(
+    private translateService: TranslateService,
+    private storageService: StorageService,
+    private appService: AppService
+    ) {
   }
 
   init(): void {
@@ -52,7 +57,10 @@ export class LanguageService {
    * @param key 
    */
   changeLanguage(key: string): void {
-    this.translateService.use(key);
-    this.storageService.setLocalItem(StorageKeys.LANG, key);
+    const language = this.languages.find((lg) => lg.key === key) || this.languages[0];
+    this.translateService.use(key).toPromise().then(() => {
+      this.storageService.setLocalItem(StorageKeys.LANG, key);
+      this.appService.changeLanguage(language);
+    });    
   }
 }

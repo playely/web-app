@@ -27,11 +27,7 @@ const routes: Routes = [
   },
   {
     path: '',
-    component: NotFoundComponent,
-    data: {
-      hideFooter: true,
-      title: 'notFound'
-    }
+    redirectTo: '/home'
   }
 ];
 

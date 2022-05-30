@@ -9,7 +9,7 @@
                 <li *ngFor="let item of menuItems" [routerLink]="[item.title.toLowerCase()]" routerLinkActive="item-active"
                 (click)="selectTab(item)">
                     <div class="icon">
-                        <mat-icon cass="menu-icon" svgIcon="{{item.title_en}}"></mat-icon>
+                        <mat-icon cass="menu-icon" svgIcon="{{item.iconName}}"></mat-icon>
                     </div>
                     <p class="title">{{ item.title }}</p>
                 </li>

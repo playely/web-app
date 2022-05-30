@@ -3,7 +3,6 @@ import { CommonModule } from '@angular/common';
 import { HeroCarouselComponent } from './carousels/hero-carousel/hero-carousel.component';
 import { CardCarouselComponent } from './carousels//card-carousel/card-carousel.component';
 import { NavbarComponent } from './navbar/navbar.component';
-import { NavbarIconComponent } from './navbar/navbar-icon/navbar-icon.component';
 import { FooterComponent } from './footer/footer.component';
 import { GridCarouselComponent } from './carousels/grid-carousel/grid-carousel.component';
 import { LoadingComponent } from './loading/loading.component';
@@ -27,7 +26,6 @@ const components = [
 @NgModule({
   declarations: [
     ...components,
-    NavbarIconComponent,
     DescriptionCardComponent,
     InnerCardComponent,
   ],
