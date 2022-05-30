@@ -5,7 +5,7 @@ import { takeUntil } from 'rxjs/operators';
 import { BaseComponent } from 'src/app/app-base.component';
 import { AppService } from 'src/app/services/app-service/app.service';
 import { ContentService } from 'src/app/services/content/content.service';
-import { ICarousel, IContent } from 'src/app/services/content/models/carousel';
+import { ICarousel, IContent } from 'src/app/services/content/models/content';
 
 @Component({
   selector: 'app-details',

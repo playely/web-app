@@ -14,6 +14,7 @@ import { BannerComponent } from './banner/banner.component';
 import { TranslateModule } from '@ngx-translate/core';
 import { ReactiveFormsModule } from '@angular/forms';
 import { PlayerTimePipe } from './pipes/player-time.pipe';
+import { TextTimePipe } from './pipes/text-time.pipe';
 
 const components = [
   HeroCarouselComponent,
@@ -29,6 +30,7 @@ const components = [
 
 const pipes = [
   PlayerTimePipe,
+  TextTimePipe,
 ];
 
 @NgModule({

@@ -1,5 +1,5 @@
 import { Component, Input, OnInit, ViewChild } from '@angular/core';
-import { IContent } from 'src/app/services/content/models/carousel';
+import { IContent } from 'src/app/services/content/models/content';
 import { Router } from '@angular/router';
 import { Location } from '@angular/common';
 import { MatSlider, MatSliderChange } from '@angular/material/slider';

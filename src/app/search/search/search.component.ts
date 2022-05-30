@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { ContentService } from 'src/app/services/content/content.service';
-import { ICarousel } from 'src/app/services/content/models/carousel';
+import { ICarousel } from 'src/app/services/content/models/content';
 import { Key } from 'ts-key-enum';
 
 @Component({

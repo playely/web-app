@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { LanguageService } from '../language/language.service';
 import { AvailableLanguages } from '../language/models/language';
-import { ICarousel, IContent } from './models/carousel';
+import { ICarousel, IContent } from './models/content';
 import { CardAspectRatio, CarouselType, ContentType } from './models/types';
 
 @Injectable({
@@ -26,7 +26,7 @@ export class ContentService {
         type: CarouselType.HERO,
         content: [
           {
-            duration: '2 hrs',
+            duration: 9000,
             id: '1',
             image: 'https://play-jolly-assets.s3.amazonaws.com/content/dummy/image1-1x1.png',
             title: isEnglish ? 'The K- POP Live Show' : 'K-POP Show en Vivo',
@@ -47,7 +47,7 @@ export class ContentService {
         content: [
           {
             description: 'Long description',
-            duration: '2 hrs',
+            duration: 9000,
             id: '1',
             image: 'https://play-jolly-assets.s3.amazonaws.com/content/dummy/image1-1x1.png',
             shortDescription: 'Short description',
@@ -61,7 +61,7 @@ export class ContentService {
           },
           {
             description: 'Long description',
-            duration: '2 hrs',
+            duration: 9000,
             id: '2',
             image: 'https://play-jolly-assets.s3.amazonaws.com/content/dummy/image2-1x1.png',
             shortDescription: 'Short description',
@@ -75,7 +75,7 @@ export class ContentService {
           },
           {
             description: 'Long description',
-            duration: '2 min',
+            duration: 9000,
             id: '3',
             image: 'https://play-jolly-assets.s3.amazonaws.com/content/dummy/image3-1x1.png',
             shortDescription: 'Short description',
@@ -88,7 +88,7 @@ export class ContentService {
           },
           {
             description: 'Long description',
-            duration: '2h',
+            duration: 9000,
             id: '3',
             image: 'https://play-jolly-assets.s3.amazonaws.com/content/dummy/image4-1x1.png',
             shortDescription: 'Short description',
@@ -101,7 +101,7 @@ export class ContentService {
           },
           {
             description: 'Long description',
-            duration: '2h 9m',
+            duration: 9000,
             id: '4',
             image: 'https://play-jolly-assets.s3.amazonaws.com/content/dummy/image4-1x1.png',
             shortDescription: 'Short description',
@@ -122,7 +122,7 @@ export class ContentService {
         content: [
           {
             description: 'Long description',
-            duration: '2 hrs',
+            duration: 9000,
             id: '1',
             image: 'https://play-jolly-assets.s3.amazonaws.com/content/dummy/image1-2x3.png',
             shortDescription: 'Short description',
@@ -135,7 +135,7 @@ export class ContentService {
           },
           {
             description: 'Long description',
-            duration: '2 hrs',
+            duration: 9000,
             id: '1',
             image: 'https://play-jolly-assets.s3.amazonaws.com/content/dummy/image2-2x3.png',
             shortDescription: 'Short description',
@@ -148,7 +148,7 @@ export class ContentService {
           },
           {
             description: 'Long description',
-            duration: '2 hrs',
+            duration: 9000,
             id: '1',
             image: 'https://play-jolly-assets.s3.amazonaws.com/content/dummy/image3-2x3.png',
             shortDescription: 'Short description',
@@ -161,7 +161,7 @@ export class ContentService {
           },
           {
             description: 'Long description',
-            duration: '2 hrs',
+            duration: 9000,
             id: '1',
             image: 'https://play-jolly-assets.s3.amazonaws.com/content/dummy/image4-2x3.png',
             shortDescription: 'Short description',
@@ -182,7 +182,7 @@ export class ContentService {
         content: [
           {
             description: 'Long description',
-            duration: '2 hrs',
+            duration: 9000,
             id: '1',
             image: 'https://play-jolly-assets.s3.amazonaws.com/content/dummy/image1-16x9.png',
             shortDescription: 'Short description',
@@ -195,7 +195,7 @@ export class ContentService {
           },
           {
             description: 'Long description',
-            duration: '2 hrs',
+            duration: 9000,
             id: '1',
             image: 'https://play-jolly-assets.s3.amazonaws.com/content/dummy/image2-16x9.png',
             shortDescription: 'Short description',
@@ -208,7 +208,7 @@ export class ContentService {
           },
           {
             description: 'Long description',
-            duration: '2 hrs',
+            duration: 9000,
             id: '1',
             image: 'https://play-jolly-assets.s3.amazonaws.com/content/dummy/image3-16x9.png',
             shortDescription: 'Short description',
@@ -229,7 +229,7 @@ export class ContentService {
         content: [
           {
             description: 'Long description',
-            duration: '2 hrs',
+            duration: 9000,
             id: '1',
             image: 'https://play-jolly-assets.s3.amazonaws.com/content/dummy/image1-16x9.png',
             shortDescription: 'Short description',
@@ -242,7 +242,7 @@ export class ContentService {
           },
           {
             description: 'Long description',
-            duration: '2 hrs',
+            duration: 9000,
             id: '1',
             image: 'https://play-jolly-assets.s3.amazonaws.com/content/dummy/image2-16x9.png',
             shortDescription: 'Short description',
@@ -255,7 +255,7 @@ export class ContentService {
           },
           {
             description: 'Long description',
-            duration: '2 hrs',
+            duration: 9000,
             id: '1',
             image: 'https://play-jolly-assets.s3.amazonaws.com/content/dummy/image3-16x9.png',
             shortDescription: 'Short description',
@@ -281,7 +281,7 @@ export class ContentService {
     if (this.languageService.getCurrentLanguage().key === AvailableLanguages.EN) {
       return Promise.resolve({
         description: 'Bizli, is a 2018 Bangladeshi Superhero film directed by Iftakar Chowdhury, and produced by Bobstar Films. It stars Bobby as the protagonist and Indian actress Satabdi Roy as the antagonist. The film was released countrywide on . t is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters.',
-        duration: '2 hrs 35min',
+        duration: 9000,
         id: '1',
         image: 'https://play-jolly-assets.s3.amazonaws.com/content/dummy/image1-16x9.png',
         shortDescription: 'Short description',
@@ -296,7 +296,7 @@ export class ContentService {
     // Spanish
     return Promise.resolve({
       description: 'Bizli, es una película de superhéroes bangladesí de 2018 dirigida por Iftakar Chowdhury, y producida por Bobstar Films. Está protagonizada por Bobby como protagonista y la actriz india Satabdi Roy como antagonista. La película se estrenó en todo el país el . s un hecho establecido desde hace mucho tiempo que un lector se distrae del contenido legible de una página cuando mira su diseño. La razón de utilizar Lorem Ipsum es que tiene una distribución más o menos normal de las letras.',
-      duration: '2 hrs 35min',
+      duration: 9000,
       id: '1',
       image: 'https://play-jolly-assets.s3.amazonaws.com/content/dummy/image1-16x9.png',
       title: 'Bijle',
@@ -324,7 +324,7 @@ export class ContentService {
       content: [
         {
           description: 'Long description',
-          duration: '2 hrs',
+          duration: 9000,
           id: '1',
           image: 'https://play-jolly-assets.s3.amazonaws.com/content/dummy/image1-2x3.png',
           shortDescription: 'Short description',
@@ -337,7 +337,7 @@ export class ContentService {
         },
         {
           description: 'Long description',
-          duration: '2 hrs',
+          duration: 9000,
           id: '1',
           image: 'https://play-jolly-assets.s3.amazonaws.com/content/dummy/image2-2x3.png',
           shortDescription: 'Short description',
@@ -350,7 +350,7 @@ export class ContentService {
         },
         {
           description: 'Long description',
-          duration: '2 hrs',
+          duration: 9000,
           id: '1',
           image: 'https://play-jolly-assets.s3.amazonaws.com/content/dummy/image3-2x3.png',
           shortDescription: 'Short description',
@@ -363,7 +363,7 @@ export class ContentService {
         },
         {
           description: 'Long description',
-          duration: '2 hrs',
+          duration: 9000,
           id: '1',
           image: 'https://play-jolly-assets.s3.amazonaws.com/content/dummy/image4-2x3.png',
           shortDescription: 'Short description',
@@ -393,7 +393,7 @@ export class ContentService {
       content: [
         {
           description: 'Long description',
-          duration: '2 hrs',
+          duration: 9000,
           id: '1',
           image: 'https://play-jolly-assets.s3.amazonaws.com/content/dummy/image1-16x9.png',
           shortDescription: 'Short description',
@@ -406,7 +406,7 @@ export class ContentService {
         },
         {
           description: 'Long description',
-          duration: '2 hrs',
+          duration: 9000,
           id: '1',
           image: 'https://play-jolly-assets.s3.amazonaws.com/content/dummy/image2-16x9.png',
           shortDescription: 'Short description',
@@ -419,7 +419,7 @@ export class ContentService {
         },
         {
           description: 'Long description',
-          duration: '2 hrs',
+          duration: 9000,
           id: '1',
           image: 'https://play-jolly-assets.s3.amazonaws.com/content/dummy/image3-16x9.png',
           shortDescription: 'Short description',
@@ -449,7 +449,7 @@ export class ContentService {
       content: [
         {
           description: 'Long description',
-          duration: '2 hrs',
+          duration: 9000,
           id: '1',
           image: 'https://play-jolly-assets.s3.amazonaws.com/content/dummy/image1-16x9.png',
           shortDescription: 'Short description',
@@ -462,7 +462,7 @@ export class ContentService {
         },
         {
           description: 'Long description',
-          duration: '2 hrs',
+          duration: 9000,
           id: '1',
           image: 'https://play-jolly-assets.s3.amazonaws.com/content/dummy/image2-16x9.png',
           shortDescription: 'Short description',
@@ -475,7 +475,7 @@ export class ContentService {
         },
         {
           description: 'Long description',
-          duration: '2 hrs',
+          duration: 9000,
           id: '1',
           image: 'https://play-jolly-assets.s3.amazonaws.com/content/dummy/image3-16x9.png',
           shortDescription: 'Short description',

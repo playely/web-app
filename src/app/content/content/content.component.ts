@@ -4,7 +4,7 @@ import { BaseComponent } from 'src/app/app-base.component';
 import { AppService } from 'src/app/services/app-service/app.service';
 import { AuthService } from 'src/app/services/auth/auth.service';
 import { ContentService } from 'src/app/services/content/content.service';
-import { ICarousel } from 'src/app/services/content/models/carousel';
+import { ICarousel } from 'src/app/services/content/models/content';
 import { CarouselType } from 'src/app/services/content/models/types';
 
 @Component({

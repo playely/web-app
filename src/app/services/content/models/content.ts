@@ -12,7 +12,7 @@ export interface IContent {
     id: string;
     title: string;
     type: ContentType;
-    duration: string;
+    duration: number;
     description?: string;
     shortDescription?: string;
     image: string;

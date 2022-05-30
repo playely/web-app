@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { ICarousel, IContent } from 'src/app/services/content/models/carousel';
+import { ICarousel, IContent } from 'src/app/services/content/models/content';
 
 @Component({
   selector: 'app-grid-carousel',

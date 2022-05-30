@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { IContent } from 'src/app/services/content/models/carousel';
+import { IContent } from 'src/app/services/content/models/content';
 import { CardAspectRatio } from 'src/app/services/content/models/types';
 
 @Component({
