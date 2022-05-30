@@ -3,7 +3,7 @@
         <h3>{{ 'settings.linkDevice' | translate }}</h3>
         <p>{{ 'settings.linkDeviceMessage' | translate }}</p>
         <form [formGroup]="codeForm" >
-            <mat-form-field>
+            <mat-form-field appearance="standard">
                 <mat-label>{{ 'settings.deviceCode' | translate }}</mat-label>
                 <input formControlName="code" class="device-input" matInput placeholder="">
               </mat-form-field>

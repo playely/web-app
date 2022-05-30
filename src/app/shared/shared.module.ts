@@ -13,6 +13,7 @@ import { MaterialModule } from './material.module';
 import { BannerComponent } from './banner/banner.component';
 import { TranslateModule } from '@ngx-translate/core';
 import { ReactiveFormsModule } from '@angular/forms';
+import { PlayerTimePipe } from './pipes/player-time.pipe';
 
 const components = [
   HeroCarouselComponent,
@@ -22,13 +23,18 @@ const components = [
   GridCarouselComponent,
   LoadingComponent,
   BannerComponent,
+  DescriptionCardComponent,
+  InnerCardComponent,
+];
+
+const pipes = [
+  PlayerTimePipe,
 ];
 
 @NgModule({
   declarations: [
     ...components,
-    DescriptionCardComponent,
-    InnerCardComponent,
+    ...pipes,
   ],
   imports: [
     CommonModule,
@@ -37,6 +43,6 @@ const components = [
     TranslateModule,
     ReactiveFormsModule
   ],
-  exports: [ ...components, TranslateModule ]
+  exports: [ ...components, ...pipes, TranslateModule ]
 })
 export class SharedModule { }

@@ -10,7 +10,7 @@
        <form [formGroup]="inputForm" >
         <mat-form-field appearance="standard">
             <mat-label>{{ data.placeholder | translate }}</mat-label>
-            <input matInput placeholder="" formControlName="value" >
+            <input matInput autocomplete="off" formControlName="value" >
           </mat-form-field>
           <button type="submit" mat-raised-button [mat-dialog-close]="inputForm.value.value" color="primary">{{ data.btnText | translate }}</button>
        </form>

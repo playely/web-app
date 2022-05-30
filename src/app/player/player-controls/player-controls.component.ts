@@ -1,7 +1,19 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, ViewChild } from '@angular/core';
 import { IContent } from 'src/app/services/content/models/carousel';
 import { Router } from '@angular/router';
 import { Location } from '@angular/common';
+import { MatSlider, MatSliderChange } from '@angular/material/slider';
+
+interface PlayerConfig {
+  minTime: number;
+  maxTime: number
+}
+
+interface PlayerState {
+  isPlaying: boolean;
+  isLoading: boolean;
+  currentTime: number;
+}
 
 @Component({
   selector: 'app-player-controls',
@@ -10,15 +22,15 @@ import { Location } from '@angular/common';
 })
 export class PlayerControlsComponent implements OnInit {
   @Input() content: IContent | undefined;
-  payerConfig = {
-    min: 0,
-    max: 100,
+  @ViewChild(MatSlider) slider: MatSlider | undefined;
+  playerConfig: PlayerConfig = {
+    minTime: 0,
+    maxTime: 9000, // 2.5 hours
   }
-  playerState = {
+  playerState: PlayerState = {
     isPlaying: false,
     isLoading: false,
-    value: 99,
-    valueText: '99'
+    currentTime: 9000,
   }
   constructor(private router: Router, private location: Location) { }
 
@@ -34,19 +46,23 @@ export class PlayerControlsComponent implements OnInit {
   }
 
   forward(): void {
-    return;
     this.playerState.isLoading = true;
     setTimeout(() => {
       this.playerState.isLoading = false;
-    }, 2000);
+      if (this.playerState.currentTime + 5 <= this.playerConfig.maxTime) {
+        this.playerState.currentTime += 5;
+      }
+    }, 1000);
   }
 
   rewind(): void {
-    return;
     this.playerState.isLoading = true;
     setTimeout(() => {
       this.playerState.isLoading = false;
-    }, 2000);
+      if (this.playerState.currentTime - 5 >= 0) {
+        this.playerState.currentTime -= 5;
+      }
+    }, 1000);
   }
 
   goBack(): void {
@@ -55,6 +71,19 @@ export class PlayerControlsComponent implements OnInit {
     } else {
       this.router.navigate(['']);
     }
+  }
+
+  /**
+   * Fired when the mat slider is released
+   * @param event 
+   */
+  handleSliderChange(event: MatSliderChange) {
+    this.slider?.blur();
+    this.playerState.currentTime = Number(event.value);
+    this.playerState.isLoading = true;
+    setTimeout(() => {
+      this.playerState.isLoading = false;
+    }, 2000);
   }
 
 }
