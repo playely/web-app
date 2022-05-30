@@ -14,21 +14,28 @@
     <div class="logo">
         <img src="assets/img/logo.png" alt="">
     </div>
-    <div class="social-media">
-        <ul class="menu">
-            <li>
-                <a href="">{{ 'followOn' | translate }}</a>
-            </li>
-            <li>
-                <a href="">
-                    <img src="assets/img/svg/social-media/facebook.svg" alt="facebook">
-                </a>
-            </li>
-            <li>
-                <a href="">
-                    <img src="assets/img/svg/social-media/instagram.svg" alt="instagram">
-                </a>
-            </li>
-        </ul>
+    <div class="container-options">
+        <div class="social-media">
+            <ul class="menu">
+                <li>
+                    <a href="">{{ 'followOn' | translate }}</a>
+                </li>
+                <li>
+                    <a href="">
+                        <img src="assets/img/svg/social-media/facebook.svg" alt="facebook">
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <img src="assets/img/svg/social-media/instagram.svg" alt="instagram">
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <mat-form-field appearance="standard">
+            <mat-select [formControl]="languageControl" (selectionChange)="handleLanguageChange($event)">
+              <mat-option *ngFor="let item of languagesList" [value]="item.key">{{item.name}}</mat-option>
+            </mat-select>
+          </mat-form-field>  
     </div>
 </footer>

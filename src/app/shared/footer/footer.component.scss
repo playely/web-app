@@ -10,6 +10,18 @@ footer {
     margin-top: 100px;
 }
 
+.container-options {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+    
+    mat-form-field {
+        width: 75%;
+    }
+}
+
+
 .arrow-top {
     position: absolute;
     right: 0;

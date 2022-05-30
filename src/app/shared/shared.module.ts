@@ -12,6 +12,7 @@ import { InnerCardComponent } from './cards/inner-card/inner-card.component';
 import { MaterialModule } from './material.module';
 import { BannerComponent } from './banner/banner.component';
 import { TranslateModule } from '@ngx-translate/core';
+import { ReactiveFormsModule } from '@angular/forms';
 
 const components = [
   HeroCarouselComponent,
@@ -34,6 +35,7 @@ const components = [
     MaterialModule,
     RouterModule.forChild([]),
     TranslateModule,
+    ReactiveFormsModule
   ],
   exports: [ ...components, TranslateModule ]
 })
