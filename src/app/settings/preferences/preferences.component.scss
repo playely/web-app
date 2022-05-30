@@ -13,6 +13,10 @@
     }
 }
 
+.show-divider {
+    display: block !important;
+}
+
 .field {
     display: flex;
     justify-content: space-between;
@@ -21,5 +25,9 @@
 
     p {
         line-height: 5px;
+    }
+
+    mat-form-field {
+        width: auto;
     }
 }

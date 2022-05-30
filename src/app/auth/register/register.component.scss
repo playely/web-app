@@ -1,7 +1,7 @@
 @import 'vars';
 
 .set-pad {
-    padding: 50px 0;
+    padding: 0;
 }
 
 .register-container {
@@ -17,9 +17,8 @@
 
     .card {
         z-index: 1;
-        width: 35%;
         .card-content{
-            padding: 50px;
+            padding: 25px 50px;
 
             h4 {
                 margin: 10px 0;
@@ -33,18 +32,34 @@
     display: flex;
     flex-direction: column;
 
+}
+
+.create-account-container {
+    display: flex;
+
+    .social-register {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding-left: 25px;
+        
+        &__container {
+            display: inline-flex;
+            margin-bottom: 5px;
+            width: 100%;
+            justify-content: space-evenly;
+            button {
+                margin-left: 15px;
+            }
+        }
+    }
+
     .divider {
         width: 100%;
         text-align: center;
         p {
             color: #FFF;
         }
-    }
-
-    &__container {
-        display: inline-flex;
-        margin-bottom: 5px;
-        width: 100%;
-        justify-content: space-evenly;
     }
 }

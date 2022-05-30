@@ -21,7 +21,7 @@ export class SubscriptionsService {
         purchased: new Date(),
         price: 119.90,
         currency: 'Q.',
-        nextInvoice: new Date(),
+        nextBilling: new Date(),
         status: true,
       },
       {
@@ -31,7 +31,7 @@ export class SubscriptionsService {
         purchased: new Date(),
         price: 119.90,
         currency: 'Q.',
-        nextInvoice: new Date(),
+        nextBilling: new Date(),
         status: false,
       },
       {
@@ -41,7 +41,7 @@ export class SubscriptionsService {
         purchased: new Date(),
         price: 119.90,
         currency: 'Q.',
-        nextInvoice: new Date(),
+        nextBilling: new Date(),
         status: false,
       },
       {
@@ -51,7 +51,7 @@ export class SubscriptionsService {
         purchased: new Date(),
         price: 119.90,
         currency: 'Q.',
-        nextInvoice: new Date(),
+        nextBilling: new Date(),
         status: true,
       },
       {
@@ -61,7 +61,7 @@ export class SubscriptionsService {
         purchased: new Date(),
         price: 119.90,
         currency: 'Q.',
-        nextInvoice: new Date(),
+        nextBilling: new Date(),
         status: false,
       },
       {
@@ -71,7 +71,7 @@ export class SubscriptionsService {
         purchased: new Date(),
         price: 119.90,
         currency: 'Q.',
-        nextInvoice: new Date(),
+        nextBilling: new Date(),
         status: false,
       },
       {
@@ -81,7 +81,7 @@ export class SubscriptionsService {
         purchased: new Date(),
         price: 119.90,
         currency: 'Q.',
-        nextInvoice: new Date(),
+        nextBilling: new Date(),
         status: true,
       },
       {
@@ -91,7 +91,7 @@ export class SubscriptionsService {
         purchased: new Date(),
         price: 119.90,
         currency: 'Q.',
-        nextInvoice: new Date(),
+        nextBilling: new Date(),
         status: false,
       },
       {
@@ -101,7 +101,7 @@ export class SubscriptionsService {
         purchased: new Date(),
         price: 119.90,
         currency: 'Q.',
-        nextInvoice: new Date(),
+        nextBilling: new Date(),
         status: false,
       },
       {
@@ -111,7 +111,7 @@ export class SubscriptionsService {
         purchased: new Date(),
         price: 119.90,
         currency: 'Q.',
-        nextInvoice: new Date(),
+        nextBilling: new Date(),
         status: false,
       }
     ]);

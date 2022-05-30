@@ -1,34 +1,67 @@
 import { ITab } from "./models/tab.model";
 
-export const menu: ITab[] = [
+export const enMenu: ITab[] = [
     {
         id: '1',
         title: 'Home',
-        title_en: 'home',
+        iconName: 'home',
     },
     {
         id: '2',
         title: 'Movies',
-        title_en: 'movies',
+        iconName: 'movies',
     },
     {
         id: '3',
         title: 'Drama',
-        title_en: 'drama',
+        iconName: 'drama',
     },
-   /* {
+    /*{
         id: '4',
         title: 'Music Video',
-        title_en: 'music',
+        iconName: 'music',
     },
     {
         id: '5',
         title: 'Live Show',
-        title_en: 'live',
+        iconName: 'live',
     },
     {
         id: '6',
         title: 'Comedies',
-        title_en: 'comedies',
+        iconName: 'comedies',
     }*/
+];
+
+export const esMenu: ITab[] = [
+    {
+        id: '1',
+        title: 'Inicio',
+        iconName: 'home',
+    },
+    {
+        id: '2',
+        title: 'Películas',
+        iconName: 'movies',
+    },
+    {
+        id: '3',
+        title: 'Novelas',
+        iconName: 'drama',
+    },
+   /*{
+        id: '4',
+        title: 'Videos Musicales',
+        iconName: 'music',
+    },
+    {
+        id: '5',
+        title: 'Show en Vivo',
+        iconName: 'live',
+    },
+    {
+        id: '6',
+        title: 'Comedias',
+        iconName: 'comedies',
+    } */
 ];

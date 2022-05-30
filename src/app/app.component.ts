@@ -3,6 +3,7 @@ import { MatIconRegistry } from '@angular/material/icon';
 import { DomSanitizer, Title } from '@angular/platform-browser';
 import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
 import { filter, map, mergeMap } from "rxjs/operators";
+import { LanguageService } from './services/language/language.service';
 import { TabService } from './services/tabs/tab.service';
 interface IconRegistry {
   label: string;
@@ -47,10 +48,12 @@ export class AppComponent implements OnInit{
     private matIconRegistry: MatIconRegistry,
     private domSanitizer: DomSanitizer,
     private tabService: TabService,
-    private title: Title
+    private title: Title,
+    private languageService: LanguageService
     ) {}
 
   ngOnInit(): void {
+    this.languageService.init();
     this.registerIcons();
     this.router.events.pipe(
       filter(event => event instanceof NavigationEnd),
@@ -103,8 +106,8 @@ export class AppComponent implements OnInit{
     this.tabService.getTabs().then((tabs) => {
       tabs.forEach(element => {
         this.matIconRegistry.addSvgIcon(
-          element.title_en,
-          this.domSanitizer.bypassSecurityTrustResourceUrl(`assets/img/svg/menu/${element.title_en}.svg`)
+          element.iconName,
+          this.domSanitizer.bypassSecurityTrustResourceUrl(`assets/img/svg/menu/${element.iconName}.svg`)
         );
       });
     });

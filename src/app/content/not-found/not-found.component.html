@@ -1,7 +1,7 @@
 <div class="not-found-container">
     <img class="img" src="assets/img/ilogo.png" alt="">
-    <h1>Not Found</h1>
-    <h5>There's nothing here ...</h5>
-    <h5>...maybe the page you're looking for is not found or never existed.</h5>
-    <h5>Redirecting to home in {{ticks}}</h5>
+    <h1>{{ 'notFound.title' | translate }}</h1>
+    <h5>{{ 'notFound.message_1' | translate }}...</h5>
+    <h5>...{{ 'notFound.message_2' | translate }}</h5>
+    <h5>{{ 'notFound.message_3' | translate }} {{ticks}}</h5>
 </div>
