@@ -6,12 +6,14 @@ import { PlayerComponent } from './player/player.component';
 import { PlayerControlsComponent } from './player-controls/player-controls.component';
 import { SharedModule } from '../shared/shared.module';
 import { MaterialModule } from '../shared/material.module';
+import { PlayerLoadingComponent } from './loading/loading.component';
 
 
 @NgModule({
   declarations: [
     PlayerComponent,
-    PlayerControlsComponent
+    PlayerControlsComponent,
+    PlayerLoadingComponent,
   ],
   imports: [
     CommonModule,

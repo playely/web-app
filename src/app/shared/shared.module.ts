@@ -5,7 +5,6 @@ import { CardCarouselComponent } from './carousels//card-carousel/card-carousel.
 import { NavbarComponent } from './navbar/navbar.component';
 import { FooterComponent } from './footer/footer.component';
 import { GridCarouselComponent } from './carousels/grid-carousel/grid-carousel.component';
-import { LoadingComponent } from './loading/loading.component';
 import { RouterModule } from '@angular/router';
 import { DescriptionCardComponent } from './cards/description-card/description-card.component';
 import { InnerCardComponent } from './cards/inner-card/inner-card.component';
@@ -22,7 +21,6 @@ const components = [
   NavbarComponent,
   FooterComponent,
   GridCarouselComponent,
-  LoadingComponent,
   BannerComponent,
   DescriptionCardComponent,
   InnerCardComponent,
