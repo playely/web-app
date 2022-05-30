@@ -14,14 +14,15 @@
     <div class="player-bottom">
         <div class="seekbar">
             <mat-slider color="primary" 
-            [max]="payerConfig.max" [min]="payerConfig.min" 
-            [value]="playerState.value" [valueText]="playerState.valueText"
+            [max]="playerConfig.maxTime" [min]="playerConfig.minTime" 
+            [value]="playerState.currentTime"
+            (change)="handleSliderChange($event)"
             ></mat-slider>
         </div>  
-        <p class="time-label">00:00:00</p>
+        <p class="time-label">{{ playerState.currentTime | FormatedTime }}</p>
     </div>
 </div>
 
 <div *ngIf="!content || playerState.isLoading" class="loading">
-    <app-loading></app-loading>
+    <app-player-loading></app-player-loading>
 </div>

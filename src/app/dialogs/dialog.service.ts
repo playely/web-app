@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { MatDialog, MatDialogRef } from '@angular/material/dialog';
-import { IUserInfoResponse } from '../services/user/models/user';
+import { DeviceType } from '../services/devices/models/devices';
+import { IUserInfo } from '../services/user/models/user';
 import { EditUserComponent } from './edit-user/edit-user.component';
 import { InputDialogComponent } from './input-dialog/input-dialog.component';
 import { LinkDeviceComponent } from './link-device/link-device.component';
@@ -19,7 +20,10 @@ export class DialogService {
    * @returns 
    */
   openLinkDeviceDialog(): MatDialogRef<LinkDeviceComponent> {
-    return  this.dialog.open(LinkDeviceComponent);
+    return  this.dialog.open(LinkDeviceComponent, {
+      panelClass: 'card-panel-class-container',
+      backdropClass: 'card-panel-class-backdrop',
+    });
   }
 
   /**
@@ -27,10 +31,12 @@ export class DialogService {
    * @param user 
    * @returns 
    */
-  openEditUser(user?: IUserInfoResponse): MatDialogRef<EditUserComponent>  {
+  openEditUser(user?: IUserInfo): MatDialogRef<EditUserComponent>  {
     return this.dialog.open(EditUserComponent, {
-      data: user
-    });
+      data: user,
+      panelClass: 'card-panel-class-container',
+      backdropClass: 'card-panel-class-backdrop',
+      });
   }
 
   /**
@@ -39,9 +45,8 @@ export class DialogService {
    */
   openRenewPlan(): MatDialogRef<YesNoOkComponent> {
     return this.openYesNoDialog(
-      DialogType.YESNO,
-      'Renew Plan',
-      'Do you want renew your plan?'
+      'settings.renewalPlan',
+      'settings.renewalPlanMessage'
     );
   }
 
@@ -51,9 +56,8 @@ export class DialogService {
    */
    openCancelPlan(): MatDialogRef<YesNoOkComponent> {
     return this.openYesNoDialog(
-      DialogType.YESNO,
-      'Cancel Plan',
-      'Do you want cancel your plan?'
+      'settings.cancelPlan',
+      'settings.cancelPlanMessage'
     );
   }
 
@@ -61,11 +65,16 @@ export class DialogService {
    * Open a change device name dialog input
    * @returns 
    */
-  openChangeDeviceName(): MatDialogRef<InputDialogComponent> {
+  openChangeDeviceName(deviceType: DeviceType): MatDialogRef<InputDialogComponent> {
     return this.dialog.open(InputDialogComponent, {
       data: {
-        title: 'Change Device Name'
-      }
+        title: 'settings.changeDeviceName',
+        placeholder: 'settings.deviceName',
+        btnText: 'Save',
+        type: deviceType,
+      },
+      panelClass: 'card-panel-class-container',
+      backdropClass: 'card-panel-class-backdrop',
     });
   }
 
@@ -75,23 +84,26 @@ export class DialogService {
    */
    openRemoveDevice(): MatDialogRef<YesNoOkComponent> {
     return this.openYesNoDialog(
-      DialogType.YESNO,
-      'Remove Device',
-      'Do you want remove your device?'
+      'settings.removeDevice',
+      'settings.removeDeviceMessage'
     );
   }
 
   /**
    * Open a yes-no-ok dialog
-   * @returns 
+   * @param title translate key of the text to show in title
+   * @param message translate key of the text to show in message
+   * @returns Mat dialog reference
    */
-  private openYesNoDialog(type: DialogType, title: string, message: string): MatDialogRef<YesNoOkComponent> {
+  private openYesNoDialog(title: string, message: string): MatDialogRef<YesNoOkComponent> {
     return this.dialog.open(YesNoOkComponent, {
       data: {
-        type,
+        type: DialogType.YESNO,
         title,
         message
-      }
+      },
+      panelClass: 'card-panel-class-container',
+      backdropClass: 'card-panel-class-backdrop',
     });
   }
 }

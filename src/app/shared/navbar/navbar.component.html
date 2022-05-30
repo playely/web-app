@@ -9,7 +9,7 @@
                 <li *ngFor="let item of menuItems" [routerLink]="[item.title.toLowerCase()]" routerLinkActive="item-active"
                 (click)="selectTab(item)">
                     <div class="icon">
-                        <mat-icon cass="menu-icon" svgIcon="{{item.title_en}}"></mat-icon>
+                        <mat-icon cass="menu-icon" svgIcon="{{item.iconName}}"></mat-icon>
                     </div>
                     <p class="title">{{ item.title }}</p>
                 </li>
@@ -21,7 +21,7 @@
         <button mat-icon-button class="btn-icon" routerLink="search">
             <mat-icon>search</mat-icon>
         </button>
-        <button mat-flat-button color="primary" *ngIf="!userInfo" routerLink="auth/login">Sign In</button>
+        <button mat-flat-button color="primary" *ngIf="!userInfo" routerLink="auth/login">{{ 'signIn' | translate }}</button>
         <div *ngIf="userInfo" class="user-info" routerLink="/settings">
             <img [src]="userInfo.image" alt="User image">
             <h4> {{ userInfo.name }}</h4>

@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { NavbarIconComponent } from './navbar-icon.component';
+import { PreferencesComponent } from './preferences.component';
 
-describe('NavbarIconComponent', () => {
-  let component: NavbarIconComponent;
-  let fixture: ComponentFixture<NavbarIconComponent>;
+describe('PreferencesComponent', () => {
+  let component: PreferencesComponent;
+  let fixture: ComponentFixture<PreferencesComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ NavbarIconComponent ]
+      declarations: [ PreferencesComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(NavbarIconComponent);
+    fixture = TestBed.createComponent(PreferencesComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

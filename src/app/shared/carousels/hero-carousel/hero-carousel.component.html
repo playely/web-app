@@ -9,9 +9,9 @@
             <p>{{ item.shortDescription }}</p>
             <div class="button-container">
                 <button mat-stroked-button color="primary" type="submit" (click)="goToPlayer(item)" >
-                    <mat-icon>play_circle_outline</mat-icon> Play</button>
+                    <mat-icon>play_circle_outline</mat-icon>{{ 'Play' | translate }}</button>
                 <button mat-stroked-button color="accent" type="submit">
-                    <mat-icon>playlist_add</mat-icon> Add to Watchlist</button>
+                    <mat-icon>playlist_add</mat-icon>{{ 'addWatchlist' | translate }}</button>
             </div>
         </div>
     </div>

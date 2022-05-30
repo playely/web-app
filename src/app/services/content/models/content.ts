@@ -12,9 +12,9 @@ export interface IContent {
     id: string;
     title: string;
     type: ContentType;
-    duration: string;
-    description: string;
-    shortDescription: string;
+    duration: number;
+    description?: string;
+    shortDescription?: string;
     image: string;
     currentWatchers?: number;
     isLive: boolean;

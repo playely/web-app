@@ -1,0 +1,22 @@
+<div class="field-container">
+    <div class="list-line-item">
+        <h5>{{ 'settings.loginMethod' | translate }}</h5>
+        <div class="field"><p>{{ 'settings.loginWithEmail' | translate }}</p>
+            <mat-slide-toggle [formControl]="loginEmailControl" (change)="handleTogleChange($event, LoginMethod.EMAIL)"></mat-slide-toggle>
+        </div>
+        <div class="field"><p>{{ 'settings.loginWithOTP' | translate }}</p>
+            <mat-slide-toggle [formControl]="loginOTPControl" (change)="handleTogleChange($event, LoginMethod.OTP)"></mat-slide-toggle>
+        </div>
+        <div class="divider show-divider"></div>
+    </div>
+    <div class="list-line-item">
+        <h5>{{ 'settings.accountLanguage' | translate }}</h5>
+        <div class="field"><p>{{ 'Language' | translate }}</p>
+            <mat-form-field appearance="standard">
+                <mat-select [formControl]="languageControl" (selectionChange)="handleLanguageChange($event)">
+                  <mat-option *ngFor="let item of languagesList" [value]="item.key">{{item.name}}</mat-option>
+                </mat-select>
+              </mat-form-field>              
+        </div>
+    </div>
+</div>

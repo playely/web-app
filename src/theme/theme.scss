@@ -1,4 +1,4 @@
-@import '~@angular/material/theming';
+@import '@angular/material/theming';
 @import 'vars';
 @include mat-core();
 
@@ -49,6 +49,10 @@ $my-custom-theme: mat-dark-theme($my-custom-primary, $my-custom-accent, $my-cust
 
 .mat-tab-body-content {
     overflow: hidden !important;
+}
+
+.mat-form-field {
+    width: 100%;
 }
 /*
 

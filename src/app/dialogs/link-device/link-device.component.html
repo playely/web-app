@@ -1,1 +1,13 @@
-<p>link-device works!</p>
+<div class="card">
+    <div class="card-content">
+        <h3>{{ 'settings.linkDevice' | translate }}</h3>
+        <p>{{ 'settings.linkDeviceMessage' | translate }}</p>
+        <form [formGroup]="codeForm" >
+            <mat-form-field appearance="standard">
+                <mat-label>{{ 'settings.deviceCode' | translate }}</mat-label>
+                <input formControlName="code" class="device-input" matInput placeholder="">
+              </mat-form-field>
+              <button mat-flat-button (click)="linkDevice()" cdkFocusInitial color="primary">{{ 'settings.linkDevice' | translate }}</button>
+        </form>
+    </div>
+</div>

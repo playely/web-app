@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ContentService } from 'src/app/services/content/content.service';
-import { IContent } from 'src/app/services/content/models/carousel';
+import { IContent } from 'src/app/services/content/models/content';
 
 @Component({
   selector: 'app-player',

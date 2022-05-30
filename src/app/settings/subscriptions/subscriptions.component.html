@@ -1,18 +1,22 @@
 <div class="subscriptions-container">
-
     <div *ngFor="let item of viewSubscriptions" class="list-line-item">
         <h5>{{item.name}}</h5>
-        <p [ngClass]="{'active-plan': item.status}" *ngIf="item.status">Estado: <span>Activo </span></p>
-        <p [ngClass]="{'inactive-plan': !item.status}" *ngIf="!item.status">Estado: <span>Inactivo</span></p>
+        <p [ngClass]="{'active-plan': item.status}" *ngIf="item.status">
+            {{ 'settings.status' | translate }}: <span>{{ 'settings.active' | translate }}</span></p>
+        <p [ngClass]="{'inactive-plan': !item.status}" *ngIf="!item.status">
+            {{ 'settings.status' | translate }}: <span>{{ 'settings.inactive' | translate }}</span></p>
 
-        <p>Adquirido en <span>{{item.purchased | date:'longDate'}}</span></p>
-        <p>Precio: <span>{{item.currency}}{{item.price}}</span></p>
-        <p *ngIf="item.status">Proxima Facturación: <span>{{item.nextInvoice | date:'longDate'}}</span></p>
-        <p *ngIf="!item.status">Valido hasta: <span>{{item.validUntil | date:'longDate'}}</span></p>
+        <p>{{ 'settings.purchasedAt' | translate }} <span>{{item.purchased | date:'longDate'}}</span></p>
+        <p>{{ 'settings.price' | translate }}: <span>{{item.currency}}{{item.price}}</span></p>
+        <p *ngIf="item.status">{{ 'settings.nextBilling' | translate }}: <span>{{item.nextBilling | date:'longDate'}}</span></p>
+        <p *ngIf="!item.status">{{ 'settings.validUntil' | translate }}: <span>{{item.validUntil | date:'longDate'}}</span></p>
         <div class="button-container">
-            <button *ngIf="item.status" mat-stroked-button color="primary" (click)="changePlan()">Cambiar Plan</button>
-            <button *ngIf="!item.status" mat-stroked-button color="primary" (click)="renewPlan()">Renovar Plan</button>
-            <button *ngIf="item.status" mat-stroked-button color="accent" (click)="cancelPlan()">Cancelar Plan</button>
+            <button *ngIf="item.status" mat-stroked-button color="primary" (click)="changePlan()">
+                {{ 'settings.changePlan' | translate }}</button>
+            <button *ngIf="!item.status" mat-stroked-button color="primary" (click)="renewPlan()">
+                {{ 'settings.renewalPlan' | translate }}</button>
+            <button *ngIf="item.status" mat-stroked-button color="accent" (click)="cancelPlan()">
+                {{ 'settings.cancelPlan' | translate }}</button>
         </div>
         <div class="divider"></div>
     </div>

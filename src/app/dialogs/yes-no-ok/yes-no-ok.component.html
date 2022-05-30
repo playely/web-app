@@ -1,1 +1,13 @@
-<p>yes-no-ok works!</p>
+<div class="card">
+    <div class="card-content">
+        <h5>{{ title | translate }}</h5>
+        <p>{{ message | translate }}</p>
+        <div *ngIf="!isOkDialog" class="button-container">
+            <button mat-raised-button color="primary" [mat-dialog-close]="dialogReturn.YES" >{{ 'Yes' | translate }}</button>
+            <button mat-raised-button color="accent" [mat-dialog-close]="dialogReturn.NO">{{ 'No' | translate }}</button>
+        </div>
+        <div *ngIf="isOkDialog" class="button-container">
+            <button mat-raised-button color="primary" [mat-dialog-close]="dialogReturn.OK">{{ 'Ok' | translate }}</button>
+        </div>
+    </div>
+</div>

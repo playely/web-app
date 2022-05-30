@@ -13,21 +13,21 @@
                     <p class="subtitle">
                         {{ content.releaseYear }} 
                         <span class="circle"></span>
-                        {{ content.duration }}
+                        {{ content.duration | TextTime }}
                     </p>
                 </div>
                 <div class="options">
                     <div class="item">
                         <mat-icon>playlist_add</mat-icon>
-                        <p>Watchlist</p>
+                        <p>{{ 'addWatchlist' | translate }}</p>
                     </div>
                     <div class="item">
                         <mat-icon>file_download</mat-icon>
-                        <p>Download</p>
+                        <p>{{ 'Download' | translate }}</p>
                     </div>
                     <div class="item">
                         <mat-icon>share</mat-icon>
-                        <p>Share</p>
+                        <p>{{ 'Share' | translate }}</p>
                     </div>
                 </div>
             </div>
@@ -38,7 +38,7 @@
                 <p>{{ content.type }}</p>
             </div>
             <div class="description">
-                <h4>Description</h4>
+                <h4>{{ 'Description' | translate }}</h4>
                 <p>{{content.description}}</p>
             </div>
         </div>

@@ -65,6 +65,21 @@ h1, h2, h3, h4, h5 {
    }
  }
 
+ mat-form-field {
+   padding-bottom: 10px;
+}
+
+ /* Mat dialog card container */
+ .card-panel-class-container .mat-dialog-container {
+   margin: 0;
+   padding: 0;
+ }
+
+ .card-panel-class-backdrop {
+   background: rgba(0, 0, 0, 0.86);
+ }
+
+ /* background over images */
  .overlay {
    position: absolute;
    top: 0;
@@ -75,6 +90,7 @@ h1, h2, h3, h4, h5 {
    mix-blend-mode: multiply;
 }
 
+/* List in settings */
 .list-line-item {
    padding: 1px;
    padding: 10px 0 ;

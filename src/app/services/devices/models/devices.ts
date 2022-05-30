@@ -11,6 +11,7 @@ export interface IDevice {
     name: string;
     type: DeviceType;
     enrollDate: Date;
+    lastUsedDate: Date;
     status: boolean;
     isCurrentDevice: boolean;
 }

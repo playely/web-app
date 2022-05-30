@@ -1,20 +1,21 @@
 @import 'vars';
 
 .aspect-ratio-2x3 {
-    width: 214px;
+    min-width: 150px;
 }
 
 .aspect-ratio-16x9 {
-    width: 400px;
+    min-width: 400px;
 }
 
 .aspect-ratio-1x1 {
-    width: 126px;
+    min-width: 126px;
 }
 
 .inner-card {
     position: relative;
     border-radius: $border-radius;
+    width: 100%;
 
     &__image-container {
 

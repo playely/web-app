@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { PageEvent } from '@angular/material/paginator';
 import { DialogService } from 'src/app/dialogs/dialog.service';
+import { DialogReturn } from 'src/app/dialogs/yes-no-ok/dialog';
 import { DevicesService } from 'src/app/services/devices/devices.service';
 import { DeviceType, IDevice } from 'src/app/services/devices/models/devices';
 
@@ -27,11 +28,17 @@ export class DevicesComponent implements OnInit {
   }
 
   removeDevice(): void {
-    this.dialogService.openRemoveDevice();
+    this.dialogService.openRemoveDevice().afterClosed().subscribe((result) => {
+      if (result === DialogReturn.YES) {
+        console.log(' remove device');
+      }
+    });
   }
 
-  changeDeviceName(): void {
-    this.dialogService.openChangeDeviceName();
+  changeDeviceName(device: IDevice): void {
+    this.dialogService.openChangeDeviceName(device.type).afterClosed().subscribe((value) => {
+      console.log('RESPONSE: ', value);
+    });
   }
 
 
