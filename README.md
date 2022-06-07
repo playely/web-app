@@ -2,6 +2,9 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.7.
 
+Based on [Video streaming service](https://www.figma.com/community/file/978204688923563508) design by [Afsar](https://www.figma.com/@imshuvo97).
+
+You can find the figma file [here](https://www.figma.com/file/Qvnl4NdJ2XuwozfSf84g5M/PlayJolly?node-id=6%3A12).
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
