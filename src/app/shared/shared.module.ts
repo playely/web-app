@@ -7,7 +7,7 @@ import { FooterComponent } from './footer/footer.component';
 import { GridCarouselComponent } from './carousels/grid-carousel/grid-carousel.component';
 import { RouterModule } from '@angular/router';
 import { DescriptionCardComponent } from './cards/description-card/description-card.component';
-import { InnerCardComponent } from './cards/inner-card/inner-card.component';
+import { InsideCardComponent } from './cards/inside-card/inside-card.component';
 import { MaterialModule } from './material.module';
 import { BannerComponent } from './banner/banner.component';
 import { TranslateModule } from '@ngx-translate/core';
@@ -24,7 +24,7 @@ const components = [
   GridCarouselComponent,
   BannerComponent,
   DescriptionCardComponent,
-  InnerCardComponent,
+  InsideCardComponent,
 ];
 
 const pipes = [

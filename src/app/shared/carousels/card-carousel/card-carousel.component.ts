@@ -20,7 +20,7 @@ export class CardCarouselComponent implements OnInit {
   }
 
   get carouselSize(): number {
-    return this.carousel?.aspectRatio === CardAspectRatio.HORIZONTAL ? 3 : 8;
+    return this.carousel?.aspectRatio === CardAspectRatio.HORIZONTAL ? 4 : 8;
   }
 
   constructor(private router: Router) { }

@@ -19,8 +19,8 @@
     <div *ngIf="isInnerCard" class="cards-container">
         <swiper [slidesPerView]="carouselSize" [spaceBetween]="10">
             <ng-template swiperSlide *ngFor="let item of carousel.content">
-                <app-inner-card [item]="item" [aspectRatio]="carousel.aspectRatio" (clickCard)="handleClickCard($event)"
-                ></app-inner-card>
+                <app-inside-card [item]="item" [aspectRatio]="carousel.aspectRatio" (clickCard)="handleClickCard($event)"
+                ></app-inside-card>
             </ng-template>
           </swiper>
     </div>

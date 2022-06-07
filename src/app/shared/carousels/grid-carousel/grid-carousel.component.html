@@ -3,8 +3,8 @@
 
     <div class="grid" [ngClass]="['grid-cols-'+cols]" >
         <div class="grid-cell" *ngFor="let item of carousel.content" >
-            <app-inner-card [item]="item" [aspectRatio]="carousel.aspectRatio" (clickCard)="handleClickCard($event)"
-        ></app-inner-card>
+            <app-inside-card [item]="item" [aspectRatio]="carousel.aspectRatio" (clickCard)="handleClickCard($event)"
+        ></app-inside-card>
         </div>
         
     </div>
