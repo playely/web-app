@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ICarousel, IContent } from 'src/app/services/content/models/content';
-import { CarouselType } from 'src/app/services/content/models/types';
+import { CardAspectRatio, CarouselType } from 'src/app/services/content/models/types';
 
 @Component({
   selector: 'app-card-carousel',
@@ -17,6 +17,10 @@ export class CardCarouselComponent implements OnInit {
 
   get isInnerCard(): boolean {
     return this.carousel?.type === CarouselType.INNERCARD;
+  }
+
+  get carouselSize(): number {
+    return this.carousel?.aspectRatio === CardAspectRatio.HORIZONTAL ? 3 : 8;
   }
 
   constructor(private router: Router) { }
