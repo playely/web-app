@@ -14,6 +14,7 @@ import { TranslateModule } from '@ngx-translate/core';
 import { ReactiveFormsModule } from '@angular/forms';
 import { PlayerTimePipe } from './pipes/player-time.pipe';
 import { TextTimePipe } from './pipes/text-time.pipe';
+import { SwiperModule } from 'swiper/angular';
 
 const components = [
   HeroCarouselComponent,
@@ -41,7 +42,8 @@ const pipes = [
     MaterialModule,
     RouterModule.forChild([]),
     TranslateModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    SwiperModule
   ],
   exports: [ ...components, ...pipes, TranslateModule ]
 })

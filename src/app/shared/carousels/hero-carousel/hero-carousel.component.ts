@@ -1,7 +1,8 @@
 import { AfterViewInit, Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ICarousel, IContent } from 'src/app/services/content/models/content';
-
+import SwiperCore, { Navigation } from 'swiper';
+SwiperCore.use([Navigation]);
 @Component({
   selector: 'app-hero-carousel',
   templateUrl: './hero-carousel.component.html',

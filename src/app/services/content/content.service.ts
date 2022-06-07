@@ -36,6 +36,54 @@ export class ContentService {
             releaseDate: new Date(),
             releaseYear: '2018',
             tags: []
+          },
+          {
+            duration: 9000,
+            id: '1',
+            image: 'https://play-jolly-assets.s3.amazonaws.com/content/dummy/image1-1x1.png',
+            title: isEnglish ? 'The K- POP Live Show' : 'K-POP Show en Vivo',
+            type: ContentType.LIVE,
+            currentWatchers: 150,
+            isLive: true,
+            releaseDate: new Date(),
+            releaseYear: '2018',
+            tags: []
+          },
+          {
+            duration: 9000,
+            id: '1',
+            image: 'https://play-jolly-assets.s3.amazonaws.com/content/dummy/image1-1x1.png',
+            title: isEnglish ? 'The K- POP Live Show' : 'K-POP Show en Vivo',
+            type: ContentType.LIVE,
+            currentWatchers: 150,
+            isLive: true,
+            releaseDate: new Date(),
+            releaseYear: '2018',
+            tags: []
+          },
+          {
+            duration: 9000,
+            id: '1',
+            image: 'https://play-jolly-assets.s3.amazonaws.com/content/dummy/image1-1x1.png',
+            title: isEnglish ? 'The K- POP Live Show' : 'K-POP Show en Vivo',
+            type: ContentType.LIVE,
+            currentWatchers: 150,
+            isLive: true,
+            releaseDate: new Date(),
+            releaseYear: '2018',
+            tags: []
+          },
+          {
+            duration: 9000,
+            id: '1',
+            image: 'https://play-jolly-assets.s3.amazonaws.com/content/dummy/image1-1x1.png',
+            title: isEnglish ? 'The K- POP Live Show' : 'K-POP Show en Vivo',
+            type: ContentType.LIVE,
+            currentWatchers: 150,
+            isLive: true,
+            releaseDate: new Date(),
+            releaseYear: '2018',
+            tags: []
           }
         ]
       },
