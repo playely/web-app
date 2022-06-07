@@ -10,7 +10,7 @@
     "lint": "ng lint",
     "build:prod": "ng build --prod",
     "test:prod": "ng test --browsers=ChromeHeadless --watch=false --code-coverage",
-    "prepare": "husky install"
+    "deploy": "ng build --prod --base-href=/play-jolly-web-app/"
   },
   "private": true,
   "dependencies": {

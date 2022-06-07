@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "angular-app-web": {
+    "play-jolly-web-app": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -20,7 +20,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/angular-app-web",
+            "outputPath": "dist/play-jolly-web-app",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -79,10 +79,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "angular-app-web:build:production"
+              "browserTarget": "play-jolly-web-app:build:production"
             },
             "development": {
-              "browserTarget": "angular-app-web:build:development"
+              "browserTarget": "play-jolly-web-app:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -90,7 +90,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "angular-app-web:build"
+            "browserTarget": "play-jolly-web-app:build"
           }
         },
         "test": {
@@ -130,7 +130,7 @@
       }
     }
   },
-  "defaultProject": "angular-app-web",
+  "defaultProject": "play-jolly-web-app",
   "cli": {
     "defaultCollection": "@angular-eslint/schematics"
   }
