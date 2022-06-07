@@ -1,0 +1,66 @@
+/* swiper styles */
+@import 'swiper/scss';
+@import 'swiper/css/navigation';
+@import 'vars';
+
+.hero-carousel {
+    --swiper-navigation-color: #e91e63;
+    --swiper-navigation-size: 25px;
+
+    .arrow {
+        visibility: hidden;
+        transition: all 0.5ms;
+        width: 47px;
+        height: 77px;
+        background-color: #fff;
+    }
+
+    .arrow::after {
+        font-weight: bold;
+    }
+
+    .swiper-button-disabled {
+        transition: all 0.5ms;
+        visibility: hidden;
+    }
+
+    .swiper-button-next {
+        @extend .arrow;
+        right: 0;
+        border-bottom-left-radius: 110px;
+        border-top-left-radius: 110px;
+    }
+
+    .swiper-button-next::after {
+        padding-left: 10px;
+    }
+
+    .swiper-button-prev {
+        @extend .arrow;
+        left: 0;
+        border-bottom-right-radius: 110px;
+        border-top-right-radius: 110px;
+    }
+
+    .swiper-button-prev::after {
+        padding-right: 10px;
+    }
+}
+
+.hero-carousel:hover {
+    .swiper-button-disabled.swiper-button-next {
+        visibility: hidden;
+    }
+
+    .swiper-button-disabled.swiper-button-prev {
+        visibility: hidden;
+    }
+
+    .swiper-button-next {
+        visibility: visible;
+    }
+
+    .swiper-button-prev {
+        visibility: visible;
+    }
+}
