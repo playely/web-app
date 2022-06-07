@@ -12,7 +12,7 @@ const routes: Routes = [
     data: {
       hideFooter: true,
       cover: true,
-      title: 'login'
+      title: 'Login'
     }
   },
   {
@@ -21,7 +21,7 @@ const routes: Routes = [
     data: {
       hideFooter: true,
       cover: true,
-      title: 'register'
+      title: 'Register'
     }
   },
   {
@@ -30,7 +30,7 @@ const routes: Routes = [
     data: {
       hideFooter: true,
       cover: true,
-      title: 'resetPassword'
+      title: 'Reset Password'
     }
   },
   {
@@ -39,7 +39,7 @@ const routes: Routes = [
     data: {
       hideFooter: true,
       cover: true,
-      title: 'newPassword'
+      title: 'New Password'
     }
   }
 ];
