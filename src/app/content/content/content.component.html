@@ -1,5 +1,0 @@
-<app-banner *ngIf="!isAuth"></app-banner>
-<app-hero-carousel *ngIf="isAuth" [carousel]="hero" ></app-hero-carousel>
-<div class="carousels">
-    <app-card-carousel *ngFor="let item of carousels" [carousel]="item"></app-card-carousel>
-</div>
