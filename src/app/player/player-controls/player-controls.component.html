@@ -9,17 +9,19 @@
         <img *ngIf="playerState.isPlaying" (click)="pause()" src="assets/img/svg/player/play-line.svg" alt="Play">
         <img *ngIf="!playerState.isPlaying" (click)="play()" src="assets/img/svg/player/pause.svg" alt="Play">
         <img src="assets/img/svg/player/forward.svg" (click)="forward()" alt="forward">
-</div>
+    </div>
 
     <div class="player-bottom">
+        <p class="time-label time-start-label">{{ sliderTime | FormatedTime }}</p>
         <div class="seekbar">
             <mat-slider color="primary" 
             [max]="playerConfig.maxTime" [min]="playerConfig.minTime" 
             [value]="playerState.currentTime"
             (change)="handleSliderChange($event)"
+            (input)="handleSliderInput($event)"
             ></mat-slider>
         </div>  
-        <p class="time-label">{{ playerState.currentTime | FormatedTime }}</p>
+        <p class="time-label">{{ playerState.duration | FormatedTime }}</p>
     </div>
 </div>
 

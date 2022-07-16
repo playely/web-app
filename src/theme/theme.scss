@@ -22,9 +22,6 @@ $my-custom-theme: mat-dark-theme($my-custom-primary, $my-custom-accent, $my-cust
     font-family: $primary-font;
 }
 
-.mat-slider-horizontal .mat-slider-ticks {
-    
-}
 .mat-primary .mat-slider-track-fill, .mat-primary .mat-slider-thumb, 
 .mat-primary .mat-slider-thumb-label {
     background: $gradient-multicolor;

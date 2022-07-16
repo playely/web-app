@@ -3,6 +3,7 @@ import { IContent } from 'src/app/services/content/models/content';
 import { Router } from '@angular/router';
 import { Location } from '@angular/common';
 import { MatSlider, MatSliderChange } from '@angular/material/slider';
+import { formatTime } from 'src/app/shared/utils/player-utils';
 
 interface PlayerConfig {
   minTime: number;
@@ -13,6 +14,7 @@ interface PlayerState {
   isPlaying: boolean;
   isLoading: boolean;
   currentTime: number;
+  duration: number;
 }
 
 @Component({
@@ -31,8 +33,12 @@ export class PlayerControlsComponent implements OnInit {
     isPlaying: false,
     isLoading: false,
     currentTime: 9000,
+    duration: 9000,
   }
-  constructor(private router: Router, private location: Location) { }
+  sliderTime = 0;
+  constructor(private router: Router, private location: Location) {
+    this.sliderTime = this.playerState.currentTime;
+  }
 
   ngOnInit(): void {
   }
@@ -86,4 +92,17 @@ export class PlayerControlsComponent implements OnInit {
     }, 2000);
   }
 
+  /**
+   * Fired when mat slider value changes
+   * @param event 
+   */
+  handleSliderInput(event: MatSliderChange) {
+    if (event && event.value) {
+      this.sliderTime = event.value;
+    }
+  }
+
+  formatTime(value: number): string {
+    return formatTime(value);
+  }
 }
