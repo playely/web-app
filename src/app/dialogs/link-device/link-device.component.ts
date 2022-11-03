@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { UntypedFormBuilder, FormControl, UntypedFormGroup, Validators } from '@angular/forms';
 import { MatDialogRef } from '@angular/material/dialog';
 
 @Component({
@@ -9,8 +9,8 @@ import { MatDialogRef } from '@angular/material/dialog';
 })
 export class LinkDeviceComponent implements OnInit {
 
-  codeForm: FormGroup;
-  constructor( public dialogRef: MatDialogRef<LinkDeviceComponent>, private formBuilder: FormBuilder) {
+  codeForm: UntypedFormGroup;
+  constructor( public dialogRef: MatDialogRef<LinkDeviceComponent>, private formBuilder: UntypedFormBuilder) {
     this.codeForm = this.formBuilder.group({
       code: ['', Validators.required]
     });

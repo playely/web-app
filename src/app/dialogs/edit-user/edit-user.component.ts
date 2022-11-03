@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { UntypedFormBuilder, UntypedFormGroup, Validators } from '@angular/forms';
 import { MatDialogRef } from '@angular/material/dialog';
 import { UserLoginMethod } from 'src/app/services/user/models/user';
 
@@ -9,9 +9,9 @@ import { UserLoginMethod } from 'src/app/services/user/models/user';
   styleUrls: ['./edit-user.component.scss']
 })
 export class EditUserComponent implements OnInit {
-  userForm: FormGroup;
-  passwordForm: FormGroup;
-  constructor(private formBuilder: FormBuilder, private dialogRef: MatDialogRef<EditUserComponent>) {
+  userForm: UntypedFormGroup;
+  passwordForm: UntypedFormGroup;
+  constructor(private formBuilder: UntypedFormBuilder, private dialogRef: MatDialogRef<EditUserComponent>) {
     this.userForm = this.formBuilder.group({
       name: ['', [Validators.required]],
       email: ['', [Validators.email, Validators.required]],

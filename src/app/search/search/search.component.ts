@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl } from '@angular/forms';
+import { UntypedFormControl } from '@angular/forms';
 import { ContentService } from 'src/app/services/content/content.service';
 import { ICarousel } from 'src/app/services/content/models/content';
 import { Key } from 'ts-key-enum';
@@ -13,9 +13,9 @@ export class SearchComponent implements OnInit {
   recents: ICarousel | undefined;
   results: ICarousel | undefined;
   
-  searchText: FormControl;
+  searchText: UntypedFormControl;
   constructor(private content: ContentService) { 
-    this.searchText = new FormControl();
+    this.searchText = new UntypedFormControl();
   }
 
   ngOnInit(): void {

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { UntypedFormBuilder, UntypedFormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/services/auth/auth.service';
 
@@ -9,8 +9,8 @@ import { AuthService } from 'src/app/services/auth/auth.service';
   styleUrls: ['./new-password.component.scss']
 })
 export class NewPasswordComponent implements OnInit {
-  newPasswordForm: FormGroup;
-  constructor(private formBuilder: FormBuilder, private authService: AuthService, private router: Router) {
+  newPasswordForm: UntypedFormGroup;
+  constructor(private formBuilder: UntypedFormBuilder, private authService: AuthService, private router: Router) {
     this.newPasswordForm = this.formBuilder.group({
       password: ['', [Validators.required, Validators.min(5)]],
       confirmPassword: ['', [Validators.required, Validators.min(5)]]

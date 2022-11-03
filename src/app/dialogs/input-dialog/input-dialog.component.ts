@@ -1,5 +1,5 @@
 import { Component, Inject, OnInit } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
+import { UntypedFormBuilder, FormControl, UntypedFormGroup } from '@angular/forms';
 import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { DeviceType } from 'src/app/services/devices/models/devices';
 
@@ -17,8 +17,8 @@ export interface InputDialogData {
   styleUrls: ['./input-dialog.component.scss']
 })
 export class InputDialogComponent implements OnInit {
-  inputForm: FormGroup;
-  constructor(@Inject(MAT_DIALOG_DATA) public data: InputDialogData, private formBuilder: FormBuilder) {
+  inputForm: UntypedFormGroup;
+  constructor(@Inject(MAT_DIALOG_DATA) public data: InputDialogData, private formBuilder: UntypedFormBuilder) {
     this.inputForm = this.formBuilder.group({
       value: [data.value],
     });

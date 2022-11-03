@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl } from '@angular/forms';
+import { UntypedFormControl } from '@angular/forms';
 import { MatSelectChange } from '@angular/material/select';
 import { LanguageService } from 'src/app/services/language/language.service';
 import { ILanguage } from 'src/app/services/language/models/language';
@@ -10,12 +10,12 @@ import { ILanguage } from 'src/app/services/language/models/language';
   styleUrls: ['./footer.component.scss']
 })
 export class FooterComponent implements OnInit {
-  languageControl: FormControl;
+  languageControl: UntypedFormControl;
   languagesList: ILanguage[] = [];
   constructor(private languageService: LanguageService) {
     this.languagesList = this.languageService.getAvailableLanguages();
     const currentLanguage = this.languageService.getCurrentLanguage();
-    this.languageControl = new FormControl(currentLanguage.key);
+    this.languageControl = new UntypedFormControl(currentLanguage.key);
    }
 
   ngOnInit(): void {

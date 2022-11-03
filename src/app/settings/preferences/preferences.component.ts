@@ -1,5 +1,5 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
-import { FormControl } from '@angular/forms';
+import { UntypedFormControl } from '@angular/forms';
 import { MatSelectChange } from '@angular/material/select';
 import { MatSlideToggleChange } from '@angular/material/slide-toggle';
 import { LanguageService } from 'src/app/services/language/language.service';
@@ -14,16 +14,16 @@ import { UserService } from 'src/app/services/user/user.service';
 })
 export class PreferencesComponent implements OnInit {
   @Output() loginMethodChange = new EventEmitter<UserLoginMethod>();
-  loginEmailControl: FormControl;
-  loginOTPControl: FormControl;
-  languageControl: FormControl;
+  loginEmailControl: UntypedFormControl;
+  loginOTPControl: UntypedFormControl;
+  languageControl: UntypedFormControl;
   languagesList: ILanguage[] = [];
   constructor(private userService: UserService, private languageService: LanguageService) {
     this.languagesList = this.languageService.getAvailableLanguages();
     const currentLanguage = this.languageService.getCurrentLanguage();
-    this.loginEmailControl = new FormControl(true);
-    this.loginOTPControl = new FormControl(false);
-    this.languageControl = new FormControl(currentLanguage.key);
+    this.loginEmailControl = new UntypedFormControl(true);
+    this.loginOTPControl = new UntypedFormControl(false);
+    this.languageControl = new UntypedFormControl(currentLanguage.key);
     this.userService.getUserPreferences().then((response) => {
       this.updateLoginMethods(true,response.loginMethod);
     });
