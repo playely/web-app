@@ -5,9 +5,9 @@ name: Testing Angular Application CI
 
 on:
   push:
-    branches: [ develop ]
+    branches: [  ]
   pull_request:
-    branches: [ develop ]
+    branches: [  ]
 
 jobs:
   build:
