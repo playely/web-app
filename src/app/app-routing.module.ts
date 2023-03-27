@@ -4,23 +4,23 @@ import { RouterModule, Routes } from '@angular/router';
 const routes: Routes = [
   {
     path: 'player',
-    loadChildren:  () => import('./player/player.module').then(m => m.PlayerModule) 
+    loadChildren:  () => import('./modules/player/player.module').then(m => m.PlayerModule) 
   },
   {
     path: 'search',
-    loadChildren:  () => import('./search/search.module').then(m => m.SearchModule) 
+    loadChildren:  () => import('./modules/search/search.module').then(m => m.SearchModule) 
   },
   {
     path: 'auth',
-    loadChildren:  () => import('./auth/auth.module').then(m => m.AuthModule) 
+    loadChildren:  () => import('./modules/auth/auth.module').then(m => m.AuthModule) 
   },
   {
     path: 'settings',
-    loadChildren:  () => import('./settings/settings.module').then(m => m.SettingsModule) 
+    loadChildren:  () => import('./modules/settings/settings.module').then(m => m.SettingsModule) 
   },
   {
     path: '',
-    loadChildren:  () => import('./content/content.module').then(m => m.ContentModule) 
+    loadChildren:  () => import('./modules/content/content.module').then(m => m.ContentModule) 
   }
 ];
 
