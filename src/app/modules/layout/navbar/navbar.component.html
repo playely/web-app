@@ -1,7 +1,7 @@
 <div class="navbar-container">
     <div class="navbar-container__left">
-        <div class="logo" [ngClass]="{'margin-logo': isCover}" routerLink="">
-            <img src="assets/img/logo.png" alt="">
+        <div class="logo" [ngClass]="{'margin-logo': isCover}">
+            <app-logo width="75%" [isClickable]="true"  ></app-logo>
         </div>
     
         <div *ngIf="!isCover" class="options">
