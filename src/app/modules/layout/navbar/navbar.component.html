@@ -1,30 +1,40 @@
-<div class="navbar-container">
-    <div class="navbar-container__left">
-        <div class="logo" [ngClass]="{'margin-logo': isCover}">
-            <app-logo width="75%" [isClickable]="true"  ></app-logo>
+<div class="navbar">
+    <div class="navbar-container">
+        <div class="navbar-container__left">
+            <div class="logo" [ngClass]="{'margin-logo': isCover}">
+                <app-logo width="75%" [isClickable]="true"></app-logo>
+            </div>
+                <ul *ngIf="!isCover" class="content-options desktop">
+                    <li *ngFor="let item of menuItems" [routerLink]="[item.title.toLowerCase()]"
+                        routerLinkActive="item-active" (click)="selectTab(item)">
+                        <div class="icon">
+                            <mat-icon cass="menu-icon" svgIcon="{{item.iconName}}"></mat-icon>
+                        </div>
+                        <p class="title">{{ item.title }}</p>
+                    </li>
+                </ul>
         </div>
-    
-        <div *ngIf="!isCover" class="options">
-            <ul>
-                <li *ngFor="let item of menuItems" [routerLink]="[item.title.toLowerCase()]" routerLinkActive="item-active"
-                (click)="selectTab(item)">
-                    <div class="icon">
-                        <mat-icon cass="menu-icon" svgIcon="{{item.iconName}}"></mat-icon>
-                    </div>
-                    <p class="title">{{ item.title }}</p>
-                </li>
-            </ul>
+
+        <div *ngIf="!isCover" class="navbar-container__right">
+            <button mat-icon-button class="btn-icon" routerLink="search">
+                <mat-icon>search</mat-icon>
+            </button>
+            <button mat-flat-button color="primary" *ngIf="!userInfo" routerLink="auth/login">{{ 'signIn' | translate
+                }}</button>
+            <div *ngIf="userInfo" class="user-info" routerLink="/settings">
+                <img [src]="userInfo.image" alt="User image">
+                <h4> {{ userInfo.name }}</h4>
+            </div>
         </div>
     </div>
 
-    <div *ngIf="!isCover" class="navbar-container__right">
-        <button mat-icon-button class="btn-icon" routerLink="search">
-            <mat-icon>search</mat-icon>
-        </button>
-        <button mat-flat-button color="primary" *ngIf="!userInfo" routerLink="auth/login">{{ 'signIn' | translate }}</button>
-        <div *ngIf="userInfo" class="user-info" routerLink="/settings">
-            <img [src]="userInfo.image" alt="User image">
-            <h4> {{ userInfo.name }}</h4>
-        </div>
-    </div>
+        <ul *ngIf="!isCover" class="content-options mobile">
+            <li *ngFor="let item of menuItems" [routerLink]="[item.title.toLowerCase()]" routerLinkActive="item-active"
+                (click)="selectTab(item)">
+                <div class="icon">
+                    <mat-icon cass="menu-icon" svgIcon="{{item.iconName}}"></mat-icon>
+                </div>
+                <p class="title">{{ item.title }}</p>
+            </li>
+        </ul>
 </div>

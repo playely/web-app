@@ -1,3 +1,4 @@
+@use 'breakpoints' as bp;
 @import 'vars';
 
 .navbar-inverse {
@@ -5,9 +6,9 @@
 }
 
 .item-active {
-    color: #FFF;
+    color: #fff;
     p {
-        color: #FFF;
+        color: #fff;
     }
 }
 
@@ -15,78 +16,110 @@
     margin-top: 20px;
 }
 
-.navbar-container {
+.navbar {
     width: 100%;
-    min-height: 10px;
-    display: inline-flex;
-    justify-content: space-between;
-    align-items: center;
     position: fixed;
     left: 0;
     top: 0;
     z-index: 5;
-    
-    &__left {
+    box-sizing: border-box;
+    padding: 10px $space-side;
+
+    @include bp.respond-to(phone) {
+        padding: 10px $space-side_phone;
+    }
+
+    @include bp.respond-to(tablet) {
+        padding: 10px $space-side_phone;
+    }
+
+    &-container {
+        width: 100%;
+        min-height: 10px;
         display: inline-flex;
+        justify-content: space-between;
         align-items: center;
-        margin-left: $space-side;
-        .options ul {
+
+        &__left {
             display: inline-flex;
-    
-            li {
-                display: flex;
+            align-items: center;
+        }
+        &__right {
+            display: inline-flex;
+            align-items: center;
+
+            .btn-icon {
+                margin-right: 10px;
+                background: transparent;
+                color: #fff;
+            }
+
+            .user-info {
+                display: inline-flex;
                 justify-content: center;
                 align-items: center;
-                padding: 0 12px;
+                color: #fff;
 
-                .icon {
-                    color: $gray;
+                img {
+                    width: 25px;
+                    height: 25px;
+                    border-radius: 100%;
                     margin-right: 10px;
+                }
+
+                h4 {
+                    margin: 0;
+                    font-size: 15px;
+                    font-weight: normal;
                 }
             }
 
-            li:hover {
+            .user-info:hover {
                 cursor: pointer;
-                p {
-                    color: #FFF;
-                }
             }
         }
     }
+}
 
-    &__right {
-        display: inline-flex;
+.content-options {
+    display: inline-flex;
+    gap: 20px;
+    padding: 0;
+
+    li {
+        display: flex;
+        justify-content: center;
         align-items: center;
-        margin-right: $space-side;
-        
-        .btn-icon {
+
+        .icon {
+            color: $gray;
             margin-right: 10px;
-            background: transparent;
-            color: #FFF;
         }
+    }
 
-        .user-info {
-            display: inline-flex;
-            justify-content: center;
-            align-items: center;
-            color: #FFF;
-
-            img {
-                width: 25px;
-                height: 25px;
-                border-radius: 100%;
-                margin-right: 10px;
-            }
-
-            h4 {
-                margin: 0;
-                font-size: 15px;
-                font-weight: normal;
-            }
+    li:hover {
+        cursor: pointer;
+        p {
+            color: #fff;
         }
+    }
 
-        .user-info:hover {
-            cursor: pointer;
+    &.desktop {
+        @include bp.respond-to(phone) {
+            display: none;
+        }
+    }
+
+    &.mobile {
+        padding: 0;
+        width: 100%;
+        justify-content: center;
+
+        @include bp.respond-to(desktop) {
+            display: none;
+        }
+        @include bp.respond-to(tablet) {
+            display: none;
         }
     }
 }

@@ -1,0 +1,21 @@
+
+  $bp_phone:  600px;
+  $bp_tablet: 900px;
+
+@mixin respond-to($breakpoint) {
+    @if $breakpoint == 'phone' {
+      @media screen and (max-width: $bp_phone) {
+        @content;
+      }
+    } 
+    @else if $breakpoint == 'tablet' {
+      @media screen and (min-width: $bp_phone) and (max-width: $bp_tablet) {
+        @content;
+      }
+    } 
+    @else if $breakpoint == 'desktop' {
+      @media screen and (min-width: $bp_tablet) {
+        @content;
+      }
+    }
+  }
