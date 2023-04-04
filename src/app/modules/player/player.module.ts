@@ -4,9 +4,9 @@ import { CommonModule } from '@angular/common';
 import { PlayerRoutingModule } from './player-routing.module';
 import { PlayerComponent } from './player.component';
 import { PlayerControlsComponent } from './components/player-controls/player-controls.component';
-import { SharedModule } from '../../shared/shared.module';
 import { MaterialModule } from '../../shared/material.module';
 import { PlayerLoadingComponent } from './components/loading/loading.component';
+import { PipesModule } from '../../pipes/pipes.module';
 
 
 @NgModule({
@@ -18,8 +18,8 @@ import { PlayerLoadingComponent } from './components/loading/loading.component';
   imports: [
     CommonModule,
     PlayerRoutingModule,
-    SharedModule,
-    MaterialModule
+    MaterialModule,
+    PipesModule
   ]
 })
 export class PlayerModule { }

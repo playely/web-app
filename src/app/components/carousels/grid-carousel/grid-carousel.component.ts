@@ -1,9 +1,13 @@
+import { CommonModule } from '@angular/common';
 import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ICarousel, IContent } from 'src/app/services/content/models/content';
+import { InsideCardComponent } from '../../cards/inside-card/inside-card.component';
 
 @Component({
   selector: 'app-grid-carousel',
+  standalone: true,
+  imports: [CommonModule, InsideCardComponent],
   templateUrl: './grid-carousel.component.html',
   styleUrls: ['./grid-carousel.component.scss']
 })

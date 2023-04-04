@@ -1,23 +1,22 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { IContent } from 'src/app/services/content/models/content';
 import { CardAspectRatio } from 'src/app/services/content/models/types';
 
 @Component({
-  selector: 'app-description-card',
-  templateUrl: './description-card.component.html',
-  styleUrls: ['./description-card.component.scss']
+  selector: 'app-inside-card',
+  standalone: true,
+  imports: [CommonModule],
+  templateUrl: './inside-card.component.html',
+  styleUrls: ['./inside-card.component.scss']
 })
-export class DescriptionCardComponent implements OnInit {
+export class InsideCardComponent {
   @Output() clickCard = new EventEmitter<IContent>();
   @Input() aspectRatio: CardAspectRatio = CardAspectRatio.SQUARE;
   @Input() item: IContent | undefined;
   
   get aspectRatioClass (): string {
     return `aspect-ratio-${this.aspectRatio}`
-  }
-  constructor() { }
-
-  ngOnInit(): void {
   }
 
   click(): void {

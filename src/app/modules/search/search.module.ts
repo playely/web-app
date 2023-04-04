@@ -3,9 +3,10 @@ import { CommonModule } from '@angular/common';
 
 import { SearchRoutingModule } from './search-routing.module';
 import { SearchComponent } from './search.component';
-import { SharedModule } from '../../shared/shared.module';
 import { MaterialModule } from '../../shared/material.module';
 import { ReactiveFormsModule } from '@angular/forms';
+import { GridCarouselComponent } from '../../components/carousels/grid-carousel/grid-carousel.component';
+import { TranslateModule } from '@ngx-translate/core';
 
 
 @NgModule({
@@ -15,9 +16,10 @@ import { ReactiveFormsModule } from '@angular/forms';
   imports: [
     CommonModule,
     SearchRoutingModule,
-    SharedModule,
     MaterialModule,
-    ReactiveFormsModule
+    TranslateModule,
+    ReactiveFormsModule,
+    GridCarouselComponent
   ]
 })
 export class SearchModule { }

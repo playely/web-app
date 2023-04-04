@@ -3,7 +3,7 @@ import { Router } from '@angular/router';
 import { Location } from '@angular/common';
 import { MatSlider, MatSliderChange } from '@angular/material/slider';
 import { IContent } from '../../../../services/content/models/content';
-import { formatTime } from '../../../../shared/utils/player-utils';
+import { formatTime } from '../../../../utils/player-utils';
 
 interface PlayerConfig {
   minTime: number;
