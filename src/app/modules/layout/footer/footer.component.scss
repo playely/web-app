@@ -1,3 +1,4 @@
+@use 'breakpoints' as bp;
 @import 'vars';
 
 footer {
@@ -8,6 +9,10 @@ footer {
     padding: 130px;
     position: relative;
     margin-top: 100px;
+
+    @include bp.respond-to(mobile) {
+        flex-direction: column;
+    }
 }
 
 .container-options {
@@ -15,12 +20,15 @@ footer {
     flex-direction: column;
     justify-content: center;
     align-items: flex-end;
-    
+
     mat-form-field {
         width: 75%;
+
+        @include bp.respond-to(mobile) {
+            width: 100%;
+        }
     }
 }
-
 
 .arrow-top {
     position: absolute;
@@ -34,11 +42,15 @@ footer {
     display: inline-flex;
     list-style: none;
 
+    @include bp.respond-to(mobile) {
+        padding: 0;
+    }
+
     li a {
         height: 100%;
         display: flex;
         text-decoration: none;
-        color: #FFF;
+        color: #fff;
         font-size: 16px;
         padding-right: 15px;
         padding-left: 15px;

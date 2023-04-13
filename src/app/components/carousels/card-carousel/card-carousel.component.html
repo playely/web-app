@@ -7,21 +7,17 @@
 
     <!--------------------DESCRIPTION CAROUSEL ----------------------------->
     <div *ngIf="isDescription" class="cards-container">
-        <swiper [slidesPerView]="4">
-            <ng-template swiperSlide *ngFor="let item of carousel.content">
-              <app-description-card  
-              [item]="item" [aspectRatio]="carousel.aspectRatio" (clickCard)="handleClickCard($event)"
-              ></app-description-card>
-            </ng-template>
-          </swiper>
+        <ng-container *ngFor="let item of carousel.content">
+            <app-description-card  
+            [item]="item" [aspectRatio]="carousel.aspectRatio" (clickCard)="handleClickCard($event)"
+            ></app-description-card>
+          </ng-container>
     </div>
     <!--------------------INNER CAROUSEL ----------------------------->
     <div *ngIf="isInnerCard" class="cards-container">
-        <swiper [slidesPerView]="carouselSize" [spaceBetween]="10">
-            <ng-template swiperSlide *ngFor="let item of carousel.content">
-                <app-inside-card [item]="item" [aspectRatio]="carousel.aspectRatio" (clickCard)="handleClickCard($event)"
-                ></app-inside-card>
-            </ng-template>
-          </swiper>
+        <ng-container *ngFor="let item of carousel.content">
+            <app-inside-card [item]="item" [aspectRatio]="carousel.aspectRatio" (clickCard)="handleClickCard($event)"
+            ></app-inside-card>
+        </ng-container>
     </div>
 </div>

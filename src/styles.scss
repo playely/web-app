@@ -1,4 +1,5 @@
-@import 'vars';
+@use 'vars' as v;
+@use 'breakpoints' as bp;
 @import './theme/forms.scss';
 @import './theme/swiper.scss';
 
@@ -9,8 +10,8 @@
 body { 
    margin: 0; 
    padding: 0;
-   font-family: $primary-font, "Helvetica Neue", sans-serif; 
-   background: $dark-black;
+   font-family: v.$primary-font, "Helvetica Neue", sans-serif; 
+   background: v.$dark-black;
 }
 
 h1, h2, h3, h4, h5 {
@@ -49,19 +50,19 @@ h1, h2, h3, h4, h5 {
  p {
     font-size: 16px;
     line-height: 24px;
-    color: $gray;
+    color: v.$gray;
  }
 
 
  .card {
-   background: $gradient-multicolor;
-   border-radius: $border-radius;
+   background: v.$gradient-multicolor;
+   border-radius: v.$border-radius;
    padding: 5px;
    display: flex;
 
    .card-content {
-      background: $dark-black;
-      border-radius: $border-radius;
+      background: v.$dark-black;
+      border-radius: v.$border-radius;
       padding: 8px;
       width: 100%;
       color: #FFF;
@@ -129,7 +130,7 @@ h1, h2, h3, h4, h5 {
 
    .divider {
        margin-top: 25px;
-       background: $gradient-multicolor;
+       background: v.$gradient-multicolor;
        width: 100%;
        height: 1px;
        border-radius: 100px;
@@ -142,10 +143,10 @@ h1, h2, h3, h4, h5 {
 
 /* Mat dialog as card */
 .dialog-panel-class .mat-dialog-container{
-   background: $dark-black;
-   border-radius: $border-radius;
+   background: v.$dark-black;
+   border-radius: v.$border-radius;
    padding: 5px;
-   border: 3px solid $primary-color;
+   border: 3px solid v.$primary-color;
 }
 
 .dialog-backdrop-class {
@@ -153,4 +154,9 @@ h1, h2, h3, h4, h5 {
    backdrop-filter: blur(100px);
    background-color: #0000009c;
     backdrop-filter: blur(4px);
+}
+
+/* global space bp */
+@include bp.respond-to(mobile) {
+   $space-top: 55px;
 }

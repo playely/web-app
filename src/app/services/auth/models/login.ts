@@ -1,11 +1,9 @@
-import { BaseResponse } from "../../base";
-
 export interface LoginRequest {
     email: string;
     password: string;
 }
 
-export interface LoginResponse extends BaseResponse {
+export interface LoginResponse {
     token: string;
     email: string;
     name: string;

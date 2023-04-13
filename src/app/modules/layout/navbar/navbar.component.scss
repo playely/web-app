@@ -1,8 +1,9 @@
 @use 'breakpoints' as bp;
-@import 'vars';
+@use 'vars' as v;
 
+// asigned in ts
 .navbar-inverse {
-    background: $dark-black;
+    background: v.$dark-black;
 }
 
 .item-active {
@@ -23,14 +24,12 @@
     top: 0;
     z-index: 5;
     box-sizing: border-box;
-    padding: 10px $space-side;
+    padding: 10px v.$space-side;
+    // background: v.$dark-black;
 
-    @include bp.respond-to(phone) {
-        padding: 10px $space-side_phone;
-    }
 
-    @include bp.respond-to(tablet) {
-        padding: 10px $space-side_phone;
+    @include bp.respond-to(mobile) {
+        padding: 10px v.$space-side_phone;
     }
 
     &-container {
@@ -92,7 +91,7 @@
         align-items: center;
 
         .icon {
-            color: $gray;
+            color: v.$gray;
             margin-right: 10px;
         }
     }

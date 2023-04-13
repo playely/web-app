@@ -3,7 +3,11 @@
   $bp_tablet: 900px;
 
 @mixin respond-to($breakpoint) {
-    @if $breakpoint == 'phone' {
+  @if $breakpoint == 'mobile' {
+    @media screen and (max-width: $bp_tablet) {
+      @content;
+    }
+  } @else if $breakpoint == 'phone' {
       @media screen and (max-width: $bp_phone) {
         @content;
       }

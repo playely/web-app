@@ -4,6 +4,7 @@ import { AvailableLanguages, ILanguage } from './models/language';
 import { StorageService } from '../storage/storage.service';
 import { StorageKeys } from '../storage/storage-items';
 import { AppService } from '../app-service/app.service';
+import { isLanguageAvailable } from '../../utils/language-utils';
 
 @Injectable({
   providedIn: 'root'
@@ -29,7 +30,7 @@ export class LanguageService {
   init(): void {
      // the lang to use, if the lang isn't available, it will use the current loader to get them
     const currentLanguage = this.storageService.getLocalItem(StorageKeys.LANG);
-    if (currentLanguage) {
+    if (currentLanguage && isLanguageAvailable(currentLanguage)) {
       this.translateService.use(currentLanguage);
     }
   }
