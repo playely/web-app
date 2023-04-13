@@ -1,7 +1,7 @@
 {
   "hosting": {
     "target": "playjolly",
-    "public": "dist/play-jolly-web-app",
+    "public": "dist/playely-web-app",
     "ignore": [
       "firebase.json",
       "**/.*",
