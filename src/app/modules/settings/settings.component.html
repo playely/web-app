@@ -9,10 +9,12 @@
                       </button>
                 </h4>
             </div>
-            <div class="item"> <mat-icon>email</mat-icon> <p>{{user.email}}</p></div>
+            <div>
+                <div class="item"> <mat-icon>email</mat-icon> <p>{{user.email}}</p></div>
             <div class="item"> <mat-icon>smartphone</mat-icon> <p>{{fullNumber}}</p></div>
             <div class="item"> <mat-icon>push_pin</mat-icon> <p>{{user.country.name}}</p> </div>
             <div class="item"> <mat-icon>key</mat-icon> <p>{{user.loginMethod | translate }}</p> </div>
+            </div>
         </div>
         <div class="buttons">
             <button (click)="linkDevice()" class="btn-device" mat-stroked-button color="primary">{{ 'settings.linkDevice' | translate }}</button>
@@ -34,4 +36,8 @@
             </mat-tab>
           </mat-tab-group>
     </div>
+    <div class="mobile-buttons">
+            <button (click)="linkDevice()" class="btn-device" mat-stroked-button color="primary">{{ 'settings.linkDevice' | translate }}</button>
+            <button (click)="logout()" class="btn-logout" mat-stroked-button color="accent">{{ 'logout' | translate }}</button>
+        </div>
 </div>

@@ -1,10 +1,21 @@
-@import 'vars';
+@use 'vars' as v;
+@use 'breakpoints' as bp;
 
 .top-space {
-    margin-top: $space-top;
+    margin-top: v.$space-top;
+
+    @include bp.respond-to(mobile) {
+        margin-top: v.$space-top_phone;
+    }
 }
 
 .left-spaces {
-    padding-left: $space-side;
-    padding-right: $space-side;
+    padding-left: v.$space-side;
+    padding-right: v.$space-side;
+    box-sizing: border-box;
+
+    @include bp.respond-to(mobile) {
+        padding-left: v.$space-side_phone;
+    padding-right: v.$space-side_phone;
+    }
 }

@@ -1,5 +1,10 @@
-@import 'vars';
+@use 'vars' as v;
+@use 'breakpoints' as bp;
 
 .carousels {
-    margin-left: $space-side;
+    margin-left: v.$space-side;
+
+    @include bp.respond-to(mobile) {
+        margin-left: v.$space-side_phone;
+    }
 }

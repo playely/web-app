@@ -40,6 +40,11 @@ h1, h2, h3, h4, h5 {
  h4 {
     font-size: 32px;
     line-height: 40px;
+
+    @include bp.respond-to(mobile) {
+      font-size: 27px;
+      line-height: inherit;
+   }
  }
 
  h5 {
@@ -154,9 +159,4 @@ h1, h2, h3, h4, h5 {
    backdrop-filter: blur(100px);
    background-color: #0000009c;
     backdrop-filter: blur(4px);
-}
-
-/* global space bp */
-@include bp.respond-to(mobile) {
-   $space-top: 55px;
 }
