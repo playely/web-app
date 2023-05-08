@@ -5,8 +5,8 @@
   "targets": {
     "devemg-f044d": {
       "hosting": {
-        "playjolly": [
-          "playjolly"
+        "stag": [
+          "playely"
         ]
       }
     }
