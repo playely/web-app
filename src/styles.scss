@@ -55,3 +55,9 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 .episode-dialog-panel {
     --mdc-dialog-container-color: #1C1C1C;
 }
+
+.player-panel {
+    .mdc-dialog__surface {
+        overflow-y: visible !important;
+    }
+}

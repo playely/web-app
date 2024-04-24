@@ -1,9 +1,11 @@
 <div class="player" [style.height]=" isModal ? '90vh' : '100vh'">
     <div class="player-controls">
         <div class="player-controls-group">
-            <div class="group">
-                <mat-icon (click)="goBack()">arrow_back_ios</mat-icon>
-                <p class="title">{{content?.title}}</p>
+            <div class="group" >
+                @if (!isModal) {
+                    <mat-icon (click)="goBack()">arrow_back_ios</mat-icon>
+                    <p class="title">{{content?.title}}</p>
+                }
             </div>
             <div class="group">
                 <mat-icon *ngIf="isModal">share</mat-icon>
