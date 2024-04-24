@@ -10,5 +10,4 @@ import { CardListComponent } from '@components/card-list/card-list.component';
   styleUrl: './content-list.component.scss'
 })
 export class ContentListComponent {
-
 }

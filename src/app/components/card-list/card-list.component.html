@@ -1,1 +1,12 @@
-<p>card-list works!</p>
+<div class="cardlist">
+    <div class="cardlist-header">
+        <h2>{{ contentList.title }}</h2>
+    </div>
+    <div class="cardlist-content">
+        @for (card of contentList.contents; track card.id) {
+            <div class="card" [ngClass]="contentList.aspectRatio">
+                <img [src]="card.image" [alt]="card.title">
+            </div>
+        }
+    </div>
+</div>
