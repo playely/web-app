@@ -16,19 +16,19 @@ export const mockRoutes: IRoute[] = [
         route: 'series',
         name: 'series',
     },
-    {
-        id: '3',
-        route: 'for-you',
-        name: 'For You',
-    },
-    {
-        id: '4',
-        route: 'sports',
-        name: 'sports',
-    },
-    {
-        id: '5',
-        route: 'live-on',
-        name: 'live on',
-    }
+    // {
+    //     id: '3',
+    //     route: 'for-you',
+    //     name: 'For You',
+    // },
+    // {
+    //     id: '4',
+    //     route: 'sports',
+    //     name: 'sports',
+    // },
+    // {
+    //     id: '5',
+    //     route: 'live-on',
+    //     name: 'live on',
+    // }
 ]

@@ -1,8 +1,12 @@
 <div class="banner" *ngIf="content">
-    <img class="banner-image" [src]="content.image" [alt]="content.image">
+    <img class="banner-image" [src]="content.backdropImage" [alt]="content.image">
+    
     <div class="banner-overlay">
         <div class="banner-data">
-            <img *ngIf="content.titleImage" [src]="content.titleImage" [alt]="content.title">
+            <img *ngIf="content.titleImage; else title" [src]="content.titleImage" [alt]="content.title">
+            <ng-template #title>
+                <h1>{{content.title}}</h1>
+            </ng-template>
             <button class="btn btn-primary">Play Now</button>
         </div>
     </div>

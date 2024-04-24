@@ -1,14 +1,17 @@
-<div class="banner-container">
+<div class="banner-container" *ngIf="contentList">
     @for (item of contentList.contents; track item.id; let  index = $index) {
         <div class="banner" [style.display]="selectedContentIndex == index ? 'flex' : 'none'">
-            <img class="banner-image" [src]="item.image" [alt]="item.image">
+            <img class="banner-image" [src]="item.backdropImage" [alt]="item.image">
             <div class="banner-overlay" 
             (touchstart)="swipe($event)" (touchend)="swipe($event)"
             >
                 <div class="banner-data">
-                    <img *ngIf="item.titleImage" [src]="item.titleImage" [alt]="item.title">
+                    <img *ngIf="item.titleImage; else title" [src]="item.titleImage" [alt]="item.title">
+                    <ng-template #title>
+                        <h2>{{item.title}}</h2>
+                    </ng-template>
                     <p>{{item.description}}</p>
-                    <button [routerLink]="[item.contentType, item.uid]" class="btn btn-primary">Play Now</button>
+                    <button [routerLink]="[item.mediaType, item.uid]" class="btn btn-primary">Play Now</button>
                 </div>
                 <div class="banner-dots">
                     @for (item of contentList.contents; track item.id; let  index = $index) {

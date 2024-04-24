@@ -14,4 +14,9 @@ import { AspectRatio } from '@models/IContentList';
 export class CardComponent {
   @Input() content?: IContent;
   @Input() aspectRatio: AspectRatio = '16x9';
+
+  manageError(event: Event) {
+    const target = event.target as HTMLElement;
+    target.style.visibility = 'hidden';
+  }
 }

@@ -1,16 +1,16 @@
 <div class="series">
     
 
-<div class="select-contaner custom-select">
+@if (content?.seasons) {
+  <div class="select-contaner custom-select">
     <select>
-      <option value="">Temporada 1</option>
-      <option value="">Temporada 2</option>
-      <option value="">Temporada 3</option>
-      <option value="">Temporada 4</option>
-      <option value="">Temporada 5</option>
-      <option value="">Temporada 6</option>
+      @for (item of content?.seasons; track item.id) {
+        <option [value]="item.id">Season {{item.season_number}}</option>
+      }
+     
     </select>
   </div>
+}
   
   
     <app-card-list></app-card-list>

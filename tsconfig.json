@@ -33,6 +33,7 @@
       "@pages/*": ["app/pages/*"],
       "@components/*": ["app/components/*"],
       "@directives/*": ["app/directives/*"],
+      "@mappers/*": ["app/mappers/*"],
     }
   },
   "angularCompilerOptions": {

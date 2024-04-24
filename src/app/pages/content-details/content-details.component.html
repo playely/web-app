@@ -1,9 +1,13 @@
-<div class="details">
+<div class="details" *ngIf="content">
     <app-banner-block [content]="content"></app-banner-block>
     <div class="body">
         <app-actions-block></app-actions-block>
         <p class="body-description">{{content.description}}</p>
-        <app-series-block [content]="content"></app-series-block>
-        <app-card-list></app-card-list>
+        @if (content.isSeries) {
+            <app-series-block [content]="content"></app-series-block>
+        }
+        @if (recommendations && recommendations.contents.length > 0) {
+            <app-card-list [contentList]="recommendations"></app-card-list>
+        }
     </div>
 </div>

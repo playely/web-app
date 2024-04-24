@@ -1,4 +1,4 @@
-@use '../../styles/breakpoints.scss' as bp;
+@use 'breakpoints.scss' as bp;
 
 .underlined-hover {
     display: inline-block;
@@ -79,15 +79,15 @@ nav {
             cursor: pointer;
 
             &-search:hover {
-                background-image: url("../../../assets/icons/fa_search-alt.svg");
+                background-image: url("/assets/icons/fa_search-alt.svg");
             }
 
             &-bookmark:hover {
-                background-image: url("../../../assets/icons/fa_bookmark-alt.svg");
+                background-image: url("/assets/icons/fa_bookmark-alt.svg");
             }
 
             &-user:hover {
-                background-image: url("../../../assets/icons/fa_user-circle-alt.svg");
+                background-image: url("/assets/icons/fa_user-circle-alt.svg");
             }
         }
     }

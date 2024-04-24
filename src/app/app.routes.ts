@@ -27,7 +27,7 @@ export const routes: Routes = [
         component: ContentListComponent,
     },
     {
-        path: ':contentType/:contentId',
+        path: ':mediaType/:contentId',
         component: ContentDetailsComponent
     },
     {

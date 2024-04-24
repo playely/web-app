@@ -1,14 +1,10 @@
-import { CUSTOM_ELEMENTS_SCHEMA, Component, ElementRef, Inject, OnInit, PLATFORM_ID, QueryList, ViewChild, ViewChildren, ViewEncapsulation, signal } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA, Component, ElementRef, Input, ViewChild, ViewEncapsulation } from '@angular/core';
 import { IContentList } from '@models/IContentList';
-import { contentList1Mock } from '@mocks/contentList.mock';
-import { CardComponent } from '../card/card.component';
-import { SwiperOptions } from 'swiper/types';
+import { CardComponent } from '@components/card/card.component';
 import { SwiperContainer } from 'swiper/element';
-import { NgFor, NgIf, NgStyle, isPlatformBrowser } from '@angular/common';
-import { SwiperDirective } from '../../directives/swiper.directive';
-import { register } from 'swiper/element/bundle';
-// register Swiper custom elements
-register();
+import { NgFor, NgIf, NgStyle } from '@angular/common';
+import { SwiperDirective } from '@directives/swiper.directive';
+import { SwiperOptions } from 'swiper/types';
 
 export interface Card {
   title: string;
@@ -27,12 +23,23 @@ export interface Card {
 })
 export class CardListComponent {
   @ViewChild('swiper') swiperContainer?: ElementRef<SwiperContainer>; 
-  contentList: IContentList = contentList1Mock;
+  @Input() contentList?: IContentList;
+
   swiperConfig: SwiperOptions = {
-    slidesPerView: 5,
+    slidesPerView: 4,
     spaceBetween: '20px',
-    navigation: false,
-  }
+    breakpoints: {
+      576: {
+        slidesPerView: 4,
+      },
+      768: {
+        slidesPerView: 6,
+      },
+      1024: {
+        slidesPerView: 8,
+      },
+    }
+  };
 
   prev() {
     this.swiperContainer?.nativeElement.swiper.slidePrev();

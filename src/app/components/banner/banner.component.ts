@@ -1,6 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { IContentList } from '@models/IContentList';
-import { contentListMock } from '@mocks/contentList.mock';
 import { NgClass, NgIf } from '@angular/common';
 import { RouterModule } from '@angular/router';
 
@@ -12,10 +11,11 @@ import { RouterModule } from '@angular/router';
   styleUrl: './banner.component.scss'
 })
 export class BannerComponent {
-  contentList: IContentList = contentListMock;
+  @Input() contentList: IContentList | undefined;
   selectedContentIndex = 0;
   swipeCoord?: number[];
   next() {
+    if (!this.contentList) return;
     if (this.selectedContentIndex+1 < this.contentList.contents.length) {
       this.selectedContentIndex++;
     } else {
@@ -24,6 +24,7 @@ export class BannerComponent {
   }
 
   previous() {
+    if (!this.contentList) return;
     if (this.selectedContentIndex - 1 >= 0) {
       this.selectedContentIndex--;
     } else {

@@ -1,2 +1,10 @@
-<app-banner></app-banner>
-<app-card-list></app-card-list>
+<div>
+    @for (item of contentList; track item.id) {
+        @if (item.type === 'banner') {
+            <app-banner [contentList]="item"></app-banner>
+        }
+        @if (item.type === 'cards') {
+            <app-card-list [contentList]="item"></app-card-list>
+        }
+    }
+</div>

@@ -3,6 +3,12 @@
     overflow: hidden;
     padding-left: var(--body-padding, 2rem);
 
+    &-header {
+        h2 {
+            text-transform: capitalize;
+        }
+    }
+
     &-content {
         position: relative;
 

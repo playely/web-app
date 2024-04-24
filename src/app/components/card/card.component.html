@@ -1,5 +1,6 @@
 @if (content) {
-    <div class="card" [ngClass]="'a'+aspectRatio" [routerLink]="['/',content.contentType, content.uid]">
-        <img [src]="content.image" [alt]="content.title">
+    <div class="card" [ngClass]="'a'+aspectRatio" [routerLink]="['/',content.mediaType, content.uid]">
+        <div class="card-skeleton"></div>
+        <img [src]="content.image" [alt]="content.title" (error)="manageError($event)">
     </div>
 }

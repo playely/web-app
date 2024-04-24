@@ -9,11 +9,28 @@
         aspect-ratio: 16 / 9;
     }
 
+    &.a2x3 {
+        aspect-ratio: 2 / 3;
+    }
+
     img {
         width: 100%;
         height: 100%;
         display: flex;
         object-fit: cover;
         object-position: center;
+    }
+
+    &-skeleton {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        background: #171717 url('/assets/images/logo1.svg');
+        background-size: 40%;
+        background-position: center;
+        background-repeat: no-repeat;
     }
 }

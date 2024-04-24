@@ -1,6 +1,6 @@
-@use './app/styles/breakpoints.scss' as bp;
-@import './app/styles/icons.scss';
-@import './app/styles/buttons.scss';
+@use 'breakpoints.scss' as bp;
+@import 'icons.scss';
+@import 'buttons.scss';
 /* You can add global styles to this file, and also import other style files */
 body {
     margin: 0;
