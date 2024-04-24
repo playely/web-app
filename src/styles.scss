@@ -11,6 +11,7 @@ body {
     --body-padding: 2rem;
     --primary-color: #E4B200;
     --color: #EEEEEE;
+    --navbar-height: 70px;
     
     @include bp.sm-breakpoint {
         --body-padding: 1rem;
