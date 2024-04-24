@@ -30,4 +30,8 @@ export const routes: Routes = [
         path: ':contentType/:contentId',
         component: ContentDetailsComponent
     },
+    {
+        path: '**',
+        component: NotFoundComponent
+    },
 ];

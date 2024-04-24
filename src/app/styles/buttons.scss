@@ -13,4 +13,15 @@
             filter: saturate(2);
         }
     }
+
+    &-outline {
+        color: var(--color, #000000);
+        border-color: var(--primary-color, #FFF);
+        border-width: 2px;
+        border-style: solid;
+        background: var(--background, #000000);
+        &:hover {
+            background: #2e2507;
+        }
+    }
 }
