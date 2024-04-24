@@ -1,1 +1,12 @@
+@import './app/styles/icons.scss';
 /* You can add global styles to this file, and also import other style files */
+body {
+    margin: 0;
+    padding: 0;
+    background: #1C1C1C;
+    font-family: "Lato", sans-serif;
+    color: #EEEEEE;
+    
+    --primary-color: #E4B200;
+    --color: #EEEEEE;
+}

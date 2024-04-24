@@ -19,10 +19,19 @@
     "target": "ES2022",
     "module": "ES2022",
     "useDefineForClassFields": false,
+    "baseUrl": "src",
     "lib": [
       "ES2022",
       "dom"
-    ]
+    ],
+    "paths": {
+      "@mocks/*": ["app/mocks/*"],
+      "@models/*": ["app/models/*"],
+      "@services/*": ["app/services/*"],
+      "@pipes/*": ["app/pipes/*"],
+      "@utils/*": ["app/utils/*"],
+      "@components/*": ["app/components/*"],
+    }
   },
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,

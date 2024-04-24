@@ -1,0 +1,17 @@
+.icon {
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    &-search {
+        background-image: url("../../assets/images/icons/fa_search.svg");
+    }
+    &-bookmark {
+        background-image: url("../../assets/images/icons/fa_bookmark.svg");
+    }
+    &-user {
+        background-image: url("../../assets/images/icons/fa_user-circle.svg");
+    }
+    &-menu {
+        background-image: url("../../assets/images/icons/fa_menu.svg");
+    }
+}
