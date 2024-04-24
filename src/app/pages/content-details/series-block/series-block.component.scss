@@ -1,6 +1,10 @@
 .series {
   padding: 1rem var(--body-padding, 2rem);
 
+  p {
+    opacity: 0.75;
+  }
+
   .select-contaner {
 
     select {
@@ -10,5 +14,13 @@
       color: #FFFFFF;
       border: none;
     }
+  }
+
+  .grid {
+    padding: 1rem 0;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 10px;
+    grid-auto-rows: minmax(100px, auto);
   }
 }

@@ -1,7 +1,18 @@
 <div class="info" *ngIf="content">
-    <div class="info-block">
+    <div class="info-block" *ngIf="content.overview">
         <h3>Description</h3>
-        <p>{{ content.description }}</p>
+        <p>{{ content.overview }}</p>
     </div>
-    
+    <div class="info-block" *ngIf="content.genres">
+        <h3>Genres</h3>
+        <p>{{  content.genres | separator }}</p>
+    </div>
+    <div class="info-block" *ngIf="content.release_date">
+        <h3>Release Date</h3>
+        <p>{{  content.release_date | date: 'longDate' }}</p>
+    </div>
+    <div class="info-block" *ngIf="content.created_by">
+        <h3>Creators</h3>
+        <p>{{  content.created_by | separator }}</p>
+    </div>
 </div>

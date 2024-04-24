@@ -1,13 +1,18 @@
 <div class="series">
   @if (content?.seasons) {
   <div class="select-contaner custom-select">
-    <select>
+    <select  [formControl]="season" (change)="onChange()">
       @for (item of content?.seasons; track item.id) {
-      <option [value]="item.id">Season {{item.season_number}}</option>
+      <option [value]="item.id">{{item.name}}</option>
       }
 
     </select>
+    <p>{{ content?.current_season?.overview}}</p>
   </div>
   }
-  <app-card-list></app-card-list>
+  <div class="grid" *ngIf="content?.current_season">
+    @for (item of content?.current_season?.episodes; track item.id) {
+      <app-card [content]="item" aspectRatio="16x9" [showTitle]="true" [showOverview]="true"></app-card>
+    }
+  </div>
 </div>

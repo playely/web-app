@@ -1,6 +1,5 @@
 import { NgClass } from '@angular/common';
 import { Component, Input } from '@angular/core';
-import { IContent } from '@models/IContent';
 
 @Component({
   selector: 'app-actions-block',
@@ -10,7 +9,7 @@ import { IContent } from '@models/IContent';
   styleUrl: './actions-block.component.scss'
 })
 export class ActionsBlockComponent {
-  @Input() content?: IContent;
+  @Input() content?: any;
   isFavorite: boolean = false;
 
   toggleFavorite() {

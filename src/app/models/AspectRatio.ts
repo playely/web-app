@@ -1,0 +1,1 @@
+export type AspectRatio = '16x9' | '2x3';

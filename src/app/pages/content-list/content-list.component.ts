@@ -2,8 +2,8 @@ import { Component } from '@angular/core';
 import { BannerComponent } from '@components/banner/banner.component';
 import { CardListComponent } from '@components/card-list/card-list.component';
 import { ContentService } from '@services/content.service';
-import { IContentList } from '@models/IContentList';
 import { ActivatedRoute } from '@angular/router';
+import { TMDBResponse } from '@models/tmdb/TMDBResponse';
 
 @Component({
   selector: 'app-content-list',
@@ -13,7 +13,7 @@ import { ActivatedRoute } from '@angular/router';
   styleUrl: './content-list.component.scss'
 })
 export class ContentListComponent {
-  contentList: IContentList[] = [];
+  contentList?: TMDBResponse[];
   constructor(private contentService: ContentService, private activatedRoute: ActivatedRoute) {
     this.activatedRoute.params.subscribe(({ listId }) => {
       switch (listId) {
@@ -31,24 +31,20 @@ export class ContentListComponent {
     Promise.all([
       this.contentService.getTrending(),
       this.contentService.getTrending('week'),
-      // this.contentService.getDiscoverMovies(1),
     ]).then(value => {
-      this.contentList = value.reduce((prev, current) => current.concat(prev));
-      this.contentList[0].type = 'banner';
+      this.contentList = value;
     });
   }
 
   private fetchMoviesContentList() {
     this.contentService.getDiscoverMovies().then(value => {
-      this.contentList = value;
-      this.contentList[0].type = 'banner';
+      this.contentList = [value];
     });
   }
 
   private fetchSeriesContentList() {
     this.contentService.getDiscoverSeries().then(value => {
-      this.contentList = value;
-      this.contentList[0].type = 'banner';
+      this.contentList = [value];
     });
   }
 }

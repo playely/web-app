@@ -1,9 +1,9 @@
 <div class="banner" *ngIf="content">
-    <img class="banner-image" [src]="content.backdropImage" [alt]="content.image">
+    <img class="banner-image" [src]="content.backdrop_path | imageUrl: 'original'" [alt]="content.title">
     
     <div class="banner-overlay">
         <div class="banner-data">
-            <img *ngIf="content.titleImage; else title" [src]="content.titleImage" [alt]="content.title">
+            <img *ngIf="content.logo_path; else title" [src]="content.logo_path| imageUrl: 'original'" [alt]="content.title">
             <ng-template #title>
                 <h1>{{content.title}}</h1>
             </ng-template>

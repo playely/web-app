@@ -1,9 +1,9 @@
 <div *ngIf="contentList" class="cardlist">
-  <div class="cardlist-header"><h2>{{contentList.title}}</h2></div>
+  <div class="cardlist-header"><h2>{{title}}</h2></div>
   <div class="cardlist-content">
     <swiper-container #swiper init="false" appSwiper [config]="swiperConfig">
-      @for (item of contentList.contents; track item.id) {
-        <swiper-slide><app-card [content]="item" [aspectRatio]="contentList.aspectRatio"></app-card></swiper-slide>
+      @for (item of contentList.results; track item.id) {
+        <swiper-slide><app-card [content]="item" aspectRatio="2x3"></app-card></swiper-slide>
       }
     </swiper-container>
     <div class="arrow left">

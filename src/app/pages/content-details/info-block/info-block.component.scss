@@ -1,3 +1,11 @@
 .info {
     padding: 1rem var(--body-padding, 2rem);
+    h3 {
+        border-bottom: 2px solid var(--primary-color, #FFFFFF);
+        width: fit-content;
+    }
+
+    p {
+        opacity: 0.75;
+    }
 }

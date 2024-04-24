@@ -1,6 +1,10 @@
 @if (content) {
-    <div class="card" [ngClass]="'a'+aspectRatio" [routerLink]="['/',content.mediaType, content.uid]">
+    <div class="card" [ngClass]="'a'+aspectRatio" [routerLink]="['/',content.media_type, content.id]">
         <div class="card-skeleton"></div>
-        <img [src]="content.image" [alt]="content.title" (error)="manageError($event)">
+        <img *ngIf="content.poster_path" [src]="content.poster_path | imageUrl: 'w500'" [alt]="content.title" (error)="manageError($event)">
+        <img *ngIf="content.still_path" [src]="content.still_path | imageUrl: 'w500'" [alt]="content.title" (error)="manageError($event)">
     </div>
+    <p *ngIf="showTitle" class="title"><span>{{content.episode_number}}.</span>{{content.name}}</p>
+    <p *ngIf="showOverview && content.runtime" class="time">{{ content.runtime | duration }}</p>
+    <p *ngIf="showOverview" class="description">{{ content.overview }}</p>
 }

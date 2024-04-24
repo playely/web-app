@@ -1,22 +1,23 @@
 import { Component, Input } from '@angular/core';
-import { IContentList } from '@models/IContentList';
 import { NgClass, NgIf } from '@angular/common';
 import { RouterModule } from '@angular/router';
+import { TMDBResponse } from '@models/tmdb/TMDBResponse';
+import { ImageUrlPipe } from '@pipes/image-url.pipe';
 
 @Component({
   selector: 'app-banner',
   standalone: true,
-  imports: [NgIf, RouterModule, NgClass],
+  imports: [NgIf, RouterModule, NgClass, ImageUrlPipe],
   templateUrl: './banner.component.html',
   styleUrl: './banner.component.scss'
 })
 export class BannerComponent {
-  @Input() contentList: IContentList | undefined;
+  @Input() contentList?: TMDBResponse;
   selectedContentIndex = 0;
   swipeCoord?: number[];
   next() {
     if (!this.contentList) return;
-    if (this.selectedContentIndex+1 < this.contentList.contents.length) {
+    if (this.selectedContentIndex + 1 < this.contentList.results.length) {
       this.selectedContentIndex++;
     } else {
       this.selectedContentIndex = 0;
@@ -28,7 +29,7 @@ export class BannerComponent {
     if (this.selectedContentIndex - 1 >= 0) {
       this.selectedContentIndex--;
     } else {
-      this.selectedContentIndex = this.contentList.contents.length -1;
+      this.selectedContentIndex = this.contentList.results.length -1;
     }
   }
 

@@ -1,10 +1,10 @@
 import { CUSTOM_ELEMENTS_SCHEMA, Component, ElementRef, Input, ViewChild, ViewEncapsulation } from '@angular/core';
-import { IContentList } from '@models/IContentList';
 import { CardComponent } from '@components/card/card.component';
 import { SwiperContainer } from 'swiper/element';
 import { NgFor, NgIf, NgStyle } from '@angular/common';
 import { SwiperDirective } from '@directives/swiper.directive';
 import { SwiperOptions } from 'swiper/types';
+import { TMDBResponse } from '@models/tmdb/TMDBResponse';
 
 export interface Card {
   title: string;
@@ -23,7 +23,8 @@ export interface Card {
 })
 export class CardListComponent {
   @ViewChild('swiper') swiperContainer?: ElementRef<SwiperContainer>; 
-  @Input() contentList?: IContentList;
+  @Input() contentList?: TMDBResponse;
+  @Input() title: string = 'Default Title';
 
   swiperConfig: SwiperOptions = {
     slidesPerView: 4,

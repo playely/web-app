@@ -2,7 +2,32 @@
     <app-banner-block [content]="content"></app-banner-block>
     <div class="body">
         <app-actions-block></app-actions-block>
-        <p class="body-description">{{content.description}}</p>
-        <app-tabs-block [content]="content" [recommendations]="recommendations"></app-tabs-block>
+        <p class="body-description">{{content.overview}}</p>
+        <p *ngIf="content.runtime" class="body-runtime">{{ content.runtime| duration }}</p>
+        <div class="tabs">
+            @for (item of tabs; track item.key) {
+                <div class="tabs-item" 
+                [ngClass]="{'selected': selectedTab?.key === item.key }"
+                (click)="selectTab(item)"
+                >{{ item.name }}</div>
+            }
+        </div>
+        
+        @switch (selectedTab?.key) {
+            @case ("eps") {
+              <app-series-block [content]="content" (changeSeason)="onChangeSeason($event)"></app-series-block>
+            }
+            @case ("info") {
+                <app-info-block [content]="content"></app-info-block>
+            }
+            @case ("rec") {
+                @if (content.recommendations?.results) {
+                    <app-card-list [contentList]="content.recommendations" title="You may like also"></app-card-list>
+                } 
+                @if (content.similar?.results) {
+                    <app-card-list [contentList]="content.similar" title="Similar to this"></app-card-list>
+                } 
+            }
+          }
     </div>
 </div>

@@ -1,9 +1,9 @@
 <div>
-    @for (item of contentList; track item.id) {
-        @if (item.type === 'banner') {
+    @for (item of contentList; track $index) {
+        @if ($index == 0) {
             <app-banner [contentList]="item"></app-banner>
         }
-        @if (item.type === 'cards') {
+        @if ($index > 0) {
             <app-card-list [contentList]="item"></app-card-list>
         }
     }
