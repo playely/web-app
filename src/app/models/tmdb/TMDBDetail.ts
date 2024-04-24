@@ -29,7 +29,6 @@ export interface TMDBDetails {
     vote_count?: number;
     media_type?: string;
     seasons?: TMDBSeason[];
-    current_season?: TMDBSeason;
     recommendations?: TMDBResponse;
     similar?: TMDBResponse;
     tagline?: string;

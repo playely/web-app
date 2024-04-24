@@ -2,34 +2,34 @@
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;
-    &-search {
+    &.search {
         background-image: url("/assets/icons/fa_search.svg");
     }
-    &-bookmark {
+    &.bookmark {
         background-image: url("/assets/icons/fa_bookmark.svg");
     }
-    &-user {
+    &.user {
         background-image: url("/assets/icons/fa_user-circle.svg");
     }
-    &-menu {
+    &.menu {
         background-image: url("/assets/icons/fa_menu.svg");
     }
-    &-arrow-left {
+    &.arrow-left {
         background-image: url("/assets/icons/icon-park_left.svg");
     }
-    &-arrow-right {
+    &.arrow-right {
         background-image: url("/assets/icons/icon-park_right.svg");
     }
-    &-movie {
+    &.movie {
         background-image: url("/assets/icons/fa_movie.svg");
     }
-    &-favorite {
+    &.favorite {
         background-image: url("/assets/icons/mi_favorite.svg");
     }
-    &-favorite-fill {
+    &.favorite-fill {
         background-image: url("/assets/icons/mi_favorite-fill.svg");
     }
-    &-info {
+    &.info {
         background-image: url("/assets/icons/ph_info-bold.svg");
     }
 }

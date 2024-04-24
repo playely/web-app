@@ -1,6 +1,8 @@
 @use 'breakpoints.scss' as bp;
-@import 'icons.scss';
-@import 'buttons.scss';
+@use 'icons.scss';
+@use 'buttons.scss';
+@use 'theme.scss';
+
 /* You can add global styles to this file, and also import other style files */
 body {
     margin: 0;
@@ -18,4 +20,15 @@ body {
         --body-padding: 1rem;
     }
 
+}
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.cdk-overlay-pane:not(.mat-mdc-select-panel-above) div.mat-mdc-select-panel,
+.mat-mdc-select-panel-above div.mat-mdc-select-panel {
+    -ms-overflow-style: none;  /* Internet Explorer 10+ */
+    scrollbar-width: none;  /* Firefox */
+    &::-webkit-scrollbar { 
+      display: none;  /* Safari and Chrome */
+    }
 }

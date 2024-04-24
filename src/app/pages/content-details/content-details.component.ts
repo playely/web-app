@@ -6,11 +6,12 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { TMDBDetails } from '@models/tmdb/TMDBDetail';
 import { ContentService } from '@services/content.service';
 import { DurationPipe } from '@pipes/duration.pipe';
-import { map } from 'rxjs';
 import { isSeries } from '@utils/content.utils';
+import { CardListComponent } from '@components/card-list/card-list.component';
+import { TMDBSeason } from '@models/tmdb/TMDBSeason';
 import { SeriesBlockComponent } from './series-block/series-block.component';
-import { CardListComponent } from '../../components/card-list/card-list.component';
 import { InfoBlockComponent } from './info-block/info-block.component';
+import { map } from 'rxjs';
 
 interface ITab {
   name: string;
@@ -45,6 +46,7 @@ export class ContentDetailsComponent {
      }
   ];
   content?: TMDBDetails;
+  currentSeason?: TMDBSeason;
   contentId$ = this.activatedRoute.params.pipe(map((q) => q['contentId']));
 
   constructor(private contentService: ContentService, private activatedRoute: ActivatedRoute, private router: Router) {
@@ -71,10 +73,11 @@ export class ContentDetailsComponent {
     if (!this.content) return;
     this.contentService.getSeasonDetails(this.content.id, seasonNumber).then((episodes)=>{
       if (this.content) {
-        this.content.current_season = episodes;
+        this.currentSeason = episodes;
       }
     });
   }
+  
   selectTab(tab: ITab) {
     this.selectedTab = tab;
   }
@@ -86,7 +89,7 @@ export class ContentDetailsComponent {
     if (!season) return;
     this.contentService.getSeasonDetails(this.content.id, season.season_number).then((episodes)=>{
       if (this.content) {
-        this.content.current_season = episodes;
+        this.currentSeason = episodes;
       }
     });
   }

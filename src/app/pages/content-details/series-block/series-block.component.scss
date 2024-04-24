@@ -5,22 +5,35 @@
     opacity: 0.75;
   }
 
-  .select-contaner {
-
-    select {
-      font-size: 18px;
-      padding: 14px 18px;
-      background: #464646;
-      color: #FFFFFF;
-      border: none;
-    }
+  &-dropdown {
+    display: flex;
+    justify-content: flex-end;
   }
 
-  .grid {
+  &-grid {
     padding: 1rem 0;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-gap: 10px;
     grid-auto-rows: minmax(100px, auto);
   }
+
+  &-footer {
+    display: flex;
+    justify-content: space-between;
+    .icon {
+      width: 20px;
+      height: 20px;
+    }
+    .mat-mdc-outlined-button.mat-primary {
+      --mdc-outlined-button-outline-color: var(--primary-color, #FFFFFF);
+      padding: 1.5rem 2rem;
+      max-width: 300px;
+    }
+    .mat-mdc-form-field-subscript-wrapper {
+      display: none;
+    }
+  }
 }
+
+

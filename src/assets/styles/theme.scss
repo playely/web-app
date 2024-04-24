@@ -1,0 +1,74 @@
+
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+@use '@angular/material' as mat;
+// ================================================================================================
+//   File name: _pallette-variables.scss
+//   Description: The palette for the material configuration, is generated using a tool
+//   Tool URL: http://mcg.mbitson.com/
+// ================================================================================================
+$primary-palette:  (
+  50 : #fcf6e0,
+  100 : #f7e8b3,
+  200 : #f2d980,
+  300 : #ecc94d,
+  400 : #e8be26,
+  500 : #e4b200,
+  600 : #e1ab00,
+  700 : #dda200,
+  800 : #d99900,
+  900 : #d18a00,
+  A100 : #fffdf9,
+  A200 : #ffe9c6,
+  A400 : #ffd593,
+  A700 : #ffcb7a,
+  contrast: (
+      50 : #000000,
+      100 : #000000,
+      200 : #000000,
+      300 : #000000,
+      400 : #000000,
+      500 : #000000,
+      600 : #000000,
+      700 : #000000,
+      800 : #000000,
+      900 : #000000,
+      A100 : #000000,
+      A200 : #000000,
+      A400 : #000000,
+      A700 : #000000,
+  )
+);
+
+// Plus imports for other components in your app.
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat.core();
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+$playely-web-primary: mat.define-palette($primary-palette, 500);
+$playely-web-accent: mat.define-palette(mat.$indigo-palette, 500);
+
+// The warn palette is optional (defaults to red).
+$playely-web-warn: mat.define-palette(mat.$red-palette);
+
+// Create the theme object. A theme consists of configurations for individual
+// theming systems such as "color" or "typography".
+$playely-web-theme: mat.define-dark-theme((
+  color: (
+    primary: $playely-web-primary,
+    accent: $playely-web-accent,
+    warn: $playely-web-warn,
+  ),
+  typography: mat.define-typography-config(),
+  density: 0
+));
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include mat.all-component-themes($playely-web-theme);
