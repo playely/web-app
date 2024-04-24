@@ -1,5 +1,9 @@
 @use 'breakpoints.scss' as bp;
 
+.details {
+    min-height: 100vh;
+}
+
 .body {
     padding: 1rem var(--body-padding, 2rem);
     &-description {

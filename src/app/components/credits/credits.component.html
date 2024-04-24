@@ -1,0 +1,23 @@
+<table>
+    <tr>
+        <td colspan="2"><h3>Cast</h3></td>
+    </tr>
+   @for (item of cast; track item.id) {
+    <tr>
+        <td class="right">{{ item.character }}</td>
+        <td class="left">{{ item.name }}</td>
+    </tr>
+   }
+
+   @for (item of crew; track item.key) {
+    <tr>
+        <td colspan="2"><h3>{{item.key}}</h3></td>
+    </tr>
+    @for (item2 of item.values; track item2.id) {
+        <tr>
+            <td class="right">{{ item2.name }}</td>
+            <td class="left">{{ item2.job }}</td>
+        </tr>
+       }
+   }
+</table>

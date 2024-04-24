@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { MatDialog, MatDialogModule } from '@angular/material/dialog';
 import { BannerBlockComponent } from './banner-block/banner-block.component';
 import { ActionsBlockComponent } from './actions-block/actions-block.component';
 import { NgClass, NgIf } from '@angular/common';
@@ -12,6 +13,7 @@ import { TMDBSeason } from '@models/tmdb/TMDBSeason';
 import { SeriesBlockComponent } from './series-block/series-block.component';
 import { InfoBlockComponent } from './info-block/info-block.component';
 import { map } from 'rxjs';
+import { CreditsComponent } from '@components/credits/credits.component';
 
 interface ITab {
   name: string;
@@ -28,7 +30,8 @@ interface ITab {
     ActionsBlockComponent, 
     SeriesBlockComponent, 
     CardListComponent, 
-    InfoBlockComponent
+    InfoBlockComponent,
+    MatDialogModule
   ],
   templateUrl: './content-details.component.html',
   styleUrl: './content-details.component.scss'
@@ -49,7 +52,12 @@ export class ContentDetailsComponent {
   currentSeason?: TMDBSeason;
   contentId$ = this.activatedRoute.params.pipe(map((q) => q['contentId']));
 
-  constructor(private contentService: ContentService, private activatedRoute: ActivatedRoute, private router: Router) {
+  constructor(
+    private contentService: ContentService, 
+    private activatedRoute: ActivatedRoute, 
+    private router: Router, 
+    private dialog: MatDialog
+  ) {
     this.contentId$.subscribe((contentId) => {
       const mediaType = this.activatedRoute.snapshot.params['mediaType'];
       this.contentService.getDetails(mediaType, contentId).then(response => {
@@ -62,7 +70,6 @@ export class ContentDetailsComponent {
           });
         }
         this.content = response;
-        console.log(this.content);
         if (isSeries(this.content)) {
           this.fetchSeasonDetails(1); 
           if (this.tabs.length < 3) {
@@ -101,6 +108,16 @@ export class ContentDetailsComponent {
       if (this.content) {
         this.currentSeason = episodes;
       }
+    });
+  }
+
+  showCredits() {
+    this.dialog.open(CreditsComponent, {
+      data: this.content?.credits,
+      panelClass: 'credits-panel',
+      backdropClass: 'credits-backdrop',
+      minWidth: '50vw',
+      maxHeight: '90vh',
     });
   }
   

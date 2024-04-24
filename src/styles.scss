@@ -32,3 +32,18 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
       display: none;  /* Safari and Chrome */
     }
 }
+
+.credits-backdrop {
+    background: #00000099;
+}
+
+.credits-panel  {
+    --mdc-dialog-container-color: #1C1C1C;
+    padding: 1rem;
+    -ms-overflow-style: none;  /* Internet Explorer 10+ */
+    scrollbar-width: none;  /* Firefox */
+    ::-webkit-scrollbar { 
+      display: none;  /* Safari and Chrome */
+    }
+  
+}

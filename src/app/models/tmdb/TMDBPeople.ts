@@ -10,4 +10,6 @@ export interface TMDBPeople {
     character?: string;
     credit_id: string;
     order?: number;
+    job?: string;
+    department?: string;
 }

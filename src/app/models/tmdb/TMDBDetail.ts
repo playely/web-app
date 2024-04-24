@@ -10,6 +10,11 @@ interface TMDBImage {
     width: number;
 }
 
+export interface TMDBCredits {
+    cast?: TMDBPeople[];
+    crew?: TMDBPeople[];
+}
+
 export interface TMDBDetails {
     id: number;
     title: string;
@@ -36,10 +41,7 @@ export interface TMDBDetails {
     created_by?: TMDBPeople[];
     runtime?: number;
     air_date?: string;
-    credits?: {
-        cast?: TMDBPeople[];
-        crew?: TMDBPeople[];
-    }
+    credits?: TMDBCredits;
     episode_number?: number;
     images: {
         backdrops?: TMDBImage[];

@@ -1,7 +1,8 @@
-<div class="details" *ngIf="content">
-    <app-banner-block [content]="content"></app-banner-block>
+<div class="details">
+    @if (content) {
+        <app-banner-block [content]="content"></app-banner-block>
     <div class="body">
-        <app-actions-block></app-actions-block>
+        <app-actions-block (showCredits)="showCredits()"></app-actions-block>
         <p class="body-description">{{content.overview}}</p>
         <p *ngIf="content.runtime" class="body-runtime">{{ content.runtime| duration }}</p>
         <div class="tabs">
@@ -31,4 +32,5 @@
             }
           }
     </div>
+    }
 </div>
