@@ -1,0 +1,26 @@
+<div class="episode" *ngIf="content">
+    <h2><strong>{{content.episode_number}}.</strong>{{content.name}}</h2>
+    <div class="episode-content">
+        <div class="episode-content-col">
+            <img *ngIf="content.poster_path" [src]="content.poster_path | imageUrl: 'w500'" [alt]="content.title" (error)="manageError($event)">
+            <img *ngIf="content.still_path" [src]="content.still_path | imageUrl: 'w500'" [alt]="content.title" (error)="manageError($event)">
+        </div>
+        <div class="episode-content-col">
+            <div class="block">
+                <strong>Description</strong>
+                <p>{{ content.overview }}</p>
+            </div>
+            <div class="block" *ngIf="content.runtime">
+                <strong>Runtime</strong>
+                <p>{{ content.runtime | duration }}</p>
+            </div>
+            <div class="block" *ngIf="content.air_date">
+                <strong>Air Date</strong>
+                <p >{{ content.air_date | date: 'longDate' }}</p>
+            </div>
+            <p>
+                <button mat-flat-button color="primary" mat-dialog-close [routerLink]="['/play',content.media_type, content.id]" [state]="content">Play Now</button>
+            </p>
+        </div>
+    </div>
+</div>

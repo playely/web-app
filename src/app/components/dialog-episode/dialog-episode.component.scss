@@ -1,0 +1,29 @@
+@use 'breakpoints.scss' as bp;
+
+.episode {
+    padding: 2rem;
+    box-sizing: border-box;
+
+    &-content {
+        display: flex;
+        gap: 1rem;
+
+        @include bp.md-breakpoint {
+            flex-direction: column;
+
+            img {
+                width: 100%;
+            }
+        }
+    }
+
+    h2 {
+        margin-top: 0;
+    }
+}
+
+.block {
+    p {
+        margin-top: 0;
+    }
+}

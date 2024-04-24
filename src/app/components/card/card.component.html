@@ -1,5 +1,5 @@
 @if (content) {
-    <div class="card" [ngClass]="'a'+aspectRatio" [routerLink]="['/',content.media_type, content.id]">
+    <div class="card" [ngClass]="'a'+aspectRatio" (click)="onClick()">
         <div class="card-skeleton"></div>
         <img *ngIf="content.poster_path" [src]="content.poster_path | imageUrl: 'w500'" [alt]="content.title" (error)="manageError($event)">
         <img *ngIf="content.still_path" [src]="content.still_path | imageUrl: 'w500'" [alt]="content.title" (error)="manageError($event)">

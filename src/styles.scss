@@ -34,7 +34,8 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 }
 
 .credits-backdrop,
-.player-backdrop {
+.player-backdrop,
+.episode-dialog-backdrop {
     background: #00000099;
 }
 
@@ -46,5 +47,8 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
     ::-webkit-scrollbar { 
       display: none;  /* Safari and Chrome */
     }
-  
+}
+
+.episode-dialog-panel {
+    --mdc-dialog-container-color: #1C1C1C;
 }

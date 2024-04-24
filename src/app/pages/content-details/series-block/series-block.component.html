@@ -12,7 +12,7 @@
   }
   <div class="series-grid" *ngIf="currentSeason">
     @for (item of currentSeason.episodes; track item.id) {
-      <app-card [content]="item" aspectRatio="16x9" [showTitle]="true" [showOverview]="true"></app-card>
+      <app-card [content]="item" aspectRatio="16x9" [showTitle]="true" [showOverview]="true" clickMode="modal"></app-card>
     }
   </div>
   <div class="series-footer">

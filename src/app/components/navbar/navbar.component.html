@@ -1,4 +1,4 @@
-<nav>
+<nav class="navbar" (scroll)="onWindowScroll()">
     <img [routerLink]="['/']" src="/assets/images/logo.svg" alt="playely"/>
     <div class="links">
         <a *ngFor="let route of routes" 

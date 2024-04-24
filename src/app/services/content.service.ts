@@ -34,13 +34,19 @@ export class ContentService {
     .then(value=>({...value, title: 'Top 10', results: value.results.map(el=>({...el, media_type: 'tv'}))}));
   }
 
-  getDetails(mediaType: number, contentId: number) {
+  getDetails(mediaType: string, contentId: number) {
     return firstValueFrom(this.http.get<TMDBDetails>(`https://api.themoviedb.org/3/${mediaType}/${contentId}?append_to_response=credits,images,keywords,recommendations,similar,providers,seasons`))
     .then(value=>({ ...value, logo_path: getLogoPath(value) }));
   }
 
   getSeasonDetails(series_id: number, season_number: number) {
-    return firstValueFrom(this.http.get<TMDBSeason>(`https://api.themoviedb.org/3/tv/${series_id}/season/${season_number}?append_to_response=details`));
+    return firstValueFrom(this.http.get<TMDBSeason>(`https://api.themoviedb.org/3/tv/${series_id}/season/${season_number}?append_to_response=details`))
+    .then(value=>({ ...value, episodes: value.episodes?.map((ep)=>({...ep, media_type: 'episode'})) }));
+  }
+
+  getEpisodeDetails(series_id: number, season_number: number, episode_number: number) {
+    return firstValueFrom(this.http.get<TMDBDetails>(` https://api.themoviedb.org/3/tv/${series_id}/season/${season_number}/episode/${episode_number}?append_to_response=credits,images,keywords,recommendations,similar,providers,seasons`))
+    .then(value=>({ ...value, logo_path: getLogoPath(value) }));
   }
 
   getRecommendations(mediaType: number, contentId: number) {
