@@ -81,13 +81,14 @@
         display: flex;
         width: 100%;
         gap: 5px;
-        justify-content: center;
-        padding-bottom: 2rem;
+        justify-content: flex-end;
+        padding: 2rem;
+        box-sizing: border-box;
 
         span {
-            width: 10px;
-            height: 10px;
-            border-radius: 100%;
+            width: 20px;
+            height: 5px;
+            border-radius: 8px;
             background-color: #FFFFFF;
             opacity: 0.85;
             cursor: pointer;

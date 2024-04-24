@@ -1,3 +1,25 @@
 <div class="search">
-    <h1> <span class="icon search"></span>Search</h1>
+    <mat-form-field appearance="outline">
+        <mat-label>Search</mat-label>
+        <input matInput placeholder="Search movies, series and episodes" [formControl]="searchControl">
+        <mat-icon matPrefix>search</mat-icon>
+      </mat-form-field>
+      <h3 *ngIf="noResults && searchControl.value">No Results for "{{searchControl.value}}"</h3>
+      <ng-container *ngIf="noSearchResults; else resultsContent">
+        <h3>Discover Movies</h3>
+        <div class="search-grid">
+          @for (item of collectionMovies; track item.id) {
+            <app-card-title [title]="item.name" [id]="item.id" [mediaType]="'movies'"></app-card-title>
+          }
+        </div>
+        <h3>Discover TV</h3>
+        <div class="search-grid">
+          @for (item of collectionTv; track item.id) {
+            <app-card-title [title]="item.name" [id]="item.id" [mediaType]="'tv'"></app-card-title>
+          }
+        </div>
+      </ng-container>
+      <ng-template #resultsContent>
+        <app-card-grid [contentList]="results"></app-card-grid>
+      </ng-template>
 </div>

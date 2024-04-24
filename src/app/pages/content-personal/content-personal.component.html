@@ -1,0 +1,8 @@
+<div class="personal">
+    @if (favoritesList) {
+        <app-card-list [contentList]="favoritesList"></app-card-list>
+    }
+    @if (watchList) {
+        <app-card-list [contentList]="watchList"></app-card-list>
+    }
+</div>

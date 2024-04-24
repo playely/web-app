@@ -14,13 +14,13 @@ export class ContentService {
 
   constructor(private http: HttpClient, private config:ConfigService) { }
 
-  getDiscoverMovies(pageNumber: number = 1): Promise<TMDBResponse> {
-    return firstValueFrom(this.http.get<TMDBResponse>(`https://api.themoviedb.org/3/discover/movie?page=${pageNumber}?append_to_response=images`))
+  getDiscoverMovies(pageNumber: number = 1, genres?: string): Promise<TMDBResponse> {
+    return firstValueFrom(this.http.get<TMDBResponse>(`https://api.themoviedb.org/3/discover/movie?page=${pageNumber}?append_to_response=imagessort_by=popularity.desc${genres ? `&with_genres=${genres}`: ''}`))
     .then(value=>({...value, title: 'Best Movies', results: value.results.map(el=>({...el, media_type: 'movie'}))}));
   }
 
-  getDiscoverSeries(pageNumber: number = 1): Promise<TMDBResponse> {
-    return firstValueFrom(this.http.get<TMDBResponse>(`https://api.themoviedb.org/3/discover/tv?page=${pageNumber}?append_to_response=images`))
+  getDiscoverSeries(pageNumber: number = 1, genres?: string): Promise<TMDBResponse> {
+    return firstValueFrom(this.http.get<TMDBResponse>(`https://api.themoviedb.org/3/discover/tv?page=${pageNumber}?append_to_response=imagessort_by=popularity.desc${genres ? `&with_genres=${genres}`: ''}`))
     .then(value=>({...value, title: 'Best Series', results: value.results.map(el=>({...el, media_type: 'tv'}))}));
   }
 
@@ -45,5 +45,18 @@ export class ContentService {
 
   getRecommendations(mediaType: number, contentId: number) {
     return firstValueFrom(this.http.get<TMDBResponse>(`https://api.themoviedb.org/3/${mediaType}/${contentId}/recommendations`));
+  }
+
+  getMovieGenres() {
+    return firstValueFrom(this.http.get<TMDBResponse>(`https://api.themoviedb.org/3/genre/movie/list`));
+  }
+
+  getSeriesGenres() {
+    return firstValueFrom(this.http.get<TMDBResponse>(`https://api.themoviedb.org/3/genre/tv/list`));
+  }
+
+  getSearchResults(text: string, page: number = 1) {
+    return firstValueFrom(this.http.get<TMDBResponse>(`https://api.themoviedb.org/3/search/multi?query=${text}&include_adult=false&language=en-US&page=${page}`))
+    .then((res)=>({...res, results: res.results.filter((item)=>item.media_type && ['movies', 'tv'].includes(item.media_type))}))
   }
 }

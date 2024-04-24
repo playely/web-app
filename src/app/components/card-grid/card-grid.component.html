@@ -1,0 +1,5 @@
+<div class="grid">
+    @for (item of contentList; track item.id) {
+        <app-card [content]="item" [aspectRatio]="'2x3'"></app-card>
+      }
+</div>

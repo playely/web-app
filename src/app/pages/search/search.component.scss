@@ -1,4 +1,17 @@
 .search {
     padding: var(--body-padding, 2vw);
     padding-top: var(--navbar-height, 0);
+    min-height: 100vh;
+    
+    mat-form-field  {
+        width: 100%;
+    }
+
+    &-grid {
+        max-width: 100%;
+        margin: 0 auto;
+        display: grid;
+        gap: 1rem;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    }
 }

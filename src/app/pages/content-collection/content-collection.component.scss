@@ -1,0 +1,6 @@
+.collection {
+    min-height: 100vh;
+    box-sizing: border-box;
+    padding: var(--body-padding, 2vw);
+    padding-top: var(--navbar-height, 0);
+}
