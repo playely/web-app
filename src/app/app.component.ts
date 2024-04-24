@@ -1,20 +1,33 @@
-import { Component } from '@angular/core';
-import { ActivatedRoute, NavigationEnd, Router, RouterOutlet } from '@angular/router';
-import { NavbarComponent } from './components/navbar/navbar.component';
-import { FooterComponent } from './components/footer/footer.component';
+import { Component, HostListener, ViewChild } from '@angular/core';
+import { ActivatedRoute, NavigationEnd, Router, RouterModule, RouterOutlet } from '@angular/router';
+import { NavbarComponent } from '@components/navbar/navbar.component';
+import { FooterComponent } from '@components/footer/footer.component';
 import { filter, map, mergeMap } from 'rxjs';
 import { Title } from '@angular/platform-browser';
+import {MatSidenav, MatSidenavModule} from '@angular/material/sidenav';
+import { mockRoutes } from '@mocks/routes.mock';
+import { IRoute } from '@models/IRoute';
+import { NgFor } from '@angular/common';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, NavbarComponent, FooterComponent],
+  imports: [RouterOutlet, NavbarComponent, FooterComponent, MatSidenavModule, RouterModule, NgFor],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
+  @ViewChild(MatSidenav) sidenav?: MatSidenav;
+  routes: IRoute[] = mockRoutes;
   showNavbar = false;
   showFooter = false;
+  navbarMode: 'gradient' | 'solid' = 'gradient';
+
+  @HostListener('window:scroll', ['$event'])
+  onWindowScroll(event: Event) {
+      let element = document.querySelector('.navbar') as HTMLElement;
+      this.navbarMode = (event.target as HTMLElement).scrollTop > element.clientHeight ? 'solid' : 'gradient';
+    }
 
   constructor(private router: Router, private activatedRoute: ActivatedRoute,  private title: Title){
     this.router.events.pipe(
@@ -29,6 +42,10 @@ export class AppComponent {
         this.title.setTitle(event.title);
       }
     });
+  }
+
+  toggleMenu() {
+    this.sidenav?.toggle();
   }
 
     /**

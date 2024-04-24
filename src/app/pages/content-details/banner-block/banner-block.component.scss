@@ -63,10 +63,6 @@
             @include bp.sm-breakpoint {
                 width: 100%;
             }
-
-            &:hover {
-                transform: scaleX(1.1);
-            }
         }
     }
 }

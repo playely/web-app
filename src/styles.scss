@@ -15,7 +15,10 @@ body {
     --primary-color: #E4B200;
     --color: #EEEEEE;
     --navbar-height: 70px;
-    
+    --mat-sidenav-content-background-color: #1C1C1C;
+    --mat-sidenav-container-background-color: #1C1C1C;
+    --mat-sidenav-scrim-color: #00000099;
+
     @include bp.sm-breakpoint {
         --body-padding: 1rem;
     }

@@ -1,8 +1,8 @@
 import { NgClass, NgFor } from '@angular/common';
-import { Component, HostListener } from '@angular/core';
-import { RouterModule } from '@angular/router';
-import { mockRoutes } from '@mocks/routes.mock';
+import { Component, EventEmitter, HostListener, Input, OnDestroy, Output } from '@angular/core';
+import { NavigationStart, Router, RouterModule } from '@angular/router';
 import { IRoute } from '@models/IRoute';
+import { ReplaySubject, fromEvent, takeUntil } from 'rxjs';
 
 @Component({
   selector: 'app-navbar',
@@ -11,17 +11,24 @@ import { IRoute } from '@models/IRoute';
   templateUrl: './navbar.component.html',
   styleUrl: './navbar.component.scss'
 })
-export class NavbarComponent {
-  routes: IRoute[] = mockRoutes;
-  @HostListener('window:scroll', ['$event'])
+export class NavbarComponent implements OnDestroy {
+  @Input() routes: IRoute[] = [];
+  @Input() isMenuOpen: boolean = false;
+  @Input() navbarMode: string = 'gradient';
+  @Output() toggleMenu = new EventEmitter();
+  private destroyed$: ReplaySubject<boolean> = new ReplaySubject(1);
 
-  onWindowScroll() {
-      let element = document.querySelector('.navbar') as HTMLElement;
-      if (window.scrollY > element.clientHeight + 200) {
-        element.classList.add('navbar-inverse');
-      } else {
-        element.classList.remove('navbar-inverse');
+    constructor(private router: Router){
+      this.router.events.pipe(takeUntil(this.destroyed$)).subscribe((event: any) => {
+        if (event instanceof NavigationStart && this.isMenuOpen) {
+          this.toggleMenu.emit();
       }
+    });
+    }
+
+    ngOnDestroy(): void {
+      this.destroyed$.next(true);
+      this.destroyed$.complete();
     }
 
 }
