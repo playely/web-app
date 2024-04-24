@@ -6,6 +6,7 @@ import { SearchComponent } from '@pages/search/search.component';
 import { PlayerComponent } from '@pages/player/player.component';
 import { ContentCollectionComponent } from '@pages/content-collection/content-collection.component';
 import { ContentPersonalComponent } from '@pages/content-personal/content-personal.component';
+import { AuthComponent } from '@pages/auth/auth.component';
 
 export const routes: Routes = [
     {
@@ -19,6 +20,10 @@ export const routes: Routes = [
     {
         path: 'personal',
         component: ContentPersonalComponent
+    },
+    {
+        path: 'sign-in',
+        component: AuthComponent
     },
     {
         path: 'not-found',
