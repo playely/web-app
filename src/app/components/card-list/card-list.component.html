@@ -1,5 +1,5 @@
 <div *ngIf="contentList" class="cardlist">
-  <div class="cardlist-header"><h2>{{title}}</h2></div>
+  <div class="cardlist-header"><h2>{{contentList.title}}</h2></div>
   <div class="cardlist-content">
     <swiper-container #swiper init="false" appSwiper [config]="swiperConfig">
       @for (item of contentList.results; track item.id) {

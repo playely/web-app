@@ -5,4 +5,5 @@ export interface TMDBResponse {
     results: TMDBDetails[];
     total_pages: number;
     total_results: number;
+    title?: string;
 }

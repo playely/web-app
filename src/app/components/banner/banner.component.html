@@ -11,7 +11,7 @@
                         <h1>{{item.title}}</h1>
                     </ng-template>
                     <p>{{item.tagline}}</p>
-                    <button [routerLink]="[item.media_type, item.id]" class="btn btn-primary">Play Now</button>
+                    <button mat-flat-button color="primary" [routerLink]="['/',item.media_type, item.id]">Play Now</button>
                 </div>
                 <div class="banner-dots">
                     @for (item of contentList.results; track item.id; let  index = $index) {

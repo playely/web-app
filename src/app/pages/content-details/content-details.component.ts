@@ -54,13 +54,23 @@ export class ContentDetailsComponent {
       const mediaType = this.activatedRoute.snapshot.params['mediaType'];
       this.contentService.getDetails(mediaType, contentId).then(response => {
         response.media_type = this.activatedRoute.snapshot.params['mediaType'];
+        if (response.recommendations) response.recommendations.title = 'You may Also Like';
+        if (response.similar) {
+          response.similar.title = 'Similar to This';
+          response.similar.results.forEach(element => {
+            element.media_type = response.media_type;
+          });
+        }
         this.content = response;
+        console.log(this.content);
         if (isSeries(this.content)) {
           this.fetchSeasonDetails(1); 
-          this.tabs.unshift({
-            key: 'eps',
-            name: 'Episodes'
-          });
+          if (this.tabs.length < 3) {
+            this.tabs.unshift({
+              key: 'eps',
+              name: 'Episodes'
+            });
+          }
         }
         this.selectedTab = this.tabs[0];
       }).catch((e) => {

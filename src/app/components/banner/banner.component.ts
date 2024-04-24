@@ -3,11 +3,12 @@ import { NgClass, NgIf } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { TMDBResponse } from '@models/tmdb/TMDBResponse';
 import { ImageUrlPipe } from '@pipes/image-url.pipe';
+import { MatButtonModule } from '@angular/material/button';
 
 @Component({
   selector: 'app-banner',
   standalone: true,
-  imports: [NgIf, RouterModule, NgClass, ImageUrlPipe],
+  imports: [NgIf, RouterModule, NgClass, ImageUrlPipe, MatButtonModule],
   templateUrl: './banner.component.html',
   styleUrl: './banner.component.scss'
 })

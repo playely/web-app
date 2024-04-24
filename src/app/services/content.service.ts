@@ -15,15 +15,23 @@ export class ContentService {
   constructor(private http: HttpClient, private config:ConfigService) { }
 
   getDiscoverMovies(pageNumber: number = 1): Promise<TMDBResponse> {
-    return firstValueFrom(this.http.get<TMDBResponse>(`https://api.themoviedb.org/3/discover/movie?page=${pageNumber}`));
+    return firstValueFrom(this.http.get<TMDBResponse>(`https://api.themoviedb.org/3/discover/movie?page=${pageNumber}?append_to_response=images`))
+    .then(value=>({...value, title: 'Best Movies', results: value.results.map(el=>({...el, media_type: 'movie'}))}));
   }
 
   getDiscoverSeries(pageNumber: number = 1): Promise<TMDBResponse> {
-    return firstValueFrom(this.http.get<TMDBResponse>(`https://api.themoviedb.org/3/discover/tv?page=${pageNumber}`));
+    return firstValueFrom(this.http.get<TMDBResponse>(`https://api.themoviedb.org/3/discover/tv?page=${pageNumber}?append_to_response=images`))
+    .then(value=>({...value, title: 'Best Series', results: value.results.map(el=>({...el, media_type: 'tv'}))}));
   }
 
   getTrending(time: string = 'day'): Promise<TMDBResponse> {
-    return firstValueFrom(this.http.get<TMDBResponse>(`https://api.themoviedb.org/3/trending/all/${time}`));
+    return firstValueFrom(this.http.get<TMDBResponse>(`https://api.themoviedb.org/3/trending/all/${time}`))
+    .then(value=>({...value, title: 'Best of the '+ time}));
+  }
+
+  getTopSeries(): Promise<TMDBResponse> {
+    return firstValueFrom(this.http.get<TMDBResponse>(`https://api.themoviedb.org/3/tv/top_rated?append_to_response=images`))
+    .then(value=>({...value, title: 'Top 10', results: value.results.map(el=>({...el, media_type: 'tv'}))}));
   }
 
   getDetails(mediaType: number, contentId: number) {

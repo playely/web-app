@@ -24,7 +24,6 @@ export interface Card {
 export class CardListComponent {
   @ViewChild('swiper') swiperContainer?: ElementRef<SwiperContainer>; 
   @Input() contentList?: TMDBResponse;
-  @Input() title: string = 'Default Title';
 
   swiperConfig: SwiperOptions = {
     slidesPerView: 4,
