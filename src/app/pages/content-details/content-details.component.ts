@@ -14,6 +14,7 @@ import { SeriesBlockComponent } from './series-block/series-block.component';
 import { InfoBlockComponent } from './info-block/info-block.component';
 import { map } from 'rxjs';
 import { CreditsComponent } from '@components/credits/credits.component';
+import { SinglePlayerComponent } from '@components/player/player.component';
 
 interface ITab {
   name: string;
@@ -121,4 +122,11 @@ export class ContentDetailsComponent {
     });
   }
   
+  showTrailer() {
+    this.dialog.open(SinglePlayerComponent, {
+      panelClass: 'player-panel',
+      backdropClass: 'player-backdrop',
+      minWidth: '90vw',
+    });
+  }
 }

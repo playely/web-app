@@ -4,6 +4,7 @@ import { ContentDetailsComponent } from '@pages/content-details/content-details.
 import { NotFoundComponent } from '@pages/not-found/not-found.component';
 import { SearchComponent } from '@pages/search/search.component';
 import { MyContentComponent } from '@pages/my-content/my-content.component';
+import { PlayerComponent } from '@pages/player/player.component';
 
 export const routes: Routes = [
     {
@@ -21,6 +22,14 @@ export const routes: Routes = [
     {
         path: 'not-found',
         component: NotFoundComponent
+    },
+    {
+        path: 'play/:mediaType/:contentId',
+        component: PlayerComponent,
+        data: {
+            hideNavbar: true,
+            hideFooter: true
+          }
     },
     {
         path: ':listId',

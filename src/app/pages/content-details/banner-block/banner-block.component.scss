@@ -59,6 +59,7 @@
 
         button {
             margin-top: 1rem;
+            padding: 1.5rem 2rem;
             @include bp.sm-breakpoint {
                 width: 100%;
             }

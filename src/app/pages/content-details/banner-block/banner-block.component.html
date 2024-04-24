@@ -7,7 +7,7 @@
             <ng-template #title>
                 <h1>{{content.title}}</h1>
             </ng-template>
-            <button class="btn btn-primary">Play Now</button>
+            <button mat-flat-button color="primary" [routerLink]="['/play',content.media_type, content.id]" [state]="content">Play Now</button>
         </div>
     </div>
 </div>

@@ -1,0 +1,17 @@
+.controls {
+    display: flex;
+    justify-content: space-between;
+
+    &-group {
+        display: inline-flex;
+        gap: 1rem;
+    }
+}
+
+mat-slider {
+    width: 98%;
+}
+
+mat-icon {
+    cursor: pointer;
+}
