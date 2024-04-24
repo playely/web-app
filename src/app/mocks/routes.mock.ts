@@ -2,6 +2,11 @@ import { IRoute } from "@models/IRoute";
 
 export const mockRoutes: IRoute[] = [
     {
+        id: '0',
+        route: '',
+        name: 'Home',
+    },
+    {
         id: '1',
         route: 'movies',
         name: 'movies',

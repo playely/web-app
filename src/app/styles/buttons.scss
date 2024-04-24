@@ -1,0 +1,16 @@
+.btn {
+    border: none;
+    padding: 1rem 2rem;
+    font-size: 18px;
+    border-radius: 8px;
+    cursor: pointer;
+    
+    &-primary {
+        color: var(--color, #000000);
+        background: var(--primary-color, #FFF);
+
+        &:hover {
+            filter: saturate(2);
+        }
+    }
+}

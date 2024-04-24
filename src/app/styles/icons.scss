@@ -3,15 +3,21 @@
     background-position: center;
     background-size: contain;
     &-search {
-        background-image: url("../../assets/images/icons/fa_search.svg");
+        background-image: url("../../assets/icons/fa_search.svg");
     }
     &-bookmark {
-        background-image: url("../../assets/images/icons/fa_bookmark.svg");
+        background-image: url("../../assets/icons/fa_bookmark.svg");
     }
     &-user {
-        background-image: url("../../assets/images/icons/fa_user-circle.svg");
+        background-image: url("../../assets/icons/fa_user-circle.svg");
     }
     &-menu {
-        background-image: url("../../assets/images/icons/fa_menu.svg");
+        background-image: url("../../assets/icons/fa_menu.svg");
+    }
+    &-arrow-left {
+        background-image: url("../../assets/icons/icon-park_left.svg");
+    }
+    &-arrow-right {
+        background-image: url("../../assets/icons/icon-park_right.svg");
     }
 }

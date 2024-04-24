@@ -30,6 +30,7 @@
       "@services/*": ["app/services/*"],
       "@pipes/*": ["app/pipes/*"],
       "@utils/*": ["app/utils/*"],
+      "@pages/*": ["app/pages/*"],
       "@components/*": ["app/components/*"],
     }
   },

@@ -1,4 +1,5 @@
 @import './app/styles/icons.scss';
+@import './app/styles/buttons.scss';
 /* You can add global styles to this file, and also import other style files */
 body {
     margin: 0;
@@ -6,7 +7,8 @@ body {
     background: #1C1C1C;
     font-family: "Lato", sans-serif;
     color: #EEEEEE;
-    
+    --body-padding: 2rem;
+    --body-mobile-padding: 1rem;
     --primary-color: #E4B200;
     --color: #EEEEEE;
 }

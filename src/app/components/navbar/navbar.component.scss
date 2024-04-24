@@ -1,4 +1,4 @@
-@import '../../styles/breakpoints.scss';
+@use '../../styles/breakpoints.scss' as bp;
 
 .underlined-hover {
     display: inline-block;
@@ -24,24 +24,30 @@
 }
 
 nav {
-    padding: 2rem;
+    padding: 1rem var(--body-padding, 2rem);
     box-sizing: border-box;
     display: flex;
     justify-content: space-between;
     align-items: center;
-
-    @include sm-breakpoint {
-        padding: 1rem;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 10;
+    background: linear-gradient(180deg, #1C1C1C, transparent 75%);
+    
+    @include bp.sm-breakpoint {
+        padding: var(--body-mobile-padding, 1rem);
     }
 
     img {
         height: 2vw;
 
-        @include sm-breakpoint {
+        @include bp.sm-breakpoint {
             height: 25px;
         }
 
-        @include md-breakpoint {
+        @include bp.md-breakpoint {
             height: 28px;
         }
     }
@@ -53,7 +59,7 @@ nav {
         &.mobile {
             display: none;
 
-            @include sm-breakpoint {
+            @include bp.sm-breakpoint {
                 display: flex;
             }
 
@@ -64,7 +70,7 @@ nav {
         }
 
         &.desktop {
-            @include sm-breakpoint {
+            @include bp.sm-breakpoint {
                 display: none;
             }
         }
@@ -77,15 +83,15 @@ nav {
             cursor: pointer;
 
             &-search:hover {
-                background-image: url("../../../assets/images/icons/fa_search-alt.svg");
+                background-image: url("../../../assets/icons/fa_search-alt.svg");
             }
 
             &-bookmark:hover {
-                background-image: url("../../../assets/images/icons/fa_bookmark-alt.svg");
+                background-image: url("../../../assets/icons/fa_bookmark-alt.svg");
             }
 
             &-user:hover {
-                background-image: url("../../../assets/images/icons/fa_user-circle-alt.svg");
+                background-image: url("../../../assets/icons/fa_user-circle-alt.svg");
             }
         }
     }
@@ -107,7 +113,7 @@ nav {
         scrollbar-width: none;
 
         /* Firefox */
-        @include sm-breakpoint {
+        @include bp.sm-breakpoint {
             display: none;
         }
 
