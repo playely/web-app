@@ -1,3 +1,4 @@
+@use './app/styles/breakpoints.scss' as bp;
 @import './app/styles/icons.scss';
 @import './app/styles/buttons.scss';
 /* You can add global styles to this file, and also import other style files */
@@ -8,7 +9,11 @@ body {
     font-family: "Lato", sans-serif;
     color: #EEEEEE;
     --body-padding: 2rem;
-    --body-mobile-padding: 1rem;
     --primary-color: #E4B200;
     --color: #EEEEEE;
+    
+    @include bp.sm-breakpoint {
+        --body-padding: 1rem;
+    }
+
 }

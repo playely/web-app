@@ -1,0 +1,13 @@
+@use '../../styles/breakpoints.scss' as bp;
+
+.body {
+    &-description {
+        padding: 1rem var(--body-padding, 2rem);
+        font-size: 16px;
+        width: 50%;
+        box-sizing: border-box;
+        @include bp.sm-breakpoint {
+           width: 100%;
+        }
+    }
+}

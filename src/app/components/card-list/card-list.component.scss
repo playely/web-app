@@ -4,9 +4,6 @@
     box-sizing: border-box;
     overflow: hidden;
     padding-left: var(--body-padding, 2rem);
-    @include bp.sm-breakpoint {
-        padding: var(--body-mobile-padding, 1rem);
-    }
 
     &-content {
         display: flex;
@@ -16,9 +13,12 @@
 
 .card {
     width: 20vw;
-    aspect-ratio: 16 / 9;
     overflow: hidden;
     cursor: pointer;
+
+    &.a16x9 {
+        aspect-ratio: 16 / 9;
+    }
 
     img {
         width: 100%;

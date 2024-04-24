@@ -2,7 +2,4 @@
 
 footer {
     padding: var(--body-padding, 2rem);
-    @include bp.sm-breakpoint {
-        padding: var(--body-mobile-padding, 1rem);
-    }
 }

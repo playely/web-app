@@ -4,7 +4,7 @@
     </div>
     <div class="cardlist-content">
         @for (card of contentList.contents; track card.id) {
-            <div class="card" [ngClass]="contentList.aspectRatio">
+            <div class="card" [ngClass]="'a'+contentList.aspectRatio" [routerLink]="['/',card.contentType, card.uid]">
                 <img [src]="card.image" [alt]="card.title">
             </div>
         }

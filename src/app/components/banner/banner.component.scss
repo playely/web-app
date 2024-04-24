@@ -41,7 +41,7 @@
 
     &-data { 
         width: 40%;
-        padding: 0 var(--padding-body, 2rem) 1rem var(--padding-body, 2rem);
+        padding: 0 var(--body-padding, 2rem) 1rem var(--body-padding, 2rem);
         box-sizing: border-box;
         @include bp.sm-breakpoint {
            width: 100%;

@@ -1,9 +1,11 @@
 <nav>
-    <img src="../../../assets/images/logo.svg" alt="playely"/>
+    <img [routerLink]="['/']" src="../../../assets/images/logo.svg" alt="playely"/>
     <div class="links">
         <a *ngFor="let route of routes" 
         [href]="route.route"
-        [routerLink]="[route.route]" routerLinkActive="active" 
+        [routerLink]="[route.route]"
+        [routerLinkActiveOptions]="{ exact: true }" 
+        routerLinkActive="active" 
         >{{route.name}}</a>
     </div>
     <div class="icons  desktop">

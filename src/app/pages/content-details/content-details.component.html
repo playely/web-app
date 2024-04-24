@@ -1,1 +1,9 @@
-<p>content-details works!</p>
+<div class="details">
+    <app-banner-block [content]="content"></app-banner-block>
+    <div class="body">
+        <app-actions-block></app-actions-block>
+        <p class="body-description">{{content.description}}</p>
+        <app-series-block [content]="content"></app-series-block>
+        <app-card-list></app-card-list>
+    </div>
+</div>

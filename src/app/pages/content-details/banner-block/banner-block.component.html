@@ -1,0 +1,9 @@
+<div class="banner" *ngIf="content">
+    <img class="banner-image" [src]="content.image" [alt]="content.image">
+    <div class="banner-overlay">
+        <div class="banner-data">
+            <img *ngIf="content.titleImage" [src]="content.titleImage" [alt]="content.title">
+            <button class="btn btn-primary">Play Now</button>
+        </div>
+    </div>
+</div>
