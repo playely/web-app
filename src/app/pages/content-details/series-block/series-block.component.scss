@@ -1,14 +1,14 @@
 .series {
+  padding: 1rem var(--body-padding, 2rem);
 
   .select-contaner {
-    padding: 0 var(--body-padding, 2rem);
 
     select {
       font-size: 18px;
       padding: 14px 18px;
-      border-radius: 8px;
       background: #464646;
       color: #FFFFFF;
+      border: none;
     }
   }
 }

@@ -1,19 +1,18 @@
-import { Component, inject } from '@angular/core';
+import { Component } from '@angular/core';
 import { IContent } from '@models/IContent';
-import { CardListComponent } from '@components/card-list/card-list.component';
 import { BannerBlockComponent } from './banner-block/banner-block.component';
 import { ActionsBlockComponent } from './actions-block/actions-block.component';
-import { SeriesBlockComponent } from './series-block/series-block.component';
 import { NgIf } from '@angular/common';
 import { ActivatedRoute, Router } from '@angular/router';
 import { map } from 'rxjs';
 import { ContentService } from '@services/content.service';
 import { IContentList } from '@models/IContentList';
+import { TabsBlockComponent } from './tabs-block/tabs-block.component';
 
 @Component({
   selector: 'app-content-details',
   standalone: true,
-  imports: [NgIf, CardListComponent, BannerBlockComponent, ActionsBlockComponent, SeriesBlockComponent],
+  imports: [NgIf, BannerBlockComponent, ActionsBlockComponent, TabsBlockComponent],
   templateUrl: './content-details.component.html',
   styleUrl: './content-details.component.scss'
 })

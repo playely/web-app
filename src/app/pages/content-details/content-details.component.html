@@ -3,11 +3,6 @@
     <div class="body">
         <app-actions-block></app-actions-block>
         <p class="body-description">{{content.description}}</p>
-        @if (content.isSeries) {
-            <app-series-block [content]="content"></app-series-block>
-        }
-        @if (recommendations && recommendations.contents.length > 0) {
-            <app-card-list [contentList]="recommendations"></app-card-list>
-        }
+        <app-tabs-block [content]="content" [recommendations]="recommendations"></app-tabs-block>
     </div>
 </div>

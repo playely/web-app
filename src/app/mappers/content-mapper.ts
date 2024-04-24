@@ -2,7 +2,8 @@ import { IContent } from "@models/IContent";
 import { TMDBDetails } from "@models/tmdb/TMDBDetail";
 import { IImageConfig } from "@models/IImageConfig";
 
-export const ContentMapper = (response: TMDBDetails, imageConfig: IImageConfig, media_type?: string): IContent => {
+export const ContentMapper = (response: any, imageConfig: IImageConfig, media_type?: string): IContent => {
+    console.log(response)
     return {
         mediaType: response.media_type?? media_type ?? 'unknown',
         isSeries: !!response.seasons,

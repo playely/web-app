@@ -33,7 +33,7 @@ export class ContentService {
   }
 
   getDetails(mediaType: number, contentId: number) {
-    return firstValueFrom(this.http.get<TMDBDetails>(`https://api.themoviedb.org/3/${mediaType}/${contentId}`))
+    return firstValueFrom(this.http.get<TMDBDetails>(`https://api.themoviedb.org/3/${mediaType}/${contentId}?append_to_response=credits,images,keywords,recommendations,similar,providers,seasons`))
     .then(res=>ContentMapper(res, this.config.getImageConfig()));
   }
 

@@ -1,17 +1,13 @@
 <div class="series">
-    
-
-@if (content?.seasons) {
+  @if (content?.seasons) {
   <div class="select-contaner custom-select">
     <select>
       @for (item of content?.seasons; track item.id) {
-        <option [value]="item.id">Season {{item.season_number}}</option>
+      <option [value]="item.id">Season {{item.season_number}}</option>
       }
-     
+
     </select>
   </div>
-}
-  
-  
-    <app-card-list></app-card-list>
+  }
+  <app-card-list></app-card-list>
 </div>
