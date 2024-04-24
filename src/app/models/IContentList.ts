@@ -1,6 +1,6 @@
 import { IContent } from "@models/IContent";
 
-declare type AspectRatio = '16x9' | '2x3';
+export declare type AspectRatio = '16x9' | '2x3';
 
 export interface IContentList {
     id: string;

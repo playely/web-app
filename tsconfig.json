@@ -32,6 +32,7 @@
       "@utils/*": ["app/utils/*"],
       "@pages/*": ["app/pages/*"],
       "@components/*": ["app/components/*"],
+      "@directives/*": ["app/directives/*"],
     }
   },
   "angularCompilerOptions": {

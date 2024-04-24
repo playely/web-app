@@ -1,0 +1,5 @@
+@if (content) {
+    <div class="card" [ngClass]="'a'+aspectRatio" [routerLink]="['/',content.contentType, content.uid]">
+        <img [src]="content.image" [alt]="content.title">
+    </div>
+}

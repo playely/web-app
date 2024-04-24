@@ -1,12 +1,16 @@
 <div class="cardlist">
-    <div class="cardlist-header">
-        <h2>{{ contentList.title }}</h2>
+  <div class="cardlist-header"><h2>{{contentList.title}}</h2></div>
+  <div class="cardlist-content">
+    <swiper-container appSwiper #swiper [config]="swiperConfig">
+      @for (item of contentList.contents; track item.id) {
+        <swiper-slide><app-card [content]="item" [aspectRatio]="contentList.aspectRatio"></app-card></swiper-slide>
+      }
+    </swiper-container>
+    <div class="arrow left">
+      <div class="icon icon-arrow-left" (click)="prev()"></div>
     </div>
-    <div class="cardlist-content">
-        @for (card of contentList.contents; track card.id) {
-            <div class="card" [ngClass]="'a'+contentList.aspectRatio" [routerLink]="['/',card.contentType, card.uid]">
-                <img [src]="card.image" [alt]="card.title">
-            </div>
-        }
+    <div class="arrow right">
+      <div class="icon icon-arrow-right" (click)="next()"></div>
     </div>
+  </div>
 </div>
