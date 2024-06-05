@@ -1,28 +1,25 @@
 @if (showNavbar) {
-    <app-navbar [routes]="routes" [isMenuOpen]="sidenav.opened" [navbarMode]="navbarMode" (toggleMenu)="toggleMenu()"></app-navbar>
+    <app-navbar [routes]="routes" [isMenuOpen]="false" [navbarMode]="navbarMode" (toggleMenu)="toggleMenu()"></app-navbar>
 }
-<mat-sidenav-container>
-    <mat-sidenav #sidenav [mode]="'over'" style="width: 50%;">
-        <ul class="menu">
-        <li *ngFor="let route of routes">
-            <a 
-            [href]="route.route"
-            [routerLink]="[route.route]"
-            [routerLinkActiveOptions]="{ exact: true }" 
-            routerLinkActive="active" 
-            >{{route.name}}</a>
-        </li>
-        <li><span class="separator"></span></li>
-        <li><a href="search" [routerLink]="['/search']">Search</a></li> 
-        <li><a href="personal" [routerLink]="['/personal']">My Content</a></li> 
-        <li><a href="sign-in" [routerLink]="['/sign-in']">Sign In</a></li> 
-        </ul>
-    </mat-sidenav>
 
-    <mat-sidenav-content (scroll)="onWindowScroll($event)">
+<ul class="menu" [ngClass]="{'opened': menuOpened }">
+    <li *ngFor="let route of routes">
+        <a 
+        [href]="route.route"
+        [routerLink]="[route.route]"
+        [routerLinkActiveOptions]="{ exact: true }" 
+        routerLinkActive="active" 
+        (click)="toggleMenu()"
+        >{{route.name}}</a>
+    </li>
+    <li><span class="separator"></span></li>
+    <li><a href="search" [routerLink]="['/search']" (click)="toggleMenu()">Search</a></li> 
+    <li><a href="personal" [routerLink]="['/personal']" (click)="toggleMenu()">My Content</a></li> 
+    <li><a href="sign-in" [routerLink]="['/sign-in']" (click)="toggleMenu()">Sign In</a></li> 
+    </ul>
+    <div class="scroll-container" >
         <router-outlet></router-outlet>
         @if (showFooter) {
             <app-footer></app-footer>
         }
-    </mat-sidenav-content>
-</mat-sidenav-container>
+    </div>

@@ -7,26 +7,26 @@ import { Title } from '@angular/platform-browser';
 import {MatSidenav, MatSidenavModule} from '@angular/material/sidenav';
 import { mockRoutes } from '@mocks/routes.mock';
 import { IRoute } from '@models/IRoute';
-import { NgFor } from '@angular/common';
+import { NgClass, NgFor } from '@angular/common';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, NavbarComponent, FooterComponent, MatSidenavModule, RouterModule, NgFor],
+  imports: [RouterOutlet, NavbarComponent, FooterComponent, RouterModule, NgFor, NgClass],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
-  @ViewChild(MatSidenav) sidenav?: MatSidenav;
   routes: IRoute[] = mockRoutes;
   showNavbar = false;
   showFooter = false;
   navbarMode: 'gradient' | 'solid' = 'gradient';
+  menuOpened = false;
 
   @HostListener('window:scroll', ['$event'])
-  onWindowScroll(event: Event) {
+  onWindowScroll() {
       let element = document.querySelector('.navbar') as HTMLElement;
-      this.navbarMode = (event.target as HTMLElement).scrollTop > element.clientHeight ? 'solid' : 'gradient';
+      this.navbarMode = window.scrollY > element.clientHeight ? 'solid' : 'gradient';
     }
 
   constructor(private router: Router, private activatedRoute: ActivatedRoute,  private title: Title){
@@ -45,7 +45,7 @@ export class AppComponent {
   }
 
   toggleMenu() {
-    this.sidenav?.toggle();
+    this.menuOpened = !this.menuOpened;
   }
 
     /**

@@ -1,0 +1,20 @@
+<form class="auth-form" [formGroup]="signInForm" (ngSubmit)="onSubmit()">
+  <h1>Welcome Back!</h1>
+  <p>Please enter your email and password.</p>
+  <mat-form-field>
+    <mat-label>Email</mat-label>
+    <input matInput placeholder="user@playely.com" formControlName="email" type="email" autocomplete="email">
+    <mat-error>{{checkForErrorsIn('email')}}</mat-error>
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Password</mat-label>
+    <input matInput type="password" placeholder="Placeholder" formControlName="password" [type]="hidePassword ? 'password' : 'text'">
+    <mat-icon matSuffix (click)="hidePassword = !hidePassword">{{hidePassword ? 'visibility_off' : 'visibility'}}</mat-icon>
+
+    <mat-error>{{checkForErrorsIn('password')}}</mat-error>
+  </mat-form-field>
+  <a class="link" routerLink="/auth/forgot-password">Forgot Password?</a>
+
+  <button color="primary" mat-flat-button type="submit" [disabled]="signInForm.invalid"> Sign In</button>
+  <p>Don't have an account? <a routerLink="/auth/sign-up">Sign Up</a></p>
+</form>

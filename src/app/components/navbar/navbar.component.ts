@@ -15,6 +15,7 @@ export class NavbarComponent implements OnDestroy {
   @Input() routes: IRoute[] = [];
   @Input() isMenuOpen: boolean = false;
   @Input() navbarMode: string = 'gradient';
+  @Input() showAll: boolean = true;
   @Output() toggleMenu = new EventEmitter();
   private destroyed$: ReplaySubject<boolean> = new ReplaySubject(1);
 

@@ -1,5 +1,17 @@
-<div class="auth">
-    <div class="auth-form">
-        <h1>Authentication will be available soon!</h1>
+
+
+<div class="signin">
+
+    <img class="logo" [routerLink]="['/']" src="/assets/images/logo.svg" alt="playely"/>
+
+    <div class="signin-video">
+        <video autoplay loop muted poster="../../../assets/videos/7986772-hd_720_1366_25fps.png">
+            <source src="../../../assets/videos/7986772-hd_720_1366_25fps.mp4" type="video/mp4">
+        </video>
+        <div class="overlay"></div>
+    </div>
+
+    <div class="signin-form">
+      <router-outlet></router-outlet>
     </div>
 </div>

@@ -1,0 +1,40 @@
+@use 'breakpoints.scss' as bp;
+
+.auth-form {
+    padding: 4rem;
+    box-sizing: border-box;
+    
+    mat-form-field,
+    button {
+        width: 100%;
+        margin: 1rem 0;
+    }
+
+    button {
+        padding: 2rem;
+    }
+
+    h1,
+    p {
+        text-align: center;
+    }
+
+    .link {
+        width: 100%;
+        display: block;
+        text-align: right;
+    }
+
+    a {
+        color: var(--primary-color);
+        text-decoration: none;
+
+        &:hover {
+            cursor: pointer;
+            text-decoration: underline;
+        }
+    }
+    mat-icon {
+        cursor: pointer;
+    }
+}

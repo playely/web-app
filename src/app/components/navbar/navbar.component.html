@@ -11,7 +11,7 @@
     <div class="icons  desktop">
         <a class="icon search" href="search" [routerLink]="['/search']"></a>
         <a class="icon bookmark" href="personal" [routerLink]="['/personal']"></a>
-        <a class="icon user" href="sign-in" [routerLink]="['/sign-in']"></a>
+        <a class="icon user" href="/auth/sign-in" [routerLink]="['/auth/sign-in']"></a>
     </div>
     <div class="icons mobile">
             <div id="nav-menu" [ngClass]="{'open': isMenuOpen}" (click)="toggleMenu.emit()">

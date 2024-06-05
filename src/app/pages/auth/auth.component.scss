@@ -1,13 +1,75 @@
-.auth {
-    min-height: 100vh;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
+@use 'breakpoints.scss' as bp;
 
-.auth-form {
-    background: var(--primary-color, #000000);
-    padding: 2rem;
-    border-radius: 16px;
-}
+.signin {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100vh;
+
+    .logo {
+        position: absolute;
+        top: 1.5rem;
+        left: 2rem;
+        z-index: 2;
+        height: 2vw;
+        cursor: pointer;
+
+        @include bp.sm-breakpoint {
+            height: 25px;
+        }
+
+        @include bp.md-breakpoint {
+            height: 28px;
+        }
+    }
+
+    @include bp.sm-breakpoint {
+        background: url('../../../assets/videos/7986772-hd_720_1366_25fps.png') no-repeat center center;
+        background-size: cover;
+        overflow: hidden;
+    }
+    
+    &-video {
+        flex: 1;
+        height: 100%;
+        object-fit: cover;
+        position: relative;
+        overflow: hidden;
+
+        video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 1;
+            background: linear-gradient(90deg, #000000c2 10%, rgba(28, 28, 28, 0.6588235294) 50%, #1C1C1C);
+            width: 100%;
+            height: 100%;
+        }
+
+        @include bp.sm-breakpoint {
+            display: none;
+        }
+    }
+
+    &-form {
+        flex: 1;
+        max-width: 45%;
+        float: right;
+        height: 100%;
+        background: var(--background, #000000);
+        @include bp.sm-breakpoint {
+            max-width: 100%;
+            padding: 2rem;
+            background: #1c1c1cc9;
+            overflow: scroll;
+        } 
+        
+     }
+ }
