@@ -51,28 +51,28 @@ export const settingsItems: ISettingsSection[] = [
             }
         ]
       }, 
-      {
-        title: 'Subscriptions',
-        items: [
-            {
-                title: 'Administrar Subscripción',
-                description: 'Administra tu subscripción a Playely.',
-                control: 'arrow',
-                link: '/settings/subscription'
-            }
-        ]
-      }, 
-      {
-        title: 'Control Parental',
-        items: [
-            {
-                title: 'Administrar Código parental',
-                description: '',
-                control: 'arrow',
-                link: '/settings/parental-control',
-            }
-        ]
-      },
+    //   {
+    //     title: 'Subscriptions',
+    //     items: [
+    //         {
+    //             title: 'Administrar Subscripción',
+    //             description: 'Administra tu subscripción a Playely.',
+    //             control: 'arrow',
+    //             link: '/settings/subscription'
+    //         }
+    //     ]
+    //   }, 
+    //   {
+    //     title: 'Control Parental',
+    //     items: [
+    //         {
+    //             title: 'Administrar Código parental',
+    //             description: '',
+    //             control: 'arrow',
+    //             link: '/settings/parental-control',
+    //         }
+    //     ]
+    //   },
       {
         title: 'Information',
         items: [

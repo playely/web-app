@@ -13,8 +13,9 @@ import { ForgotPasswordComponent } from '@pages/auth/forgot-password/forgot-pass
 import { ResetPasswordComponent } from '@pages/auth/reset-password/reset-password.component';
 import { LoggedGuard } from './guards/logged.guard';
 import { NotLoggedGuard } from './guards/not-logged.guard';
-import { SettingsComponent } from './pages/settings/settings.component';
-import { SettingsMenuComponent } from './pages/settings/settings-menu/settings-menu.component';
+import { SettingsComponent } from '@pages/settings/settings.component';
+import { SettingsMenuComponent } from '@pages/settings/settings-menu/settings-menu.component';
+import { InfoComponent } from '@pages/settings/info/info.component';
 
 export const routes: Routes = [
     {
@@ -33,6 +34,10 @@ export const routes: Routes = [
             {
                 path: '',
                 component: SettingsMenuComponent
+            },
+            {
+                path: 'information',
+                component: InfoComponent
             },
             {
                 path: '**',
