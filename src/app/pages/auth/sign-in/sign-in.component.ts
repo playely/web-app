@@ -31,6 +31,9 @@ export class SignInComponent implements OnDestroy {
     this.snackBar.dismiss();
   }
 
+  /**
+   * Submit form and sign in user
+   */
   onSubmit() {
     if (this.signInForm.valid) {
       const { email, password } = this.signInForm.value;
@@ -48,7 +51,22 @@ export class SignInComponent implements OnDestroy {
     }
   }
 
+  /**
+   * Get error message for form control
+   * @param formControlName 
+   * @returns 
+   */
   checkForErrorsIn(formControlName: string): string {
     return getErrorMessage(this.signInForm, formControlName);
   }
+
+  /**
+   * Fill form with demo credentials
+   */
+  fillform() {
+    this.signInForm.setValue({
+      email: 'user@playely.com',
+      password: 'play123456'
+  });
+}
 }

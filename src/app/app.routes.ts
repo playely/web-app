@@ -11,6 +11,10 @@ import { SignUpComponent } from '@pages/auth/sign-up/sign-up.component';
 import { AuthComponent } from '@pages/auth/auth.component';
 import { ForgotPasswordComponent } from '@pages/auth/forgot-password/forgot-password.component';
 import { ResetPasswordComponent } from '@pages/auth/reset-password/reset-password.component';
+import { LoggedGuard } from './guards/logged.guard';
+import { NotLoggedGuard } from './guards/not-logged.guard';
+import { SettingsComponent } from './pages/settings/settings.component';
+import { SettingsMenuComponent } from './pages/settings/settings-menu/settings-menu.component';
 
 export const routes: Routes = [
     {
@@ -22,12 +26,29 @@ export const routes: Routes = [
         component: SearchComponent
     },
     {
+        path: 'settings',
+        component: SettingsComponent,
+        canActivate: [LoggedGuard],
+        children: [
+            {
+                path: '',
+                component: SettingsMenuComponent
+            },
+            {
+                path: '**',
+                redirectTo: ''
+            }
+        ]
+    },
+    {
         path: 'personal',
-        component: ContentPersonalComponent
+        component: ContentPersonalComponent,
+        canActivate: [LoggedGuard]
     },
     {
         path: 'auth',
         component: AuthComponent,
+        canActivateChild: [NotLoggedGuard],
         children: [
             {
                 path: 'sign-up',

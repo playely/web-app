@@ -8,10 +8,22 @@
         routerLinkActive="active" 
         >{{route.name}}</a>
     </div>
-    <div class="icons  desktop">
+    <div class="icons desktop">
         <a class="icon search" href="search" [routerLink]="['/search']"></a>
         <a class="icon bookmark" href="personal" [routerLink]="['/personal']"></a>
-        <a class="icon user" href="/auth/sign-in" [routerLink]="['/auth/sign-in']"></a>
+        @if (!user) {
+            <a class="icon user" href="/auth/sign-in" [routerLink]="['/auth/sign-in']"></a>
+        } @else { 
+            <a class="icon user">
+
+                <div class="d-menu">
+                    <div class="d-menu-item profile"><a class="icon user"></a></div>
+                    <div class="d-menu-item"  href="/settings" [routerLink]="['/settings']">Settings</div>
+                    <div class="d-menu-item" (click)="logout()">Log Out</div>
+                </div>
+            </a>
+            
+        }
     </div>
     <div class="icons mobile">
             <div id="nav-menu" [ngClass]="{'open': isMenuOpen}" (click)="toggleMenu.emit()">

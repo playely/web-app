@@ -1,8 +1,10 @@
 <div class="actions">
-    <div class="actions-item" (click)="toggleFavorite()">
-        <span class="icon " [ngClass]="isFavorite ? 'favorite-fill' : 'favorite'"></span>
-        <span>Mi Lista</span>
-    </div>
+    @if (enableToggleFavs) {
+        <div class="actions-item" (click)="toggleFavorite()">
+            <span class="icon " [ngClass]="isFavorite ? 'favorite-fill' : 'favorite'"></span>
+            <span>Mi Lista</span>
+        </div>
+    }
     <div class="actions-item" (click)="showTrailer.emit()">
         <span class="icon movie"></span>
         <span>Trailer</span>

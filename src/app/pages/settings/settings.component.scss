@@ -1,0 +1,11 @@
+
+.settings  {
+    padding: var(--navbar-height, 0) var(--body-padding, 2vw);
+    min-height: 100vh;
+    box-sizing: border-box;
+
+    h1 {
+        padding-bottom: 0.5rem;
+        border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+    }
+}

@@ -27,7 +27,9 @@ body {
 }
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
-
+.mat-mdc-option .mat-pseudo-checkbox-minimal {
+    display: none;
+}
 .cdk-overlay-pane:not(.mat-mdc-select-panel-above) div.mat-mdc-select-panel,
 .mat-mdc-select-panel-above div.mat-mdc-select-panel {
     -ms-overflow-style: none;  /* Internet Explorer 10+ */
@@ -78,3 +80,4 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
         --mat-snack-bar-button-color: #fff;
       }
   }
+

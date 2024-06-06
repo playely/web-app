@@ -17,4 +17,9 @@ export class ActionsBlockComponent {
   toggleFavorite() {
     this.isFavorite = !this.isFavorite;
   }
+
+  get enableToggleFavs() {
+    return localStorage.getItem('user') !== null;
+  }
+
 }

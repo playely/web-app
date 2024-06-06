@@ -34,6 +34,7 @@
       "@components/*": ["app/components/*"],
       "@directives/*": ["app/directives/*"],
       "@mappers/*": ["app/mappers/*"],
+      "@guards/*": ["app/guards/*"],
     }
   },
   "angularCompilerOptions": {

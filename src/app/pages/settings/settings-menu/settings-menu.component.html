@@ -1,0 +1,36 @@
+
+    @for (item of list; track $index) {
+        <div class="settings-section">
+            @if (item.items.length > 1) {
+                <h2>{{ item.title }}</h2>
+            }
+            
+            @for (option of item.items; track $index) {
+                <div class="settings-section-item">
+                    <div class="settings-section-item-description">
+                        <p class="title">{{ option.title }}</p>
+                        <p class="description">{{ option.description }}</p>
+                    </div>
+                    <div class="settings-section-item-controls">
+                        @switch (option.control) {
+                            @case ('select') {
+                                <mat-select [value]="option.value">
+                                    @for (value of option.values; track value) {
+                                      <mat-option [value]="value.value">{{value.label}}</mat-option>
+                                    }
+                                  </mat-select>
+                            }
+                            @case('boolean') {
+                                <mat-slide-toggle [checked]="option.value" color="primary"></mat-slide-toggle>
+                            }
+                            @case('arrow') {
+                                <button mat-icon-button [routerLink]="[option.link]">
+                                    <mat-icon>arrow_forward_ios</mat-icon>
+                                  </button>
+                            }
+                        }
+                    </div>
+                </div>
+            }
+        </div>
+    }

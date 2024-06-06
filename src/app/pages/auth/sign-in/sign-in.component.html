@@ -17,4 +17,11 @@
 
   <button color="primary" mat-flat-button type="submit" [disabled]="signInForm.invalid"> Sign In</button>
   <p>Don't have an account? <a routerLink="/auth/sign-up">Sign Up</a></p>
+
+  <div class="tag" (click)="fillform()">
+    <p>This is a demo app!</p>
+    <p>Use the following credentials to sign in (or click me):</p>
+    <p>Email: <strong> user&#64;playely.com </strong></p>
+    <p>Password: <strong> play123456 </strong></p>
+  </div>
 </form>
