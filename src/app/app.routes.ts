@@ -16,6 +16,10 @@ import { NotLoggedGuard } from './guards/not-logged.guard';
 import { SettingsComponent } from '@pages/settings/settings.component';
 import { SettingsMenuComponent } from '@pages/settings/settings-menu/settings-menu.component';
 import { InfoComponent } from '@pages/settings/info/info.component';
+import { LegalComponent } from '@pages/legal/legal.component';
+import { PrivacyPolicyComponent } from './pages/legal/privacy-policy/privacy-policy.component';
+import { TermsUseComponent } from './pages/legal/terms-use/terms-use.component';
+import { FaqComponent } from './pages/legal/faq/faq.component';
 
 export const routes: Routes = [
     {
@@ -25,6 +29,33 @@ export const routes: Routes = [
     {
         path: 'search',
         component: SearchComponent
+    },
+    {
+        path: 'personal',
+        component: ContentPersonalComponent,
+        canActivate: [LoggedGuard]
+    },
+    {
+        path: 'not-found',
+        component: NotFoundComponent
+    },
+    {
+        path: 'legal',
+        component: LegalComponent,
+        children: [
+            {
+                path: 'privacy-policy',
+                component: PrivacyPolicyComponent
+            },
+            {
+                path: 'terms-of-use',
+                component: TermsUseComponent
+            },
+            {
+                path: 'faq',
+                component: FaqComponent
+            }
+        ]
     },
     {
         path: 'settings',
@@ -44,11 +75,6 @@ export const routes: Routes = [
                 redirectTo: ''
             }
         ]
-    },
-    {
-        path: 'personal',
-        component: ContentPersonalComponent,
-        canActivate: [LoggedGuard]
     },
     {
         path: 'auth',
@@ -92,10 +118,6 @@ export const routes: Routes = [
                 redirectTo: 'sign-in'
             }
         ],
-    },
-    {
-        path: 'not-found',
-        component: NotFoundComponent
     },
     {
         path: 'play/:mediaType/:contentId',

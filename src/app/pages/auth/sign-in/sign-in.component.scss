@@ -3,9 +3,10 @@
 }
 
 .tag {
+    opacity: 0.8;
     position: absolute;
-    right: 5%;
-    bottom: -5%;
+    left: -40px;
+    top: 5%;
     z-index: 1;
     transform: rotate(-10deg);
     background: rgb(42 41 41 / 90%);
@@ -17,6 +18,10 @@
         font-size: 12px;
         text-align: left;
         margin: 0;
+
+        strong {
+            font-weight: 500;
+        }
     }
     &:hover {
         transform: scale(1.1) rotate(-10deg);

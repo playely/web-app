@@ -26,7 +26,7 @@ export class AppComponent {
   @HostListener('window:scroll', ['$event'])
   onWindowScroll() {
       let element = document.querySelector('.navbar') as HTMLElement;
-      this.navbarMode = window.scrollY > element.clientHeight ? 'solid' : 'gradient';
+      this.navbarMode = window.scrollY > element?.clientHeight ? 'solid' : 'gradient';
     }
 
   constructor(private router: Router, private activatedRoute: ActivatedRoute,  private title: Title){

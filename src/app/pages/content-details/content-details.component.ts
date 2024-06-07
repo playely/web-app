@@ -60,6 +60,7 @@ export class ContentDetailsComponent {
     private dialog: MatDialog
   ) {
     this.contentId$.subscribe((contentId) => {
+      this.content = undefined;
       const mediaType = this.activatedRoute.snapshot.params['mediaType'];
       this.contentService.getDetails(mediaType, contentId).then(response => {
         response.media_type = this.activatedRoute.snapshot.params['mediaType'];
