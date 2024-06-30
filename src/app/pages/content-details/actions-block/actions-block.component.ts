@@ -19,7 +19,7 @@ export class ActionsBlockComponent {
   }
 
   get enableToggleFavs() {
-    return localStorage.getItem('user') !== null;
+    return localStorage.getItem('user') !== null  && localStorage.getItem('user') !== undefined;
   }
 
 }

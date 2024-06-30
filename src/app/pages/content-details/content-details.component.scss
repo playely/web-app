@@ -2,9 +2,17 @@
 
 .details {
     min-height: 100vh;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 
 .body {
+    background: linear-gradient(180deg,
+    rgba(28, 28, 28, 0.40) 25%,
+    rgba(28, 28, 28, 0.70) 40%, 
+    rgba(28, 28, 28, 1) 100%);
     padding: 1rem var(--body-padding, 2rem);
     &-description {
         font-size: 16px;

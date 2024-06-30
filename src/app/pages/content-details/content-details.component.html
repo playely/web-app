@@ -1,7 +1,9 @@
-<div class="details">
+<div class="details" [ngStyle]="{
+    'background-image': content ? 'url(' + (content.backdrop_path | imageUrl: 'original') + ')' : 'none'
+    }">
     @if (content) {
-        <app-banner-block [content]="content"></app-banner-block>
     <div class="body">
+        <app-banner-block [content]="content"></app-banner-block>
         <app-actions-block (showCredits)="showCredits()" (showTrailer)="showTrailer()"></app-actions-block>
         <p class="body-description">{{content.overview}}</p>
         <p *ngIf="content.runtime" class="body-runtime">{{ content.runtime| duration }}</p>
@@ -12,8 +14,7 @@
                 (click)="selectTab(item)"
                 >{{ item.name }}</div>
             }
-        </div>
-        
+        </div>       
         @switch (selectedTab?.key) {
             @case ("eps") {
               <app-series-block *ngIf="currentSeason" [seasons]="content.seasons" [currentSeason]="currentSeason"

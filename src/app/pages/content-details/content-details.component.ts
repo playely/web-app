@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { MatDialog, MatDialogModule } from '@angular/material/dialog';
 import { BannerBlockComponent } from './banner-block/banner-block.component';
 import { ActionsBlockComponent } from './actions-block/actions-block.component';
-import { NgClass, NgIf } from '@angular/common';
+import { NgClass, NgIf, NgStyle } from '@angular/common';
 import { ActivatedRoute, Router } from '@angular/router';
 import { TMDBDetails } from '@models/tmdb/TMDBDetail';
 import { ContentService } from '@services/content.service';
@@ -15,6 +15,7 @@ import { InfoBlockComponent } from './info-block/info-block.component';
 import { map } from 'rxjs';
 import { CreditsComponent } from '@components/credits/credits.component';
 import { SinglePlayerComponent } from '@components/player/player.component';
+import { ImageUrlPipe } from '../../pipes/image-url.pipe';
 
 interface ITab {
   name: string;
@@ -27,12 +28,14 @@ interface ITab {
     NgIf, 
     DurationPipe,
     NgClass, 
+    NgStyle,
     BannerBlockComponent, 
     ActionsBlockComponent, 
     SeriesBlockComponent, 
     CardListComponent, 
     InfoBlockComponent,
-    MatDialogModule
+    MatDialogModule,
+    ImageUrlPipe
   ],
   templateUrl: './content-details.component.html',
   styleUrl: './content-details.component.scss'
