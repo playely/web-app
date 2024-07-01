@@ -5,4 +5,10 @@ describe('PrefixPipe', () => {
     const pipe = new PrefixPipe();
     expect(pipe).toBeTruthy();
   });
+
+  it('transforms "test" to "prefix test"', () => {
+    const pipe = new PrefixPipe();
+    expect(pipe.transform('test', true, 'prefix')).toBe('test prefix ');
+  });
+
 });

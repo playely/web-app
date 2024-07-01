@@ -2,7 +2,6 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { TMDBResponse } from '@models/tmdb/TMDBResponse';
 import { firstValueFrom } from 'rxjs';
-import { ConfigService } from './config.service';
 import { TMDBDetails } from '@models/tmdb/TMDBDetail';
 import { TMDBSeason } from '@models/tmdb/TMDBSeason';
 import { getLogoPath } from '@utils/content.utils';
@@ -12,7 +11,7 @@ import { getLogoPath } from '@utils/content.utils';
 })
 export class ContentService {
 
-  constructor(private http: HttpClient, private config:ConfigService) { }
+  constructor(private http: HttpClient) { }
 
   getDiscoverMovies(pageNumber: number = 1, genres?: string): Promise<TMDBResponse> {
     return firstValueFrom(this.http.get<TMDBResponse>(`https://api.themoviedb.org/3/discover/movie?page=${pageNumber}?append_to_response=imagessort_by=popularity.desc${genres ? `&with_genres=${genres}`: ''}`))
@@ -42,15 +41,6 @@ export class ContentService {
   getSeasonDetails(series_id: number, season_number: number) {
     return firstValueFrom(this.http.get<TMDBSeason>(`https://api.themoviedb.org/3/tv/${series_id}/season/${season_number}?append_to_response=details`))
     .then(value=>({ ...value, episodes: value.episodes?.map((ep)=>({...ep, media_type: 'episode'})) }));
-  }
-
-  getEpisodeDetails(series_id: number, season_number: number, episode_number: number) {
-    return firstValueFrom(this.http.get<TMDBDetails>(` https://api.themoviedb.org/3/tv/${series_id}/season/${season_number}/episode/${episode_number}?append_to_response=credits,images,keywords,recommendations,similar,providers,seasons`))
-    .then(value=>({ ...value, logo_path: getLogoPath(value) }));
-  }
-
-  getRecommendations(mediaType: number, contentId: number) {
-    return firstValueFrom(this.http.get<TMDBResponse>(`https://api.themoviedb.org/3/${mediaType}/${contentId}/recommendations`));
   }
 
   getMovieGenres() {

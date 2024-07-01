@@ -12,10 +12,10 @@ export class ActionsBlockComponent {
   @Input() content?: any;
   @Output() showCredits = new EventEmitter();
   @Output() showTrailer = new EventEmitter();
-  isFavorite: boolean = false;
+  isFavourite: boolean = false;
 
-  toggleFavorite() {
-    this.isFavorite = !this.isFavorite;
+  toggleFavourite() {
+    this.isFavourite = !this.isFavourite;
   }
 
   get enableToggleFavs() {

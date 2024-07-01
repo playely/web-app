@@ -29,7 +29,7 @@ export class AppComponent {
       this.navbarMode = window.scrollY > element?.clientHeight ? 'solid' : 'gradient';
     }
 
-  constructor(private router: Router, private activatedRoute: ActivatedRoute,  private title: Title){
+  constructor(private router: Router, private activatedRoute: ActivatedRoute){
     this.router.events.pipe(
       filter(event => event instanceof NavigationEnd),
       map(() => this.rootRoute(this.activatedRoute)),
@@ -38,9 +38,6 @@ export class AppComponent {
     ).subscribe((event: any) => {
       this.showFooter = !event.hideFooter;
       this.showNavbar = !event.hideNavbar;
-      if (event.title) {
-        this.title.setTitle(event.title);
-      }
     });
   }
 

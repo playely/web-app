@@ -11,7 +11,7 @@ describe('ActionsBlockComponent', () => {
       imports: [ActionsBlockComponent]
     })
     .compileComponents();
-    
+    localStorage.clear();    
     fixture = TestBed.createComponent(ActionsBlockComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
@@ -19,5 +19,18 @@ describe('ActionsBlockComponent', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
+    expect(component.enableToggleFavs).toBeFalse();
+  });
+
+  it('should enable toggle favourites', () => {
+    localStorage.setItem('user', JSON.stringify({id: 1}));
+    expect(component.enableToggleFavs).toBeTrue();
+  });
+
+  it('should toggle favourite state', () => {
+    component.toggleFavourite();
+    expect(component.isFavourite).toBeTrue();
+    component.toggleFavourite();
+    expect(component.isFavourite).toBeFalse();    
   });
 });

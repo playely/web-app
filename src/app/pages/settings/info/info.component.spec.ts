@@ -1,5 +1,4 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { ComponentFixture, TestBed, discardPeriodicTasks, fakeAsync, tick } from '@angular/core/testing';
 import { InfoComponent } from './info.component';
 
 describe('InfoComponent', () => {
@@ -20,4 +19,17 @@ describe('InfoComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it ('should manage a clock', fakeAsync(() => {
+    component.ngOnInit();
+    expect(component.date).toBeInstanceOf(Date);
+    expect(component.clockInterval).toBeDefined();
+    expect(component.deviceInfo).toBeDefined();
+    const date = component.date;
+    tick(1000); // Advance time by 1 second
+    fixture.detectChanges();
+    expect(component.date > date).toBeTrue();
+    discardPeriodicTasks(); // Clean up any periodic tasks set up by the component
+  }));
+
 });
