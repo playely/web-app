@@ -42,19 +42,19 @@ describe('PlayerCTRLBarComponent', () => {
   it('should add time on forward with current time zero', () => {
     component.currentTime = 0;
     component.onForward();
-    expect(component.currentTime).toBe(0);
-  });
-
-  it('should remove time on rewind', () => {
-    component.currentTime = 42000;
-    component.onBackward();
-    expect(component.currentTime).toBe(32000);
+    expect(component.currentTime).toBe(10000);
   });
 
   it('should remove time on rewind', () => {
     const time = component.currentTime;
     component.onBackward();
-    expect(component.currentTime).toBe(time - 10000);
+    expect(component.currentTime).toBe(0);
+  });
+
+  it('should remove time on rewind with current time', () => {
+    component.currentTime = 42000;
+    component.onBackward();
+    expect(component.currentTime).toBe(32000);
   });
 
   it('should manage the seekbar ', () => {

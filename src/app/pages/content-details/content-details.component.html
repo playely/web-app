@@ -17,7 +17,7 @@
         </div>       
         @switch (selectedTab?.key) {
             @case ("eps") {
-              <app-series-block *ngIf="currentSeason" [seasons]="content.seasons" [currentSeason]="currentSeason"
+              <app-series-block *ngIf="currentSeason" [seasons]="content.seasons ?? []" [currentSeason]="currentSeason"
               (changeSeason)="onChangeSeason($event)"></app-series-block>
             }
             @case ("info") {

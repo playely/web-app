@@ -7,7 +7,7 @@ import { Pipe, PipeTransform } from '@angular/core';
 export class PrefixPipe implements PipeTransform {
 
   transform(value: string | number, show: boolean, separator: string): unknown {
-    return show && value ? `${value}${separator} ` : '';
+    return show && value ? `${value}${separator}` : '';
   }
 
 }

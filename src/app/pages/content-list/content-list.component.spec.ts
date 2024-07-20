@@ -1,6 +1,10 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ContentListComponent } from './content-list.component';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { ContentServiceMock } from '../../tests/service-mocks/content-service.mock';
+import { ContentService } from '../../services/content.service';
+import { provideRouter } from '@angular/router';
 
 describe('ContentListComponent', () => {
   let component: ContentListComponent;
@@ -8,7 +12,11 @@ describe('ContentListComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [ContentListComponent]
+      imports: [ContentListComponent, HttpClientTestingModule],
+      providers: [
+        provideRouter([]),
+        { provide: ContentService, useClass: ContentServiceMock }
+      ]
     })
     .compileComponents();
     

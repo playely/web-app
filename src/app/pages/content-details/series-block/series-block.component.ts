@@ -27,7 +27,7 @@ import { PrefixPipe } from '@pipes/prefix.pipe';
 })
 export class SeriesBlockComponent implements OnInit {
   @ViewChild('series') seriesBlock?: ElementRef;
-  @Input() seasons?: TMDBSeason[] = [];
+  @Input() seasons: TMDBSeason[] = [];
   @Input() currentSeason?: TMDBSeason;
   @Output() changeSeason = new EventEmitter();
   prevSeason?: TMDBSeason;
@@ -39,7 +39,7 @@ export class SeriesBlockComponent implements OnInit {
   ngOnInit(): void {
     if (this.currentSeason) {
       this.showSeasonNumber = !this.currentSeason.name.toLowerCase().includes('season');
-      this.singleSeason = (this.seasons && this.seasons.length < 2) ?? false;
+      this.singleSeason = this.seasons.length < 2;
       this.selectedSeason.setValue(this.currentSeason.id);
       this.setSeasonState(this.currentSeason.id);
     }
@@ -50,8 +50,7 @@ export class SeriesBlockComponent implements OnInit {
     this.setSeasonState(id);  
   }
 
-  setSeasonState(id: number) {
-    if (!this.seasons) return;
+  private setSeasonState(id: number) {
     this.prevSeason = undefined;
     this.nextSeason = undefined;
     const index = this.seasons.findIndex(item=>item.id === id); 

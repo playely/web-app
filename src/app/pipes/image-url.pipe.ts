@@ -9,7 +9,7 @@ export class ImageUrlPipe implements PipeTransform {
 
   constructor(private configService: ConfigService){}
 
-  transform(imagePath?: string, imageSize?: string): unknown {
+  transform(imagePath?: string, imageSize: string = 'original'): unknown {
     return `${this.configService.getConfig()?.images.base_url}${imageSize}${imagePath}`;
   }
 

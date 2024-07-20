@@ -1,6 +1,9 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ContentPersonalComponent } from './content-personal.component';
+import { ContentServiceMock } from '../../tests/service-mocks/content-service.mock';
+import { ContentService } from '../../services/content.service';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 
 describe('ContentPersonalComponent', () => {
   let component: ContentPersonalComponent;
@@ -8,7 +11,10 @@ describe('ContentPersonalComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [ContentPersonalComponent]
+      imports: [ContentPersonalComponent, HttpClientTestingModule],
+      providers: [
+        { provide: ContentService, useClass: ContentServiceMock }
+      ]
     })
     .compileComponents();
     

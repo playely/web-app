@@ -16,6 +16,7 @@ export class BannerComponent {
   @Input() contentList?: TMDBResponse;
   selectedContentIndex = 0;
   swipeCoord?: number[];
+  
   next() {
     if (!this.contentList) return;
     if (this.selectedContentIndex + 1 < this.contentList.results.length) {

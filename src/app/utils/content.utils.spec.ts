@@ -5,8 +5,7 @@ import { contentDetailsMock } from "../tests/data-mocks/content.mock";
 describe("Content Utils", () => {
     describe("isSeries", () => {
         it("should return true if content is a series", () => {
-            const content: TMDBDetails = contentDetailsMock;
-            const result = isSeries(content);
+            const result = isSeries(contentDetailsMock);
             expect(result).toBe(true);
         });
 

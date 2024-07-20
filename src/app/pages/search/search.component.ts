@@ -48,11 +48,15 @@ export class SearchComponent {
             this.results = undefined;
             this.noResults = true;
           }
+        })
+        .catch(()=> {
+          this.results = undefined;
+          this.noResults = true;
         });
       });
   }
 
   get noSearchResults() {
-    return this.results === undefined || this.results === null;
+    return this.results === undefined;
   }
 }

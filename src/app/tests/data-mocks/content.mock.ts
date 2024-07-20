@@ -130,6 +130,30 @@ export const contentTop10Mock: TMDBResponse = {
             },
             title: "House of the Dragon"
         },
+        {
+            "adult": false,
+            "backdrop_path": "/etj8E2o0Bud0HkONVQPjyCkIvpv.jpg",
+            "genre_ids": [
+                10765,
+                18,
+                10759
+            ],
+            "id": 94997,
+            "original_language": "en",
+            "overview": "The Targaryen dynasty is at the absolute apex of its power, with more than 15 dragons under their yoke. Most empires crumble from such heights. In the case of the Targaryens, their slow fall begins when King Viserys breaks with a century of tradition by naming his daughter Rhaenyra heir to the Iron Throne. But when Viserys later fathers a son, the court is shocked when Rhaenyra retains her status as his heir, and seeds of division sow friction across the realm.",
+            "popularity": 3193.991,
+            "poster_path": "/t9XkeE7HzOsdQcDDDapDYh8Rrmt.jpg",
+            "name": "House of the Dragon",
+            "vote_average": 8.418,
+            "vote_count": 4229,
+            "media_type": "tv",
+            images: {
+                backdrops: [],
+                logos: [],
+                posters: []
+            },
+            title: "House of the Dragon"
+        },
     ],
     "total_pages": 384,
     "total_results": 7668,
@@ -330,6 +354,39 @@ export const contentDetailsMock: TMDBDetails = {
     "logo_path": "/wGRt3aaq0iM5FTzmw2q1LPIPIP4.png",
     "media_type": "tv"
 };
+
+export const detailsSeasonsMock: TMDBSeason[] = [
+    {
+        "air_date": "2022-08-21",
+        "episode_count": 53,
+        "id": 309556,
+        "name": "Specials",
+        "overview": "",
+        "poster_path": "/qVU4112Ob2ikHBu4VRC50MdWZcM.jpg",
+        "season_number": 0,
+        "vote_average": 0
+    },
+    {
+        "air_date": "2022-08-20",
+        "episode_count": 10,
+        "id": 134965,
+        "name": "Season 1",
+        "overview": "",
+        "poster_path": "/m7ta0kNg2ONvnBFF76miVvbWK1V.jpg",
+        "season_number": 1,
+        "vote_average": 7.9
+    },
+    {
+        "air_date": "2024-06-16",
+        "episode_count": 8,
+        "id": 368014,
+        "name": "Season 2",
+        "overview": "",
+        "poster_path": "/xhjADf5sslq7lbRjc50FgvIYIkT.jpg",
+        "season_number": 2,
+        "vote_average": 6.6
+    }
+];
 
 export const contentSeasonMock: TMDBSeason = {
     episode_count: 10,
