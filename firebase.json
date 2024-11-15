@@ -1,0 +1,14 @@
+{
+  "hosting": {
+    "target": "playely", 
+    "public": "dist/playely-web/browser",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
+    "frameworksBackend": {
+      "region": "us-central1"
+    }
+  }
+}
